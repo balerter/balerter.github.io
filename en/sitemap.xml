@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://balerter.com/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://balerter.com/ru/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://balerter.com/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://balerter.com/ru/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://balerter.com/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://balerter.com/ru/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://balerter.com/en/tags/"
+                />
+  </url>
+  
+</urlset>

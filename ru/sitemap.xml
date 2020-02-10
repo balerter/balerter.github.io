@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://balerter.com/ru/core/log/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/datasources/clickhouse/</loc>
+    <lastmod>2020-02-04T17:10:36+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/example/</loc>
+    <lastmod>2020-02-04T16:37:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/basics/about/</loc>
+    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/basics/</loc>
+    <lastmod>2020-02-04T16:07:19+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/core/kv/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/datasources/prometheus/</loc>
+    <lastmod>2020-02-04T17:10:42+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/</loc>
+    <lastmod>2020-02-04T16:35:56+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/basics/install/</loc>
+    <lastmod>2020-02-04T16:20:36+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/core/alert/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/datasources/postgres/</loc>
+    <lastmod>2020-02-04T17:10:48+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/core/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/datasources/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/scripts/folder/</loc>
+    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/configuration/scripts/</loc>
+    <lastmod>2020-02-04T16:48:31+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://balerter.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://balerter.com/ru/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://balerter.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://balerter.com/ru/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://balerter.com/ru/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://balerter.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://balerter.com/ru/tags/"
+                />
+  </url>
+  
+</urlset>

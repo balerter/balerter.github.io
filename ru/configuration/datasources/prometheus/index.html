@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ru" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Тип Prometheus :: Документация по Balerter</title>
+
+    
+    <link href="/css/nucleus.css?1581351814" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1581351814" rel="stylesheet">
+    <link href="/css/hybrid.css?1581351814" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1581351814" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1581351814" rel="stylesheet">
+    <link href="/css/auto-complete.css?1581351814" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1581351814" rel="stylesheet">
+    <link href="/css/theme.css?1581351814" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1581351814" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1581351814"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/ru/configuration/datasources/prometheus/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://balerter.com/">
+  <strong style="font-size: 2em;color:#ffffff;font-family:Tahoma">BALERTER</strong>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Поиск...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1581351814"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1581351814"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/balerter.com\/\/ru";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1581351814"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/basics/" title="Основы" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/basics/">
+          <b>I. </b>Основы
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/basics/about/" title="О Balerter" class="dd-item ">
+        <a href="/ru/basics/about/">
+        О Balerter
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/basics/install/" title="Установка" class="dd-item ">
+        <a href="/ru/basics/install/">
+        Установка
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/ru/configuration/">
+          <b>II. </b>Конфигурация
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/example/" title="Пример конфигурации" class="dd-item ">
+        <a href="/ru/configuration/example/">
+        Пример конфигурации
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/datasources/" title="Раздел datasource" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/ru/configuration/datasources/">
+          Раздел datasource
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/clickhouse/" title="Тип Clickhouse" class="dd-item ">
+        <a href="/ru/configuration/datasources/clickhouse/">
+        Тип Clickhouse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/prometheus/" title="Тип Prometheus" class="dd-item active">
+        <a href="/ru/configuration/datasources/prometheus/">
+        Тип Prometheus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/postgres/" title="Тип Postgres" class="dd-item ">
+        <a href="/ru/configuration/datasources/postgres/">
+        Тип Postgres
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/scripts/" title="Раздел Scripts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/scripts/">
+          Раздел Scripts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item ">
+        <a href="/ru/configuration/scripts/folder/">
+        Тип Folder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/">
+          <b>III. </b>Модули ядра
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/log/" title="Log" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/log/">
+          Log
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/kv/" title="KV" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/kv/">
+          KV
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/alert/" title="Alert" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/alert/">
+          Alert
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ru" value="http://balerter.com/ru/configuration/datasources/prometheus/" selected>Русский</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/datasources/'>Раздел datasource</a> > Тип Prometheus
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#name">name</a></li>
+        <li><a href="#url">url</a></li>
+        <li><a href="#basic_auth">basic_auth</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Тип Prometheus
+            </h1>
+          
+
+        
+
+
+
+<pre><code>name: prom1
+url: domain.com
+basic_auth:
+  username: username
+  password: password
+
+</code></pre><h3 id="name">name</h3>
+<blockquote>
+<p>Обязательное поле, Уникальное значение среди источников данных этого типа</p>
+</blockquote>
+<p>Название источника данных</p>
+<p>В названии могут использоваться латинские символы, цифры и знак подчеркивания</p>
+<p>По этому имени вы будете обращаться из скрипта, например:</p>
+<pre><code>local ds = require('datasource.prometheus.prom1')
+</code></pre><h3 id="url">url</h3>
+<blockquote>
+<p>Обязательное поле</p>
+</blockquote>
+<p>URL для запросов. Требуемые пути API, например <code>/api/v1/query</code> будут добавлены автоматически</p>
+<h3 id="basic_auth">basic_auth</h3>
+<p>Имя и пароль пользователя, если источник данных защищен Basic аутентификацией</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/ru/configuration/datasources/clickhouse/" title="Тип Clickhouse"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/ru/configuration/datasources/postgres/" title="Тип Postgres" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1581351815"></script>
+    <script src="/js/perfect-scrollbar.min.js?1581351815"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1581351815"></script>
+    <script src="/js/jquery.sticky.js?1581351815"></script>
+    <script src="/js/featherlight.min.js?1581351815"></script>
+    <script src="/js/highlight.pack.js?1581351815"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1581351815"></script>
+    <script src="/js/learn.js?1581351815"></script>
+    <script src="/js/hugo-learn.js?1581351815"></script>
+
+    <link href="/mermaid/mermaid.css?1581351815" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1581351815"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
