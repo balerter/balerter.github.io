@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Раздел datasource on Документация по Balerter</title>
-    <link>http://balerter.com/ru/configuration/datasources/</link>
+    <link>https://balerter.github.io/ru/configuration/datasources/</link>
     <description>Recent content in Раздел datasource on Документация по Balerter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Feb 2020 17:06:21 +0300</lastBuildDate>
     
-	<atom:link href="http://balerter.com/ru/configuration/datasources/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://balerter.github.io/ru/configuration/datasources/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Тип Clickhouse</title>
-      <link>http://balerter.com/ru/configuration/datasources/clickhouse/</link>
+      <link>https://balerter.github.io/ru/configuration/datasources/clickhouse/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:36 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/datasources/clickhouse/</guid>
+      <guid>https://balerter.github.io/ru/configuration/datasources/clickhouse/</guid>
       <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.crt name  Обязательное поле, Уникальное значение среди источников данных этого типа
  Название источника данных
 В названии могут использоваться латинские символы, цифры и знак подчеркивания
@@ -29,10 +29,10 @@ port  По-умолчанию 6440
     
     <item>
       <title>Тип Prometheus</title>
-      <link>http://balerter.com/ru/configuration/datasources/prometheus/</link>
+      <link>https://balerter.github.io/ru/configuration/datasources/prometheus/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/datasources/prometheus/</guid>
+      <guid>https://balerter.github.io/ru/configuration/datasources/prometheus/</guid>
       <description>name: prom1 url: domain.com basic_auth: username: username password: password name  Обязательное поле, Уникальное значение среди источников данных этого типа
  Название источника данных
 В названии могут использоваться латинские символы, цифры и знак подчеркивания
@@ -44,10 +44,10 @@ basic_auth Имя и пароль пользователя, если источ�
     
     <item>
       <title>Тип Postgres</title>
-      <link>http://balerter.com/ru/configuration/datasources/postgres/</link>
+      <link>https://balerter.github.io/ru/configuration/datasources/postgres/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/datasources/postgres/</guid>
+      <guid>https://balerter.github.io/ru/configuration/datasources/postgres/</guid>
       <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database ssl_mode: verify-full ssl_cert_path: /path/to/cert.crt name  Обязательное поле, Уникальное значение среди источников данных этого типа
  Название источника данных
 В названии могут использоваться латинские символы, цифры и знак подчеркивания

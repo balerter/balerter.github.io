@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Раздел Scripts on Документация по Balerter</title>
-    <link>http://balerter.com/ru/configuration/scripts/</link>
+    <link>https://balerter.github.io/ru/configuration/scripts/</link>
     <description>Recent content in Раздел Scripts on Документация по Balerter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Feb 2020 16:48:31 +0300</lastBuildDate>
     
-	<atom:link href="http://balerter.com/ru/configuration/scripts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://balerter.github.io/ru/configuration/scripts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Тип Folder</title>
-      <link>http://balerter.com/ru/configuration/scripts/folder/</link>
+      <link>https://balerter.github.io/ru/configuration/scripts/folder/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/scripts/folder/</guid>
+      <guid>https://balerter.github.io/ru/configuration/scripts/folder/</guid>
       <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Обязательное поле, Уникальное значение
  Название источника скрипта, в том числе используется при логгировании
 В названии могут использоваться латинские символы, цифры и знак подчеркивания

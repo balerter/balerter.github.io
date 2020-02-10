@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://balerter.com/en/categories/</loc>
+    <loc>https://balerter.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://balerter.com/ru/categories/"
+                href="https://balerter.github.io/ru/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://balerter.com/en/categories/"
+                href="https://balerter.github.io/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://balerter.com/en/</loc>
+    <loc>https://balerter.github.io/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://balerter.com/ru/"
+                href="https://balerter.github.io/ru/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://balerter.com/en/"
+                href="https://balerter.github.io/en/"
                 />
   </url>
   
   <url>
-    <loc>http://balerter.com/en/tags/</loc>
+    <loc>https://balerter.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://balerter.com/ru/tags/"
+                href="https://balerter.github.io/ru/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://balerter.com/en/tags/"
+                href="https://balerter.github.io/en/tags/"
                 />
   </url>
   

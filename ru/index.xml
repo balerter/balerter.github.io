@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Содержание on Документация по Balerter</title>
-    <link>http://balerter.com/ru/</link>
+    <link>https://balerter.github.io/ru/</link>
     <description>Recent content in Содержание on Документация по Balerter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Feb 2020 16:08:54 +0300</lastBuildDate>
     
-	<atom:link href="http://balerter.com/ru/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://balerter.github.io/ru/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Тип Clickhouse</title>
-      <link>http://balerter.com/ru/configuration/datasources/clickhouse/</link>
+      <link>https://balerter.github.io/ru/configuration/datasources/clickhouse/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:36 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/datasources/clickhouse/</guid>
+      <guid>https://balerter.github.io/ru/configuration/datasources/clickhouse/</guid>
       <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.crt name  Обязательное поле, Уникальное значение среди источников данных этого типа
  Название источника данных
 В названии могут использоваться латинские символы, цифры и знак подчеркивания
@@ -29,10 +29,10 @@ port  По-умолчанию 6440
     
     <item>
       <title>Пример конфигурации</title>
-      <link>http://balerter.com/ru/configuration/example/</link>
+      <link>https://balerter.github.io/ru/configuration/example/</link>
       <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/example/</guid>
+      <guid>https://balerter.github.io/ru/configuration/example/</guid>
       <description>Файл конфигурации описывается в yaml формате
 Секции конфигурации высшего уровня:
  scripts - описание источников скриптов datasources - описание источников данных channels - описание каналов отправки уведомлений global - глобальные настройки  Пример:
@@ -41,20 +41,20 @@ scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#3
     
     <item>
       <title>О Balerter</title>
-      <link>http://balerter.com/ru/basics/about/</link>
+      <link>https://balerter.github.io/ru/basics/about/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/basics/about/</guid>
+      <guid>https://balerter.github.io/ru/basics/about/</guid>
       <description>Balerter - это система оповещний, основанная на скриптах.
 Все логика получения, обработки данных и отправки оповещений описывается в LUA-скриптах.</description>
     </item>
     
     <item>
       <title>Тип Prometheus</title>
-      <link>http://balerter.com/ru/configuration/datasources/prometheus/</link>
+      <link>https://balerter.github.io/ru/configuration/datasources/prometheus/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/datasources/prometheus/</guid>
+      <guid>https://balerter.github.io/ru/configuration/datasources/prometheus/</guid>
       <description>name: prom1 url: domain.com basic_auth: username: username password: password name  Обязательное поле, Уникальное значение среди источников данных этого типа
  Название источника данных
 В названии могут использоваться латинские символы, цифры и знак подчеркивания
@@ -66,10 +66,10 @@ basic_auth Имя и пароль пользователя, если источ�
     
     <item>
       <title>Установка</title>
-      <link>http://balerter.com/ru/basics/install/</link>
+      <link>https://balerter.github.io/ru/basics/install/</link>
       <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/basics/install/</guid>
+      <guid>https://balerter.github.io/ru/basics/install/</guid>
       <description>Докер Для простейшего запуска Balerter вам требуется передать ему конфигурационный файл
 docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=/opt/config.yml Исходный код Клонируем репозиторий на локальную машину и запускаем Balerter, указав конфигурационный файл
  Требуется Go версии 1.13 и выше
@@ -78,10 +78,10 @@ docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=
     
     <item>
       <title>Тип Postgres</title>
-      <link>http://balerter.com/ru/configuration/datasources/postgres/</link>
+      <link>https://balerter.github.io/ru/configuration/datasources/postgres/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/datasources/postgres/</guid>
+      <guid>https://balerter.github.io/ru/configuration/datasources/postgres/</guid>
       <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database ssl_mode: verify-full ssl_cert_path: /path/to/cert.crt name  Обязательное поле, Уникальное значение среди источников данных этого типа
  Название источника данных
 В названии могут использоваться латинские символы, цифры и знак подчеркивания
@@ -94,10 +94,10 @@ port  По-умолчанию 5432
     
     <item>
       <title>Тип Folder</title>
-      <link>http://balerter.com/ru/configuration/scripts/folder/</link>
+      <link>https://balerter.github.io/ru/configuration/scripts/folder/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
-      <guid>http://balerter.com/ru/configuration/scripts/folder/</guid>
+      <guid>https://balerter.github.io/ru/configuration/scripts/folder/</guid>
       <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Обязательное поле, Уникальное значение
  Название источника скрипта, в том числе используется при логгировании
 В названии могут использоваться латинские символы, цифры и знак подчеркивания
