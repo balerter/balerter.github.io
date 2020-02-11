@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Скрипты on Документация по Balerter</title>
+    <link>https://balerter.github.io/ru/scripts/</link>
+    <description>Recent content in Скрипты on Документация по Balerter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 16:08:54 +0300</lastBuildDate>
+    
+	<atom:link href="https://balerter.github.io/ru/scripts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Основы</title>
+      <link>https://balerter.github.io/ru/scripts/basics/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/scripts/basics/</guid>
+      <description>Скрипты пишутся на языке Lua 5.1
+С официальной документацией можно ознакомться тут
+ Для разработчиков: в исходном коде используется Golang библиотка https://github.com/yuin/gopher-lua для исполнения Lua скриптов
+ Пример простого скрипта с подробными комментариями: (комментарии в Lua начинаются с двойного минуса --)
+-- в начале скрипта можно указать некоторые мета-теги. Например, с помощью тега @interval можно указать частоту исполнения скрипта -- все возможные варианты мета-тегов смотрите в соотвествующем разделе -- @interval 5m -- в переменную sizeLimit запомним значение 1e9, которое будет в нашем случае означать 1Гб (1e9 в байтах) local sizeLimit = 1000000000 -- подключим модуль ядра Log для возможности вывода сообщений в лог сервиса local log = require(&amp;quot;log&amp;quot;) -- подключим источник данных типа Clickhouse с названием ch1 (он должен быть описан в файле конфигурации) local ch1 = require(&amp;quot;datasource.</description>
+    </item>
+    
+    <item>
+      <title>Мета-теги</title>
+      <link>https://balerter.github.io/ru/scripts/meta-tags/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/scripts/meta-tags/</guid>
+      <description>В начале каждого скрипта можно указать мета-теги
+-- @interval 10s -- @ignore local log = require(&#39;log&#39;) ... Каждый мета-тег имеет вид @&amp;lt;TAG_NAME&amp;gt; [&amp;lt;TAG_OPTIONS&amp;gt;]
+Все мета-теги должны быть строго в начале скрипта и располагаться в начале комментария.
+Любая строка не-комментарий прервет обработку мета-тегов.
+-- можно помещать комментарии без мета-тегов. они будут пропущены -- @interval 10s (комментарий тут не допускается, перенесите его на другую строку, если он необходим) -- -- пустая строка комментария тоже допустима -- @ignore -- этот мета-тег не будет обработан, так как перед ним есть строка не-комментарий Мета-теги @interval &amp;lt;TIME INTERVAL&amp;gt; Позволяет указать интервал, с которым будет запускаться скрипт.</description>
+    </item>
+    
+  </channel>
+</rss>

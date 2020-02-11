@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Содержание :: Документация по Balerter</title>
+    <title>Скрипты :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1581429282" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/">
+  <body class="" data-url="/ru/scripts/">
     <nav id="sidebar" class="">
 
 
@@ -455,8 +455,8 @@
   
     
     <li data-nav-id="/ru/scripts/" title="Скрипты" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/scripts/">
@@ -540,23 +540,11 @@
               
               
                   
-                    
-                    
-                      <option id="en" value="https://balerter.github.io/en/">English</option>
-                    
-                  
-              
-                  
-              
-          
-              
-              
-                  
               
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/scripts/" selected>Русский</option>
                     
                   
               
@@ -594,9 +582,44 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > Скрипты
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
+        
+          <div id="chapter">
         
         <div id="body-inner">
           
@@ -604,53 +627,22 @@
         
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="balerter">Balerter</h1>
-<p>Balerter - система оповещений, основанная на скриптах</p>
-<h3 id="содержание">Содержание</h3>
-<ul>
-<li><a href="basics">Основы</a>
-<ul>
-<li><a href="basics/about">О Balerter</a></li>
-<li><a href="basics/installation">Установка</a></li>
-</ul>
-</li>
-<li><a href="configuration">Конфигурация</a>
-<ul>
-<li><a href="configuration/scripts">Источники скриптов</a>
-<ul>
-<li><a href="configuration/scripts/folder">Folder</a></li>
-</ul>
-</li>
-<li><a href="configuration/datasources">Источники данных</a>
-<ul>
-<li><a href="configuration/datasources/clickhouse">Clickhouse</a></li>
-<li><a href="configuration/datasources/prometheus">Prometheus</a></li>
-<li><a href="configuration/datasources/postgres">Postgres</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="core">Модули ядра</a>
-<ul>
-<li><a href="core/log">Log</a></li>
-<li><a href="core/kv">KV</a> (Key/Value)</li>
-<li><a href="core/alert">Alert</a></li>
-</ul>
-</li>
-<li><a href="scripts">Скрипты</a>
-<ul>
-<li><a href="scripts/basics">Основы</a></li>
-<li><a href="scripts/meta-tags">Мета-теги</a></li>
-</ul>
-</li>
-</ul>
+
+	<h3 id="часть-iv">Часть IV</h3>
+<h1 id="скрипты">Скрипты</h1>
+<p>В данном разделе описаны принципы создания скриптов. Приведены примеры.</p>
+
+
+
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
+        
+            </div> 
         
         </div> 
         
@@ -929,6 +921,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -941,6 +934,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -981,8 +977,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/ru/core/alert/" title="Alert"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/ru/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/ru/scripts/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1014,4 +1012,3 @@
 
   </body>
 </html>
-

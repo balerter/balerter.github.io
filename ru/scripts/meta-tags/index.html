@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Содержание :: Документация по Balerter</title>
+    <title>Мета-теги :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1581429282" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/">
+  <body class="" data-url="/ru/scripts/meta-tags/">
     <nav id="sidebar" class="">
 
 
@@ -455,7 +455,7 @@
   
     
     <li data-nav-id="/ru/scripts/" title="Скрипты" class="dd-item 
-        
+        parent
         
         
         ">
@@ -498,7 +498,7 @@
  
   
     
-      <li data-nav-id="/ru/scripts/meta-tags/" title="Мета-теги" class="dd-item ">
+      <li data-nav-id="/ru/scripts/meta-tags/" title="Мета-теги" class="dd-item active">
         <a href="/ru/scripts/meta-tags/">
         Мета-теги
         
@@ -540,23 +540,11 @@
               
               
                   
-                    
-                    
-                      <option id="en" value="https://balerter.github.io/en/">English</option>
-                    
-                  
-              
-                  
-              
-          
-              
-              
-                  
               
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/scripts/meta-tags/" selected>Русский</option>
                     
                   
               
@@ -594,63 +582,115 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/scripts/'>Скрипты</a> > Мета-теги
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#мета-теги">Мета-теги</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Мета-теги
+            </h1>
+          
 
         
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="balerter">Balerter</h1>
-<p>Balerter - система оповещений, основанная на скриптах</p>
-<h3 id="содержание">Содержание</h3>
-<ul>
-<li><a href="basics">Основы</a>
-<ul>
-<li><a href="basics/about">О Balerter</a></li>
-<li><a href="basics/installation">Установка</a></li>
-</ul>
-</li>
-<li><a href="configuration">Конфигурация</a>
-<ul>
-<li><a href="configuration/scripts">Источники скриптов</a>
-<ul>
-<li><a href="configuration/scripts/folder">Folder</a></li>
-</ul>
-</li>
-<li><a href="configuration/datasources">Источники данных</a>
-<ul>
-<li><a href="configuration/datasources/clickhouse">Clickhouse</a></li>
-<li><a href="configuration/datasources/prometheus">Prometheus</a></li>
-<li><a href="configuration/datasources/postgres">Postgres</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="core">Модули ядра</a>
-<ul>
-<li><a href="core/log">Log</a></li>
-<li><a href="core/kv">KV</a> (Key/Value)</li>
-<li><a href="core/alert">Alert</a></li>
-</ul>
-</li>
-<li><a href="scripts">Скрипты</a>
-<ul>
-<li><a href="scripts/basics">Основы</a></li>
-<li><a href="scripts/meta-tags">Мета-теги</a></li>
-</ul>
-</li>
-</ul>
+<p>В начале каждого скрипта можно указать мета-теги</p>
+<pre><code>-- @interval 10s
+-- @ignore
+
+local log = require('log')
+...
+
+</code></pre><p>Каждый мета-тег имеет вид <code>@&lt;TAG_NAME&gt; [&lt;TAG_OPTIONS&gt;]</code></p>
+<p>Все мета-теги должны быть строго в начале скрипта и располагаться в начале комментария.</p>
+<p>Любая строка не-комментарий прервет обработку мета-тегов.</p>
+<pre><code>-- можно помещать комментарии без мета-тегов. они будут пропущены
+-- @interval 10s (комментарий тут не допускается, перенесите его на другую строку, если он необходим)
+--
+-- пустая строка комментария тоже допустима
+
+-- @ignore
+-- этот мета-тег не будет обработан, так как перед ним есть строка не-комментарий
+</code></pre><h3 id="мета-теги">Мета-теги</h3>
+<h4 id="interval-time-interval"><code>@interval &lt;TIME INTERVAL&gt;</code></h4>
+<p>Позволяет указать интервал, с которым будет запускаться скрипт.
+Если не указан, используется значение по-умолчанию или указанное в файле конфигурации.</p>
+<p>Допустимые значения единиц времени: &ldquo;ns&rdquo;, &ldquo;us&rdquo; (or &ldquo;µs&rdquo;), &ldquo;ms&rdquo;, &ldquo;s&rdquo;, &ldquo;m&rdquo;, &ldquo;h&rdquo;.</p>
+<p>Вы можете использовать любые значения, однако стоит понимать, что запуск скрипта каждую микросекунду не кажется здравой идеей.</p>
+<p>Пример:</p>
+<pre><code>-- @interval 10s
+-- @interval 5m
+</code></pre><h4 id="ignore"><code>@ignore</code></h4>
+<p>Если указан этот мета-тег, то скрипт не будет выполняться.</p>
+<h4 id="name-script-name"><code>@name &lt;SCRIPT NAME&gt;</code></h4>
+<p>Указать свое имя для скрипта. По умолчанию в качестве имени используется полный путь к файлу</p>
+<p>Имя скрипта используется для выдачи отладочной информации и сообщений об ошибках в логах</p>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div> 
         
@@ -929,6 +969,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -941,6 +982,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -957,6 +1001,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -981,8 +1026,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/ru/scripts/basics/" title="Основы"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/ru/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/ru/scripts/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
