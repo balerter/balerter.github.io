@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/luamodules/about/</loc>
+    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/scripts/basics/</loc>
     <lastmod>2020-02-04T16:32:46+03:00</lastmod>
   </url>
@@ -78,6 +83,11 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/luamodules/new/</loc>
+    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/basics/install/</loc>
     <lastmod>2020-02-04T16:20:36+03:00</lastmod>
   </url>
@@ -118,13 +128,18 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/scripts/</loc>
+    <loc>https://balerter.github.io/ru/luamodules/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://balerter.github.io/ru/configuration/global/</loc>
     <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/scripts/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
   </url>
   
   <url>
