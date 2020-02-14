@@ -63,6 +63,11 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/configuration/scripts/</loc>
+    <lastmod>2020-02-04T16:48:31+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/configuration/</loc>
     <lastmod>2020-02-04T16:35:56+03:00</lastmod>
   </url>
@@ -93,6 +98,11 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/configuration/datasources/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/core/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
   </url>
@@ -103,18 +113,23 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/configuration/channels/</loc>
+    <lastmod>2020-02-04T16:48:31+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/scripts/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/manuals/</loc>
-    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <loc>https://balerter.github.io/ru/configuration/global/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/configuration/datasources/</loc>
-    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+    <loc>https://balerter.github.io/ru/manuals/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
   </url>
   
   <url>
@@ -130,16 +145,6 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/channels/telegram/</loc>
     <lastmod>2020-02-04T16:50:16+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/ru/configuration/channels/</loc>
-    <lastmod>2020-02-04T16:48:31+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/ru/configuration/scripts/</loc>
-    <lastmod>2020-02-04T16:48:31+03:00</lastmod>
   </url>
   
   <url>
