@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Основы :: Документация по Balerter</title>
+    <title>Тип Slack :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1581690926" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/scripts/basics/">
+  <body class="" data-url="/ru/configuration/channels/slack/">
     <nav id="sidebar" class="">
 
 
@@ -152,7 +152,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        
+        parent
         
         
         ">
@@ -289,7 +289,7 @@
   
     
     <li data-nav-id="/ru/configuration/channels/" title="Раздел Channels" class="dd-item 
-        
+        parent
         
         
         ">
@@ -313,7 +313,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/channels/slack/" title="Тип Slack" class="dd-item ">
+      <li data-nav-id="/ru/configuration/channels/slack/" title="Тип Slack" class="dd-item active">
         <a href="/ru/configuration/channels/slack/">
         Тип Slack
         
@@ -635,7 +635,7 @@
   
     
     <li data-nav-id="/ru/scripts/" title="Скрипты" class="dd-item 
-        parent
+        
         
         
         ">
@@ -659,7 +659,7 @@
  
   
     
-      <li data-nav-id="/ru/scripts/basics/" title="Основы" class="dd-item active">
+      <li data-nav-id="/ru/scripts/basics/" title="Основы" class="dd-item ">
         <a href="/ru/scripts/basics/">
         Основы
         
@@ -806,7 +806,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/scripts/basics/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/configuration/channels/slack/" selected>Русский</option>
                     
                   
               
@@ -871,7 +871,13 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > <a href='/ru/scripts/'>Скрипты</a> > Основы
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/channels/'>Раздел Channels</a> > Тип Slack
+          
+         
           
          
           
@@ -884,7 +890,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#name">name</a></li>
+        <li><a href="#token">token</a></li>
+        <li><a href="#channel">channel</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -900,7 +916,7 @@
           
             <h1>
               
-              Основы
+              Тип Slack
             </h1>
           
 
@@ -908,47 +924,27 @@
 
 
 
-<p>Скрипты пишутся на языке <strong>Lua 5.1</strong></p>
-<p>С официальной документацией можно ознакомться <a href="http://www.lua.org/manual/5.1/">тут</a></p>
+<pre><code>  slack:
+    - name: slack-notification
+      token: SLACK-APPLICATION-TOKEN
+      channel: notification
+</code></pre><h3 id="name">name</h3>
 <blockquote>
-<p>Для разработчиков: в исходном коде используется Golang библиотка <a href="https://github.com/yuin/gopher-lua">https://github.com/yuin/gopher-lua</a> для исполнения Lua скриптов</p>
+<p>Обязательное поле, Уникальное значение</p>
 </blockquote>
-<p>Пример простого скрипта с подробными комментариями: (комментарии в Lua начинаются с двойного минуса <code>--</code>)</p>
-<pre><code>-- в начале скрипта можно указать некоторые мета-теги. Например, с помощью тега @interval можно указать частоту исполнения скрипта
--- все возможные варианты мета-тегов смотрите в соотвествующем разделе 
--- @interval 5m
+<p>Название канала уведомлений, в том числе используется при логгировании</p>
+<p>В названии могут использоваться латинские символы, цифры, знаки минуса и подчеркивания</p>
+<h3 id="token">token</h3>
+<blockquote>
+<p>Обязательное поле</p>
+</blockquote>
+<p>Токен Slack приложения</p>
+<h3 id="channel">channel</h3>
+<blockquote>
+<p>Обязательное поле</p>
+</blockquote>
+<p>Имя Slack канала</p>
 
--- в переменную sizeLimit запомним значение 1e9, которое будет в нашем случае означать 1Гб (1e9 в байтах) 
-local sizeLimit = 1000000000
-
--- подключим модуль ядра Log для возможности вывода сообщений в лог сервиса
-local log = require(&quot;log&quot;)
--- подключим источник данных типа Clickhouse с названием ch1 (он должен быть описан в файле конфигурации)
-local ch1 = require(&quot;datasource.clickhouse.ch1&quot;)
-
--- получим ответ от Clickhouse на наш запрос
-local res, err = ch1.query(&quot;SELECT sum(bytes) AS size FROM system.parts WHERE active&quot;)
--- если вернулась ошибка, то пишем сообщение в лог и выходим из скрипта
-if err ~= nil then
-    log.error(&quot;clickhouse 'ch1' query error: &quot; .. err)
-    return
-end
-
--- из полученного результата берем первую запись (индексация массивов в Lua начинается с 1, а не с 0)
--- и в этой записи берем поле size (мы в запросе указали: ... AS size)
-local currentSize = res[1].size
-
-if currentSize &gt; sizeLimit then
-    -- если наше полученное значение выше нашего лимита, то
-    -- устанавливаем для Алерта с идентификаторм clickhouse-disk-space статус Error
-    -- если на момент вызова был другой статус, то будет отправлено уведомление с текстом 'Check disk space ...' 
-    alert.error(&quot;clickhouse-disk-space&quot;, &quot;Check disk space in Clickhouse cluster! Current busy: &quot; .. tostring(currentSize))
-else
-    -- иначе устанавливаем для этого же Алерта статус Sucess
-    -- если на момент вызова у алерта был другой статус (например, Error), то будет отправлено уведомление с текстом 'Clickhouse disk space - ok'  
-    alert.success(&quot;clickhouse-disk-space&quot;, &quot;Clickhouse disk space - ok&quot;)
-end 
-</code></pre>
 
 <footer class="footline">
 	
@@ -1036,6 +1032,7 @@ end
             
                 
                     
+                    
                 
                 
 
@@ -1050,6 +1047,9 @@ end
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1131,6 +1131,59 @@ end
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -1155,119 +1208,8 @@ end
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1335,22 +1277,17 @@ end
             
         
                     
-            
-        
-                    
-            
-        
-                    
                         
             
             
                 
                     
-                    
                 
                 
 
                     
+                    
+                        
                     
                     
 
@@ -1359,7 +1296,6 @@ end
             
             
                 
-                    
                     
                 
                 
@@ -1377,8 +1313,72 @@ end
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1453,10 +1453,10 @@ end
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/scripts/" title="Скрипты"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/configuration/channels/" title="Раздел Channels"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/scripts/meta-tags/" title="Мета-теги" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/configuration/channels/telegram/" title="Тип Telegram" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

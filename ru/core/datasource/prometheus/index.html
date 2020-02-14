@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Основы :: Документация по Balerter</title>
+    <title>Prometheus :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1581690926" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/scripts/basics/">
+  <body class="" data-url="/ru/core/datasource/prometheus/">
     <nav id="sidebar" class="">
 
 
@@ -421,7 +421,7 @@
   
     
     <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
-        
+        parent
         
         
         ">
@@ -520,7 +520,7 @@
   
     
     <li data-nav-id="/ru/core/datasource/" title="Datasource" class="dd-item 
-        
+        parent
         
         
         ">
@@ -595,8 +595,8 @@
   
     
     <li data-nav-id="/ru/core/datasource/prometheus/" title="Prometheus" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/core/datasource/prometheus/">
@@ -635,7 +635,7 @@
   
     
     <li data-nav-id="/ru/scripts/" title="Скрипты" class="dd-item 
-        parent
+        
         
         
         ">
@@ -659,7 +659,7 @@
  
   
     
-      <li data-nav-id="/ru/scripts/basics/" title="Основы" class="dd-item active">
+      <li data-nav-id="/ru/scripts/basics/" title="Основы" class="dd-item ">
         <a href="/ru/scripts/basics/">
         Основы
         
@@ -806,7 +806,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/scripts/basics/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/core/datasource/prometheus/" selected>Русский</option>
                     
                   
               
@@ -871,7 +871,13 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > <a href='/ru/scripts/'>Скрипты</a> > Основы
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/core/'>Модули ядра</a> > <a href='/ru/core/datasource/'>Datasource</a> > Prometheus
+          
+         
           
          
           
@@ -900,7 +906,7 @@
           
             <h1>
               
-              Основы
+              Prometheus
             </h1>
           
 
@@ -908,49 +914,14 @@
 
 
 
-<p>Скрипты пишутся на языке <strong>Lua 5.1</strong></p>
-<p>С официальной документацией можно ознакомться <a href="http://www.lua.org/manual/5.1/">тут</a></p>
-<blockquote>
-<p>Для разработчиков: в исходном коде используется Golang библиотка <a href="https://github.com/yuin/gopher-lua">https://github.com/yuin/gopher-lua</a> для исполнения Lua скриптов</p>
-</blockquote>
-<p>Пример простого скрипта с подробными комментариями: (комментарии в Lua начинаются с двойного минуса <code>--</code>)</p>
-<pre><code>-- в начале скрипта можно указать некоторые мета-теги. Например, с помощью тега @interval можно указать частоту исполнения скрипта
--- все возможные варианты мета-тегов смотрите в соотвествующем разделе 
--- @interval 5m
 
--- в переменную sizeLimit запомним значение 1e9, которое будет в нашем случае означать 1Гб (1e9 в байтах) 
-local sizeLimit = 1000000000
+	<p>todo</p>
 
--- подключим модуль ядра Log для возможности вывода сообщений в лог сервиса
-local log = require(&quot;log&quot;)
--- подключим источник данных типа Clickhouse с названием ch1 (он должен быть описан в файле конфигурации)
-local ch1 = require(&quot;datasource.clickhouse.ch1&quot;)
 
--- получим ответ от Clickhouse на наш запрос
-local res, err = ch1.query(&quot;SELECT sum(bytes) AS size FROM system.parts WHERE active&quot;)
--- если вернулась ошибка, то пишем сообщение в лог и выходим из скрипта
-if err ~= nil then
-    log.error(&quot;clickhouse 'ch1' query error: &quot; .. err)
-    return
-end
 
--- из полученного результата берем первую запись (индексация массивов в Lua начинается с 1, а не с 0)
--- и в этой записи берем поле size (мы в запросе указали: ... AS size)
-local currentSize = res[1].size
 
-if currentSize &gt; sizeLimit then
-    -- если наше полученное значение выше нашего лимита, то
-    -- устанавливаем для Алерта с идентификаторм clickhouse-disk-space статус Error
-    -- если на момент вызова был другой статус, то будет отправлено уведомление с текстом 'Check disk space ...' 
-    alert.error(&quot;clickhouse-disk-space&quot;, &quot;Check disk space in Clickhouse cluster! Current busy: &quot; .. tostring(currentSize))
-else
-    -- иначе устанавливаем для этого же Алерта статус Sucess
-    -- если на момент вызова у алерта был другой статус (например, Error), то будет отправлено уведомление с текстом 'Clickhouse disk space - ok'  
-    alert.success(&quot;clickhouse-disk-space&quot;, &quot;Clickhouse disk space - ok&quot;)
-end 
-</code></pre>
 
-<footer class="footline">
+<footer class=" footline" >
 	
 </footer>
 
@@ -1214,6 +1185,7 @@ end
             
                 
                     
+                    
                 
                 
 
@@ -1228,6 +1200,9 @@ end
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1277,6 +1252,7 @@ end
             
                 
                     
+                    
                 
                 
 
@@ -1291,6 +1267,9 @@ end
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1324,42 +1303,6 @@ end
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1372,6 +1315,12 @@ end
             
         
                     
+            
+        
+                    
+            
+        
+                    
                         
             
             
@@ -1379,6 +1328,35 @@ end
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1453,10 +1431,10 @@ end
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/scripts/" title="Скрипты"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/core/datasource/postgres/" title="Postgres"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/scripts/meta-tags/" title="Мета-теги" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/scripts/" title="Скрипты" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1488,4 +1466,3 @@ end
 
   </body>
 </html>
-
