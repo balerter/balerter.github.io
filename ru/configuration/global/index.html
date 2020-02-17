@@ -12,18 +12,18 @@
     <title>Раздел global :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1581934859" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1581934859" rel="stylesheet">
-    <link href="/css/hybrid.css?1581934859" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1581934859" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1581934859" rel="stylesheet">
-    <link href="/css/auto-complete.css?1581934859" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1581934859" rel="stylesheet">
-    <link href="/css/theme.css?1581934859" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1581934859" rel="stylesheet">
+    <link href="/css/nucleus.css?1581939644" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1581939644" rel="stylesheet">
+    <link href="/css/hybrid.css?1581939644" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1581939644" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1581939644" rel="stylesheet">
+    <link href="/css/auto-complete.css?1581939644" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1581939644" rel="stylesheet">
+    <link href="/css/theme.css?1581939644" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1581939644" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1581934859"></script>
+    <script src="/js/jquery-3.3.1.min.js?1581939644"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -58,14 +58,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1581934859"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1581934859"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1581939644"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1581939644"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1581934859"></script>
+<script type="text/javascript" src="/js/search.js?1581939644"></script>
 
     
   </div>
@@ -808,6 +808,35 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/api/api/" title="Описание API" class="dd-item ">
+        <a href="/ru/api/api/">
+        Описание API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -1001,7 +1030,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#send_start_notification">send_start_notification</a></li>
+        <li><a href="#send_stop_notification">send_stop_notification</a></li>
+        <li><a href="#api">api</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1026,7 +1065,23 @@
 
 
 
-	<p>todo</p>
+	<p>В секции <code>global</code> описываются общие настройки приложения</p>
+<pre><code>global:
+  send_start_notification:
+    - slack-notification
+  send_stop_notification:
+    - slack-notification
+  api:
+    address: 127.0.0.1:2000
+</code></pre><h3 id="send_start_notification"><code>send_start_notification</code></h3>
+<p>Список каналов, куда будет отправлено уведомление <strong>о старте</strong> приложения. Если не указано, уведомление отправлено не будет.</p>
+<h3 id="send_stop_notification"><code>send_stop_notification</code></h3>
+<p>Список каналов, куда будет отправлено уведомление <strong>об остановке</strong> приложения. Если не указано, уведомление отправлено не будет.</p>
+<h3 id="api"><code>api</code></h3>
+<p>Настройки HTTP API сервера приложения</p>
+<ul>
+<li><code>address</code> (по умолчанию <code>127.0.0.1:2000</code>) - адрес, на котором будет слушать HTTP API сервер</li>
+</ul>
 
 
 
@@ -1556,6 +1611,22 @@
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1631,19 +1702,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1581934859"></script>
-    <script src="/js/perfect-scrollbar.min.js?1581934859"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1581934859"></script>
-    <script src="/js/jquery.sticky.js?1581934859"></script>
-    <script src="/js/featherlight.min.js?1581934859"></script>
-    <script src="/js/highlight.pack.js?1581934859"></script>
+    <script src="/js/clipboard.min.js?1581939644"></script>
+    <script src="/js/perfect-scrollbar.min.js?1581939644"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1581939644"></script>
+    <script src="/js/jquery.sticky.js?1581939644"></script>
+    <script src="/js/featherlight.min.js?1581939644"></script>
+    <script src="/js/highlight.pack.js?1581939644"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1581934859"></script>
-    <script src="/js/learn.js?1581934859"></script>
-    <script src="/js/hugo-learn.js?1581934859"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1581939644"></script>
+    <script src="/js/learn.js?1581939644"></script>
+    <script src="/js/hugo-learn.js?1581939644"></script>
 
-    <link href="/mermaid/mermaid.css?1581934859" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1581934859"></script>
+    <link href="/mermaid/mermaid.css?1581939644" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1581939644"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

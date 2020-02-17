@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Скрипты :: Документация по Balerter</title>
+    <title>Описание API :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1581939644" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/scripts/">
+  <body class="" data-url="/ru/api/api/">
     <nav id="sidebar" class="">
 
 
@@ -729,8 +729,8 @@
   
     
     <li data-nav-id="/ru/scripts/" title="Скрипты" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/ru/scripts/">
@@ -799,7 +799,7 @@
   
     
     <li data-nav-id="/ru/api/" title="API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -823,7 +823,7 @@
  
   
     
-      <li data-nav-id="/ru/api/api/" title="Описание API" class="dd-item ">
+      <li data-nav-id="/ru/api/api/" title="Описание API" class="dd-item active">
         <a href="/ru/api/api/">
         Описание API
         
@@ -951,7 +951,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/scripts/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/api/api/" selected>Русский</option>
                     
                   
               
@@ -1001,6 +1001,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1011,7 +1013,13 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > Скрипты
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/api/'>API</a> > Описание API
+          
+         
           
          
           
@@ -1020,6 +1028,28 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#описания-моделей">Описания моделей</a>
+      <ul>
+        <li><a href="#alertinfo">AlertInfo</a></li>
+        <li><a href="#alertlevel">AlertLevel</a></li>
+      </ul>
+    </li>
+    <li><a href="#методы-api">Методы API</a>
+      <ul>
+        <li><a href="#get-apiversionalerts">GET /api/<version>/alerts</a></li>
+        <li><a href="#get-apiversionconfig">GET /api/<version>/config</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1027,30 +1057,104 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Описание API
+            </h1>
           
 
         
 
 
 
+<p>В конфигурации в секции <code>Global</code> вы можете указать адрес, на котором будет слушать HTTP API сервер.
+По-умолчанию это <code>127.0.0.1:2000</code>.</p>
+<p>Запросы к API осуществляются на этот адрес по пути <code>/api/&lt;API_VERSION&gt;/&lt;API_QUERY&gt;</code></p>
+<hr>
+<p>Версия API <code>v1</code></p>
+<h2 id="описания-моделей">Описания моделей</h2>
+<h3 id="alertinfo"><code>AlertInfo</code></h3>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count</td>
+<td>int</td>
+<td>количество вызовов данного уровня алерта с момента последнего изменения</td>
+</tr>
+<tr>
+<td>last_change</td>
+<td>datetime</td>
+<td>время, когда последний раз было изменения уровня алерта</td>
+</tr>
+<tr>
+<td>level</td>
+<td>int</td>
+<td>текущий уровень алерта (см. AlertLevel)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>имя алерта</td>
+</tr>
+<tr>
+<td>start</td>
+<td>datetime</td>
+<td>время, когда алерт был вызван первый раз</td>
+</tr>
+</tbody>
+</table>
+<p>Пример:</p>
+<pre><code>{
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: 2,
+    &quot;name&quot;: &quot;alert-name&quot;,
+    &quot;start&quot;: &quot;2020-02-17T14:03:05.403458+03:00&quot;
+}
+</code></pre><blockquote>
+<p>Пояснения по полю <code>Count</code>:</p>
+</blockquote>
+<blockquote>
+<p>Допустим, ваш скрипт выполянется 1 раз в минуту. И каждый свой запуск он для алерта &lsquo;alert-name&rsquo; указывает статус Success. В этом случае, если вы вызовете метод API для получения спсика алертов, то для алерта &lsquo;alert-name&rsquo; поле Count будет равно 5. Так как, к этому моменту скрипт 5 раз &ldquo;сказал&rdquo;, что этот алерт имеет статус <code>Success</code></p>
+</blockquote>
+<h3 id="alertlevel"><code>AlertLevel</code></h3>
+<ul>
+<li>1 - Success</li>
+<li>2 - Error</li>
+<li>3 - Warn</li>
+</ul>
+<h2 id="методы-api">Методы API</h2>
+<h3 id="get-apiversionalerts"><code>GET /api/&lt;version&gt;/alerts</code></h3>
+<p>Получение списка Алертов</p>
+<p>Ответ:</p>
+<pre><code>[
+  {
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: 2,
+    &quot;name&quot;: &quot;a1&quot;,
+    &quot;start&quot;: &quot;2020-02-17T14:03:05.403458+03:00&quot;
+  },
+  ...
+]
+</code></pre><h3 id="get-apiversionconfig"><code>GET /api/&lt;version&gt;/config</code></h3>
+<p>Получение конфигурации в JSON представлении.</p>
+<p>Для просмотра возможных вариантов ответа, смотрите раздел <a href="../../configuration/example">Конфигурация</a></p>
 
-	<h3 id="часть-v">Часть V</h3>
-<h1 id="скрипты">Скрипты</h1>
-<p>В данном разделе описаны принципы создания скриптов. Приведены примеры.</p>
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1507,7 +1611,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1520,9 +1623,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1559,6 +1659,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1571,6 +1672,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1590,6 +1692,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1645,10 +1750,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/luamodules/new/" title="Создание lua модуля"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/api/" title="API"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/scripts/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/manuals/" title="Руководства" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1680,3 +1785,4 @@
 
   </body>
 </html>
+
