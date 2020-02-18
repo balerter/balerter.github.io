@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Тип Folder :: Документация по Balerter</title>
+    <title>s3 :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1582040403" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/configuration/scripts/folder/">
+  <body class="" data-url="/ru/core/storage/s3/">
     <nav id="sidebar" class="">
 
 
@@ -152,7 +152,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        parent
+        
         
         
         ">
@@ -198,7 +198,7 @@
   
     
     <li data-nav-id="/ru/configuration/scripts/" title="Раздел Scripts" class="dd-item 
-        parent
+        
         
         
         ">
@@ -222,7 +222,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item active">
+      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item ">
         <a href="/ru/configuration/scripts/folder/">
         Тип Folder
         
@@ -498,7 +498,7 @@
   
     
     <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
-        
+        parent
         
         
         ">
@@ -597,7 +597,7 @@
   
     
     <li data-nav-id="/ru/core/storage/" title="Storage" class="dd-item 
-        
+        parent
         
         
         ">
@@ -624,8 +624,8 @@
   
     
     <li data-nav-id="/ru/core/storage/s3/" title="s3" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/core/storage/s3/">
@@ -1088,7 +1088,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/scripts/folder/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/core/storage/s3/" selected>Русский</option>
                     
                   
               
@@ -1158,7 +1158,7 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/scripts/'>Раздел Scripts</a> > Тип Folder
+            <a href='/ru/'>Содержание</a> > <a href='/ru/core/'>Модули ядра</a> > <a href='/ru/core/storage/'>Storage</a> > s3
           
          
           
@@ -1177,10 +1177,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#name">name</a></li>
-        <li><a href="#path">path</a></li>
-        <li><a href="#mask">mask</a></li>
-        <li><a href="#update_interval">update_interval</a></li>
+        <li><a href="#методы">Методы</a></li>
+        <li><a href="#публичная-ссылка">Публичная ссылка</a></li>
       </ul>
     </li>
   </ul>
@@ -1200,7 +1198,7 @@
           
             <h1>
               
-              Тип Folder
+              s3
             </h1>
           
 
@@ -1208,39 +1206,32 @@
 
 
 
-<pre><code>name: scripts
-path: /opt/scripts
-mask: '*.lua'
-update_interval: 5s
-</code></pre><h3 id="name">name</h3>
-<blockquote>
-<p>Обязательное поле, Уникальное значение</p>
-</blockquote>
-<p>Название источника скрипта, в том числе используется при логгировании</p>
-<p>В названии могут использоваться латинские символы, цифры и знак подчеркивания</p>
-<h3 id="path">path</h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Путь к папке со скриптами.</p>
-<h3 id="mask">mask</h3>
-<blockquote>
-<p>По умолчанию: <code>*.lua</code></p>
-</blockquote>
-<p>Макса для выбора файлов</p>
-<h3 id="update_interval">update_interval</h3>
-<blockquote>
-<p>По умолчанию: <code>10s</code></p>
-</blockquote>
-<p>С указанным интервалов система будет проверять изменения файлов в данной папке и, при необходимости, останавливать/запускать или перезапускать скрипты</p>
-<p>Допустимые суффксы для указания интервала: &ldquo;ns&rdquo;, &ldquo;us&rdquo; (or &ldquo;µs&rdquo;), &ldquo;ms&rdquo;, &ldquo;s&rdquo;, &ldquo;m&rdquo;, &ldquo;h&rdquo;.</p>
-<p>Число должно быть положительным.</p>
-<blockquote>
-<p><strong>Обратите внимание</strong>! Указание слишком маленького значения может привести к излишней нагрузке!</p>
-</blockquote>
+
+	<p>Модуль <code>storage.s3</code> позволяет загружать файлы во внешнее хранилище, подключенное по протоколу Amazon S3</p>
+<h3 id="методы">Методы</h3>
+<h4 id="uploadpngdata-filename-imageurl-error"><code>uploadPNG(data[, &lt;FILENAME&gt;]) imageURL, error</code></h4>
+<p>Загрузить изображение в формате <code>PNG</code> и получить ссылку на изображение.</p>
+<p>При ошибке, она будет возвращена вторым параметром.</p>
+<p>Если имя файла не указано, то оно будет сгенерировано автоматически.
+Вы можете указать имя файла без расширения, оно будет добавлено автоматически.
+Если вы укажете расширение <code>.png</code>, <code>.jpg</code> или <code>.jpeg</code>, оно будет отброшено</p>
+<p>Пример:</p>
+<pre><code>local storage = require('storage.s3.dev')
+
+local data = 'SOME_IMAGE_DATA_FROM_MODULE_CHART'
+
+local link, err = storage.uploadPNG(data)
+
+-- в переменной link при успешной загрузке вы получите публичную ссылку на изображение
+</code></pre><h3 id="публичная-ссылка">Публичная ссылка</h3>
+<p>Публичная ссылка для изображения формируется следующим образом:</p>
+<pre><code>https://&lt;BUCKET&gt;.&lt;ENDPOINT&gt;/&lt;FILENAME&gt;
+</code></pre>
 
 
-<footer class="footline">
+
+
+<footer class=" footline" >
 	
 </footer>
 
@@ -1326,7 +1317,6 @@ update_interval: 5s
             
                 
                     
-                    
                 
                 
 
@@ -1341,9 +1331,6 @@ update_interval: 5s
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1361,7 +1348,6 @@ update_interval: 5s
             
                 
                     
-                    
                 
                 
 
@@ -1374,7 +1360,6 @@ update_interval: 5s
             
             
                 
-                    
                     
                 
                 
@@ -1394,9 +1379,6 @@ update_interval: 5s
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1561,6 +1543,7 @@ update_interval: 5s
             
                 
                     
+                    
                 
                 
 
@@ -1575,6 +1558,9 @@ update_interval: 5s
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1624,6 +1610,7 @@ update_interval: 5s
             
                 
                     
+                    
                 
                 
 
@@ -1638,6 +1625,7 @@ update_interval: 5s
             
             
                 
+                    
                     
                 
                 
@@ -1657,6 +1645,9 @@ update_interval: 5s
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1925,10 +1916,10 @@ update_interval: 5s
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/scripts/" title="Раздел Scripts"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/core/storage/" title="Storage"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/datasources/" title="Раздел datasource" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/core/alert/" title="Alert" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1960,4 +1951,3 @@ update_interval: 5s
 
   </body>
 </html>
-

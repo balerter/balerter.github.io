@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Тип Folder :: Документация по Balerter</title>
+    <title>Chart :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1582040403" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/configuration/scripts/folder/">
+  <body class="" data-url="/ru/core/chart/">
     <nav id="sidebar" class="">
 
 
@@ -152,7 +152,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        parent
+        
         
         
         ">
@@ -198,7 +198,7 @@
   
     
     <li data-nav-id="/ru/configuration/scripts/" title="Раздел Scripts" class="dd-item 
-        parent
+        
         
         
         ">
@@ -222,7 +222,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item active">
+      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item ">
         <a href="/ru/configuration/scripts/folder/">
         Тип Folder
         
@@ -498,7 +498,7 @@
   
     
     <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
-        
+        parent
         
         
         ">
@@ -573,8 +573,8 @@
   
     
     <li data-nav-id="/ru/core/chart/" title="Chart" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/core/chart/">
@@ -1088,7 +1088,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/scripts/folder/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/core/chart/" selected>Русский</option>
                     
                   
               
@@ -1154,13 +1154,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/scripts/'>Раздел Scripts</a> > Тип Folder
-          
-         
+            <a href='/ru/'>Содержание</a> > <a href='/ru/core/'>Модули ядра</a> > Chart
           
          
           
@@ -1177,10 +1171,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#name">name</a></li>
-        <li><a href="#path">path</a></li>
-        <li><a href="#mask">mask</a></li>
-        <li><a href="#update_interval">update_interval</a></li>
+        <li><a href="#методы">Методы</a></li>
+        <li><a href="#chart-options">Chart Options</a></li>
+        <li><a href="#примеры">Примеры:</a></li>
       </ul>
     </li>
   </ul>
@@ -1200,7 +1193,7 @@
           
             <h1>
               
-              Тип Folder
+              Chart
             </h1>
           
 
@@ -1208,39 +1201,115 @@
 
 
 
-<pre><code>name: scripts
-path: /opt/scripts
-mask: '*.lua'
-update_interval: 5s
-</code></pre><h3 id="name">name</h3>
-<blockquote>
-<p>Обязательное поле, Уникальное значение</p>
-</blockquote>
-<p>Название источника скрипта, в том числе используется при логгировании</p>
-<p>В названии могут использоваться латинские символы, цифры и знак подчеркивания</p>
-<h3 id="path">path</h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Путь к папке со скриптами.</p>
-<h3 id="mask">mask</h3>
-<blockquote>
-<p>По умолчанию: <code>*.lua</code></p>
-</blockquote>
-<p>Макса для выбора файлов</p>
-<h3 id="update_interval">update_interval</h3>
-<blockquote>
-<p>По умолчанию: <code>10s</code></p>
-</blockquote>
-<p>С указанным интервалов система будет проверять изменения файлов в данной папке и, при необходимости, останавливать/запускать или перезапускать скрипты</p>
-<p>Допустимые суффксы для указания интервала: &ldquo;ns&rdquo;, &ldquo;us&rdquo; (or &ldquo;µs&rdquo;), &ldquo;ms&rdquo;, &ldquo;s&rdquo;, &ldquo;m&rdquo;, &ldquo;h&rdquo;.</p>
-<p>Число должно быть положительным.</p>
-<blockquote>
-<p><strong>Обратите внимание</strong>! Указание слишком маленького значения может привести к излишней нагрузке!</p>
-</blockquote>
+
+	<p>Модуль <code>chart</code> позволяет вам создать изображение с графиком, которое вы можете затем загрузить в хранилище и прикрепить к уведомлению</p>
+<p>Подключение:</p>
+<pre><code>local chart = require('chart')
+</code></pre><h3 id="методы">Методы</h3>
+<h4 id="renderchart_title-chart_options-binaryimagedata-error"><code>render('&lt;CHART_TITLE&gt;', &lt;CHART_OPTIONS&gt;) binaryImageData, error</code></h4>
+<p>Метод <code>render</code> формирует изображение на основе переданных данных и возвращает это изображение первым параметром</p>
+<p>Если во время рендера произошла ошибка, она будет возвращена вторым параметром</p>
+<h3 id="chart-options">Chart Options</h3>
+<p>Структура <code>&lt;CHART_OPTIONS&gt;</code> описывает данные, на основе которых формируется график</p>
+<pre><code>{
+    series = { &lt;CHART_SERIES&gt;, &lt;CHART_SERIES&gt;, ... } 
+}
+</code></pre><p>Поле <code>series</code> содержит массив Серий (или отдельных линий на общем графике), которые будут нанесены на график</p>
+<h4 id="series">Series</h4>
+<pre><code>{
+    color = '&lt;COLOR&gt;',
+    line_color = '&lt;COLOR&gt;',
+    point_color = '&lt;COLOR&gt;',
+    data = { &lt;POINT_VALUE&gt;, &lt;POINT_VALUE&gt;, ... }
+}
+</code></pre><p>Поля <code>color</code>, <code>line_color</code>, <code>point_color</code> позволяют указать общий цвет, цвет линий или цвет точек соответственно.
+Если указан только <code>color</code> - он будет применяться и к линиям и к точкам.
+Если цвет не указан, будет применяться цвет по-умолчанию: черный. Формат этого поля описан ниже.</p>
+<p>Поле <code>data</code> содержит массив данных для каждой точки графика.</p>
+<p>Одна точка графика описывается следующей структурой:</p>
+<pre><code>{
+    timestamp = &lt;FLOAT&gt;
+    value = &lt;FLOAT&gt;
+}
+</code></pre><h4 id="color">Color</h4>
+<p>Поле <code>color</code> (<code>color_line</code>, <code>color_point</code>) может содержать следующие варианты:</p>
+<p>Одну из предустановленных констант:</p>
+<ul>
+<li>blue</li>
+<li>red</li>
+<li>black</li>
+<li>green</li>
+<li>yellow</li>
+</ul>
+<p>Либо строку вида <code>#XXXXXX</code> для указания цвета в формате RGB или <code>#XXXXXXXX</code> для указания в формате RGBA</p>
+<p>Например:</p>
+<pre><code>color = 'blue'
+color = '#00FF00'
+color = '#ABCD12FA'
+</code></pre><h3 id="примеры">Примеры:</h3>
+<p>Установка данных вручную:</p>
+<pre><code>local chartOptions = {
+    ['series'] = {
+        {
+            ['color'] = '#456789',
+            [&quot;data&quot;] = {
+                { ['timestamp'] = 12345646554, ['value'] = 95 },
+                { ['timestamp'] = 12345646555, ['value'] = 94 },
+                { ['timestamp'] = 12345646556, ['value'] = 97 },
+                { ['timestamp'] = 12345646557, ['value'] = 93 }
+            }
+        },
+        {
+            ['color'] = 'red',
+            [&quot;data&quot;] = {
+                { ['timestamp'] = 12345646554, ['value'] = 85 },
+                { ['timestamp'] = 12345646555, ['value'] = 84 },
+                { ['timestamp'] = 12345646556, ['value'] = 87 },
+                { ['timestamp'] = 12345646557, ['value'] = 83 }
+            }
+        }
+    }
+}
+
+local img, err = chart.render('My Chart', chartOptions)
+
+-- img будет содержать изображение, которое можно загрузить в хранилище
+</code></pre><p><img src="example1.png" alt="Example 1"></p>
+<p>Получение данных из Prometheus (в котором есть данные из <a href="https://github.com/prometheus/node_exporter">NodeExporter</a>)</p>
+<pre><code>local rangeOptions = {
+    ['start'] = r - 86400,
+    ['end'] = r,
+    ['step'] = '3600'
+}
+
+res1 = prom.range('rate(sum(node_cpu_seconds_total{mode!=&quot;idle&quot;,node=&quot;32&quot;}[5m])) / rate(sum(node_cpu_seconds_total{node=&quot;32&quot;}[5m]))', rangeOptions)
+res2 = prom.range('rate(sum(node_cpu_seconds_total{mode!=&quot;idle&quot;,node=&quot;43&quot;}[5m])) / rate(sum(node_cpu_seconds_total{node=&quot;43&quot;}[5m]))', rangeOptions)
+
+local chartOptions = {
+    ['series'] = {
+        {
+            ['color'] = '#456789',
+            [&quot;data&quot;] = res1[1].values,
+        },
+        {
+            ['color'] = 'red',
+            ['line_color'] = 'blue',
+            [&quot;data&quot;] = res2[1].values,
+        }
+    }
+}
 
 
-<footer class="footline">
+local img, err = chart.render('CPU', chartOptions)
+
+-- img будет содержать изображение, которое можно загрузить в хранилище
+</code></pre><p><img src="example2.png" alt="Example 2"></p>
+
+
+
+
+
+<footer class=" footline" >
 	
 </footer>
 
@@ -1326,7 +1395,6 @@ update_interval: 5s
             
                 
                     
-                    
                 
                 
 
@@ -1341,9 +1409,6 @@ update_interval: 5s
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1361,7 +1426,6 @@ update_interval: 5s
             
                 
                     
-                    
                 
                 
 
@@ -1374,7 +1438,6 @@ update_interval: 5s
             
             
                 
-                    
                     
                 
                 
@@ -1394,9 +1457,6 @@ update_interval: 5s
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1561,6 +1621,7 @@ update_interval: 5s
             
                 
                     
+                    
                 
                 
 
@@ -1575,6 +1636,9 @@ update_interval: 5s
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1608,6 +1672,7 @@ update_interval: 5s
             
                 
                     
+                    
                 
                 
 
@@ -1623,6 +1688,9 @@ update_interval: 5s
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1925,10 +1993,10 @@ update_interval: 5s
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/scripts/" title="Раздел Scripts"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/core/kv/" title="KV"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/datasources/" title="Раздел datasource" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/core/storage/" title="Storage" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1960,4 +2028,3 @@ update_interval: 5s
 
   </body>
 </html>
-

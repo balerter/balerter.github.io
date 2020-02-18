@@ -19,8 +19,8 @@
       <guid>https://balerter.github.io/ru/configuration/example/</guid>
       <description>Файл конфигурации описывается в yaml формате
 Секции конфигурации высшего уровня:
- scripts - описание источников скриптов datasources - описание источников данных channels - описание каналов отправки уведомлений global - глобальные настройки  Пример:
-scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.crt prometheus: - name: prom1 url: domain.com basic_auth: username: username password: password postgres: - name: pg1 host: domain.</description>
+ scripts - описание источников скриптов datasources - описание источников данных channels - описание каналов отправки уведомлений storages - описание хранилищ для загрузки данных. например, изображений global - глобальные настройки  Пример:
+scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.</description>
     </item>
     
   </channel>

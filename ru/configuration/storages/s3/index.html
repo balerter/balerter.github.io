@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Тип Folder :: Документация по Balerter</title>
+    <title>s3 :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1582040403" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/configuration/scripts/folder/">
+  <body class="" data-url="/ru/configuration/storages/s3/">
     <nav id="sidebar" class="">
 
 
@@ -198,7 +198,7 @@
   
     
     <li data-nav-id="/ru/configuration/scripts/" title="Раздел Scripts" class="dd-item 
-        parent
+        
         
         
         ">
@@ -222,7 +222,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item active">
+      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item ">
         <a href="/ru/configuration/scripts/folder/">
         Тип Folder
         
@@ -414,7 +414,7 @@
   
     
     <li data-nav-id="/ru/configuration/storages/" title="Раздел storages" class="dd-item 
-        
+        parent
         
         
         ">
@@ -438,7 +438,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/storages/s3/" title="s3" class="dd-item ">
+      <li data-nav-id="/ru/configuration/storages/s3/" title="s3" class="dd-item active">
         <a href="/ru/configuration/storages/s3/">
         s3
         
@@ -1088,7 +1088,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/scripts/folder/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/configuration/storages/s3/" selected>Русский</option>
                     
                   
               
@@ -1158,7 +1158,7 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/scripts/'>Раздел Scripts</a> > Тип Folder
+            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/storages/'>Раздел storages</a> > s3
           
          
           
@@ -1178,9 +1178,11 @@
     <li>
       <ul>
         <li><a href="#name">name</a></li>
-        <li><a href="#path">path</a></li>
-        <li><a href="#mask">mask</a></li>
-        <li><a href="#update_interval">update_interval</a></li>
+        <li><a href="#region">region</a></li>
+        <li><a href="#key">key</a></li>
+        <li><a href="#secret">secret</a></li>
+        <li><a href="#endpoint">endpoint</a></li>
+        <li><a href="#bucket">bucket</a></li>
       </ul>
     </li>
   </ul>
@@ -1200,7 +1202,7 @@
           
             <h1>
               
-              Тип Folder
+              s3
             </h1>
           
 
@@ -1208,36 +1210,43 @@
 
 
 
-<pre><code>name: scripts
-path: /opt/scripts
-mask: '*.lua'
-update_interval: 5s
-</code></pre><h3 id="name">name</h3>
+<p>Настройки хранилища s3</p>
+<pre><code>name: dev
+region: us-east1
+key: SOME_KEY
+secret: SOME_SECRET
+endpoint: SOME_ENDPOINT
+bucket: SOME_BUCKET
+</code></pre><h3 id="name"><code>name</code></h3>
 <blockquote>
-<p>Обязательное поле, Уникальное значение</p>
+<p>Обязательное поле, Уникальное значение среди хранилищ этого типа</p>
 </blockquote>
-<p>Название источника скрипта, в том числе используется при логгировании</p>
-<p>В названии могут использоваться латинские символы, цифры и знак подчеркивания</p>
-<h3 id="path">path</h3>
+<p>Название хранилища</p>
+<h3 id="region"><code>region</code></h3>
 <blockquote>
 <p>Обязательное поле</p>
 </blockquote>
-<p>Путь к папке со скриптами.</p>
-<h3 id="mask">mask</h3>
+<p>Регион</p>
+<h3 id="key"><code>key</code></h3>
 <blockquote>
-<p>По умолчанию: <code>*.lua</code></p>
+<p>Обязательное поле</p>
 </blockquote>
-<p>Макса для выбора файлов</p>
-<h3 id="update_interval">update_interval</h3>
+<p>Ключ доступа</p>
+<h3 id="secret"><code>secret</code></h3>
 <blockquote>
-<p>По умолчанию: <code>10s</code></p>
+<p>Обязательное поле</p>
 </blockquote>
-<p>С указанным интервалов система будет проверять изменения файлов в данной папке и, при необходимости, останавливать/запускать или перезапускать скрипты</p>
-<p>Допустимые суффксы для указания интервала: &ldquo;ns&rdquo;, &ldquo;us&rdquo; (or &ldquo;µs&rdquo;), &ldquo;ms&rdquo;, &ldquo;s&rdquo;, &ldquo;m&rdquo;, &ldquo;h&rdquo;.</p>
-<p>Число должно быть положительным.</p>
+<p>Секретный ключ</p>
+<h3 id="endpoint"><code>endpoint</code></h3>
 <blockquote>
-<p><strong>Обратите внимание</strong>! Указание слишком маленького значения может привести к излишней нагрузке!</p>
+<p>Обязательное поле</p>
 </blockquote>
+<p>Эндпоинт (без схемы)</p>
+<h3 id="bucket"><code>bucket</code></h3>
+<blockquote>
+<p>Обязательное поле</p>
+</blockquote>
+<p>Имя бакета</p>
 
 
 <footer class="footline">
@@ -1361,7 +1370,6 @@ update_interval: 5s
             
                 
                     
-                    
                 
                 
 
@@ -1374,7 +1382,6 @@ update_interval: 5s
             
             
                 
-                    
                     
                 
                 
@@ -1394,9 +1401,6 @@ update_interval: 5s
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1510,6 +1514,7 @@ update_interval: 5s
             
                 
                     
+                    
                 
                 
 
@@ -1522,6 +1527,7 @@ update_interval: 5s
             
             
                 
+                    
                     
                 
                 
@@ -1541,6 +1547,9 @@ update_interval: 5s
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1925,10 +1934,10 @@ update_interval: 5s
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/scripts/" title="Раздел Scripts"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/configuration/storages/" title="Раздел storages"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/datasources/" title="Раздел datasource" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/configuration/global/" title="Раздел global" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

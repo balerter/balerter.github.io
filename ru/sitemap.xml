@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/core/storage/s3/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/manuals/slack/</loc>
     <lastmod>2020-02-04T19:23:28+03:00</lastmod>
   </url>
@@ -20,6 +25,11 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/datasources/clickhouse/</loc>
     <lastmod>2020-02-04T17:10:36+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/configuration/storages/s3/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
   </url>
   
   <url>
@@ -123,7 +133,7 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/core/alert/</loc>
+    <loc>https://balerter.github.io/ru/core/storage/</loc>
     <lastmod>2020-02-04T19:23:28+03:00</lastmod>
   </url>
   
@@ -138,6 +148,21 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/core/alert/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/configuration/storages/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/scripts/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/core/datasource/</loc>
     <lastmod>2020-02-04T19:23:28+03:00</lastmod>
   </url>
@@ -145,11 +170,6 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/global/</loc>
     <lastmod>2020-02-04T17:06:21+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/ru/scripts/</loc>
-    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
   </url>
   
   <url>
