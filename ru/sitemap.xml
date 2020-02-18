@@ -98,7 +98,7 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/core/alert/</loc>
+    <loc>https://balerter.github.io/ru/core/chart/</loc>
     <lastmod>2020-02-04T19:23:28+03:00</lastmod>
   </url>
   
@@ -123,7 +123,7 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/core/datasource/</loc>
+    <loc>https://balerter.github.io/ru/core/alert/</loc>
     <lastmod>2020-02-04T19:23:28+03:00</lastmod>
   </url>
   
@@ -135,6 +135,11 @@
   <url>
     <loc>https://balerter.github.io/ru/luamodules/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/core/datasource/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
   </url>
   
   <url>
