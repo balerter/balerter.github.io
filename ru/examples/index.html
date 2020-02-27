@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>s3 :: Документация по Balerter</title>
+    <title>Примеры :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1582821487" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/configuration/storages/s3/">
+  <body class="" data-url="/ru/examples/">
     <nav id="sidebar" class="">
 
 
@@ -152,7 +152,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        parent
+        
         
         
         ">
@@ -414,7 +414,7 @@
   
     
     <li data-nav-id="/ru/configuration/storages/" title="Раздел storages" class="dd-item 
-        parent
+        
         
         
         ">
@@ -438,7 +438,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/storages/s3/" title="s3" class="dd-item active">
+      <li data-nav-id="/ru/configuration/storages/s3/" title="s3" class="dd-item ">
         <a href="/ru/configuration/storages/s3/">
         s3
         
@@ -1069,8 +1069,8 @@
   
     
     <li data-nav-id="/ru/examples/" title="Примеры" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/examples/">
@@ -1139,7 +1139,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/storages/s3/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/examples/" selected>Русский</option>
                     
                   
               
@@ -1189,8 +1189,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -1201,19 +1199,7 @@
             
           
           
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/storages/'>Раздел storages</a> > s3
-          
-         
-          
-         
+            <a href='/ru/'>Содержание</a> > Примеры
           
          
           
@@ -1222,26 +1208,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#name">name</a></li>
-        <li><a href="#region">region</a></li>
-        <li><a href="#key">key</a></li>
-        <li><a href="#secret">secret</a></li>
-        <li><a href="#endpoint">endpoint</a></li>
-        <li><a href="#bucket">bucket</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -1249,61 +1215,30 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              s3
-            </h1>
           
 
         
 
 
 
-<p>Настройки хранилища s3</p>
-<pre><code>name: dev
-region: us-east1
-key: SOME_KEY
-secret: SOME_SECRET
-endpoint: SOME_ENDPOINT
-bucket: SOME_BUCKET
-</code></pre><h3 id="name"><code>name</code></h3>
-<blockquote>
-<p>Обязательное поле, Уникальное значение среди хранилищ этого типа</p>
-</blockquote>
-<p>Название хранилища</p>
-<h3 id="region"><code>region</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Регион</p>
-<h3 id="key"><code>key</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Ключ доступа</p>
-<h3 id="secret"><code>secret</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Секретный ключ</p>
-<h3 id="endpoint"><code>endpoint</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Эндпоинт (без схемы)</p>
-<h3 id="bucket"><code>bucket</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Имя бакета</p>
+
+	<h3 id="часть-viii">Часть VIII</h3>
+<h1 id="примеры">Примеры</h1>
+<p>В этой части собраны различные примеры скриптов (без конфигураций) для решения различных проблем.</p>
 
 
-<footer class="footline">
+
+
+
+<footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div> 
         
@@ -1386,7 +1321,6 @@ bucket: SOME_BUCKET
             
                 
                     
-                    
                 
                 
 
@@ -1401,9 +1335,6 @@ bucket: SOME_BUCKET
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1565,7 +1496,6 @@ bucket: SOME_BUCKET
             
                 
                     
-                    
                 
                 
 
@@ -1578,7 +1508,6 @@ bucket: SOME_BUCKET
             
             
                 
-                    
                     
                 
                 
@@ -1598,9 +1527,6 @@ bucket: SOME_BUCKET
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1981,6 +1907,7 @@ bucket: SOME_BUCKET
             
                 
                     
+                    
                 
                 
 
@@ -1993,6 +1920,9 @@ bucket: SOME_BUCKET
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2017,10 +1947,10 @@ bucket: SOME_BUCKET
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/storages/" title="Раздел storages"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/manuals/telegram/" title="Подключение Telegram"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/global/" title="Раздел global" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/examples/01/" title="Нагрузка CPU" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2052,4 +1982,3 @@ bucket: SOME_BUCKET
 
   </body>
 </html>
-

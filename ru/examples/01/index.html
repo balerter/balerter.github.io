@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>s3 :: Документация по Balerter</title>
+    <title>Нагрузка CPU :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1582821487" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/configuration/storages/s3/">
+  <body class="" data-url="/ru/examples/01/">
     <nav id="sidebar" class="">
 
 
@@ -152,7 +152,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        parent
+        
         
         
         ">
@@ -414,7 +414,7 @@
   
     
     <li data-nav-id="/ru/configuration/storages/" title="Раздел storages" class="dd-item 
-        parent
+        
         
         
         ">
@@ -438,7 +438,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/storages/s3/" title="s3" class="dd-item active">
+      <li data-nav-id="/ru/configuration/storages/s3/" title="s3" class="dd-item ">
         <a href="/ru/configuration/storages/s3/">
         s3
         
@@ -1069,7 +1069,7 @@
   
     
     <li data-nav-id="/ru/examples/" title="Примеры" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1093,7 +1093,7 @@
  
   
     
-      <li data-nav-id="/ru/examples/01/" title="Нагрузка CPU" class="dd-item ">
+      <li data-nav-id="/ru/examples/01/" title="Нагрузка CPU" class="dd-item active">
         <a href="/ru/examples/01/">
         Нагрузка CPU
         
@@ -1139,7 +1139,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/storages/s3/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/examples/01/" selected>Русский</option>
                     
                   
               
@@ -1205,13 +1205,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/storages/'>Раздел storages</a> > s3
-          
-         
+            <a href='/ru/'>Содержание</a> > <a href='/ru/examples/'>Примеры</a> > Нагрузка CPU
           
          
           
@@ -1226,16 +1220,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#name">name</a></li>
-        <li><a href="#region">region</a></li>
-        <li><a href="#key">key</a></li>
-        <li><a href="#secret">secret</a></li>
-        <li><a href="#endpoint">endpoint</a></li>
-        <li><a href="#bucket">bucket</a></li>
-      </ul>
-    </li>
+    <li><a href="#проверяем-нагрузку-на-cpu-если-она-выше-70---алертим">Проверяем нагрузку на CPU. Если она выше 70% - алертим</a></li>
   </ul>
 </nav>
     </div>
@@ -1253,7 +1238,7 @@
           
             <h1>
               
-              s3
+              Нагрузка CPU
             </h1>
           
 
@@ -1261,44 +1246,37 @@
 
 
 
-<p>Настройки хранилища s3</p>
-<pre><code>name: dev
-region: us-east1
-key: SOME_KEY
-secret: SOME_SECRET
-endpoint: SOME_ENDPOINT
-bucket: SOME_BUCKET
-</code></pre><h3 id="name"><code>name</code></h3>
-<blockquote>
-<p>Обязательное поле, Уникальное значение среди хранилищ этого типа</p>
-</blockquote>
-<p>Название хранилища</p>
-<h3 id="region"><code>region</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Регион</p>
-<h3 id="key"><code>key</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Ключ доступа</p>
-<h3 id="secret"><code>secret</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Секретный ключ</p>
-<h3 id="endpoint"><code>endpoint</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Эндпоинт (без схемы)</p>
-<h3 id="bucket"><code>bucket</code></h3>
-<blockquote>
-<p>Обязательное поле</p>
-</blockquote>
-<p>Имя бакета</p>
+<h2 id="проверяем-нагрузку-на-cpu-если-она-выше-70---алертим">Проверяем нагрузку на CPU. Если она выше 70% - алертим</h2>
+<ul>
+<li>Prometheus собирает данные с Node Exporter</li>
+<li>Метрики имеют лейбл <code>instance</code>, который идентифицирует каждую машину</li>
+</ul>
+<pre><code>-- @interval 30s
+-- @name cpu70
 
+local cpuLimit = 0.7
+
+local prom1 = require('datasource.prometheus.prom1')
+local alert = require('alert')
+
+
+local res, err = prom1.range('rate(sum(node_cpu_seconds_total{mode!=&quot;idle&quot;}) by (instance)) / rate(sum(node_cpu_seconds_total) by (instance))')
+if err ~= nil then
+    return
+end
+
+for i, item in pairs(res) do
+    local v = item.values[#item.values]
+
+    local alertName = &quot;cpu70-&quot; .. item.metrics.instance
+
+    if v &gt; cpuLimit then
+        alert.on(alertName, &quot;High CPU loading on instance &quot; .. item.metrics.instance )
+    else
+        alert.off(alertName, &quot;Success CPU loading on instance &quot; .. item.metrics.instance )
+    end
+end
+</code></pre>
 
 <footer class="footline">
 	
@@ -1386,7 +1364,6 @@ bucket: SOME_BUCKET
             
                 
                     
-                    
                 
                 
 
@@ -1401,9 +1378,6 @@ bucket: SOME_BUCKET
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1565,7 +1539,6 @@ bucket: SOME_BUCKET
             
                 
                     
-                    
                 
                 
 
@@ -1578,7 +1551,6 @@ bucket: SOME_BUCKET
             
             
                 
-                    
                     
                 
                 
@@ -1598,9 +1570,6 @@ bucket: SOME_BUCKET
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1981,6 +1950,7 @@ bucket: SOME_BUCKET
             
                 
                     
+                    
                 
                 
 
@@ -1993,6 +1963,7 @@ bucket: SOME_BUCKET
             
             
                 
+                    
                     
                 
                 
@@ -2017,10 +1988,10 @@ bucket: SOME_BUCKET
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/storages/" title="Раздел storages"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/examples/" title="Примеры"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/global/" title="Раздел global" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

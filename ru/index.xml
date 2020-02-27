@@ -61,6 +61,15 @@ scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#3
     </item>
     
     <item>
+      <title>Нагрузка CPU</title>
+      <link>https://balerter.github.io/ru/examples/01/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/examples/01/</guid>
+      <description>Проверяем нагрузку на CPU. Если она выше 70% - алертим  Prometheus собирает данные с Node Exporter Метрики имеют лейбл instance, который идентифицирует каждую машину  -- @interval 30s -- @name cpu70 local cpuLimit = 0.7 local prom1 = require(&#39;datasource.prometheus.prom1&#39;) local alert = require(&#39;alert&#39;) local res, err = prom1.range(&#39;rate(sum(node_cpu_seconds_total{mode!=&amp;quot;idle&amp;quot;}) by (instance)) / rate(sum(node_cpu_seconds_total) by (instance))&#39;) if err ~= nil then return end for i, item in pairs(res) do local v = item.</description>
+    </item>
+    
+    <item>
       <title>О Balerter</title>
       <link>https://balerter.github.io/ru/basics/about/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
