@@ -12,18 +12,18 @@
     <title>О Balerter :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1583150530" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1583150530" rel="stylesheet">
-    <link href="/css/hybrid.css?1583150530" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1583150530" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1583150530" rel="stylesheet">
-    <link href="/css/auto-complete.css?1583150530" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1583150530" rel="stylesheet">
-    <link href="/css/theme.css?1583150530" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1583150530" rel="stylesheet">
+    <link href="/css/nucleus.css?1583153571" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1583153571" rel="stylesheet">
+    <link href="/css/hybrid.css?1583153571" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1583153571" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1583153571" rel="stylesheet">
+    <link href="/css/auto-complete.css?1583153571" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1583153571" rel="stylesheet">
+    <link href="/css/theme.css?1583153571" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1583153571" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1583150530"></script>
+    <script src="/js/jquery-3.3.1.min.js?1583153571"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -58,14 +58,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1583150530"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1583150530"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1583153571"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1583153571"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1583150530"></script>
+<script type="text/javascript" src="/js/search.js?1583153571"></script>
 
     
   </div>
@@ -1300,23 +1300,19 @@
 
 
 <p><strong>Balerter</strong> - это <strong>Alert Manager</strong>.</p>
-<p>Balerter позволяет вам писать и исполнять lua-скрипты, в которых вы:</p>
+<p>Основное предназначение Balerter - дать возможность как можно проще описать сложные правила алертинга.</p>
+<p>Для простого Алерта, который срабатывает при превышении количества http запросов - достаточно будет даже встроенного функционала Grafana (оставим за скобками целесообразность этого подхода)</p>
+<p>Однако, для более сложных случаев это не подойдет. Например, вы если вы хотите выбрать исторические данные из БД, затем сравнить их с текущими данными, сходить в сторонний сервис по API и затем уже принять решение об алертинге.</p>
+<p>Именно для подобных кейсов и создан Balerter.</p>
+<p>Вся логика описывается в lua-скриптах.</p>
+<p>Внутри скрипта вы можете:</p>
 <ul>
-<li>получаете необходимые данные из различных источников, которые вы определили в конфигурации
-<ul>
-<li>postgres</li>
-<li>clickhouse</li>
-<li>prometheus</li>
-<li>etc</li>
+<li>получить данные из различных источников, например Prometheus или Postgres (etc)</li>
+<li>произвести любые требуемые вам вычисления и принять решение об алерте</li>
+<li>задать требуемый уровень алерту Success, Warning или Error</li>
+<li>настроить поведение, при котором уведомления будут отправляться в различные канали, в зависимости от уровня алерта. Например, warning уходит дежурному инжереру, а Error еще и руководителю</li>
+<li>создать и прикрепить график к уведомлению, чтобы можно быть сразу наглядно оценить ситуацию</li>
 </ul>
-</li>
-<li>производите над этими данными любые вычисления</li>
-<li>принимаете решение об уровне алерта Success (штатная ситуация), Warning или Error</li>
-<li>если необходимо, прикрепляете к алерту график, чтобы при получении сообщения можно было наглядно понять ситуацию</li>
-</ul>
-<blockquote>
-<p>Пример простейшего использования вы можете посмотреть в статье <a href="../../manuals/simple">Базовый пример</a></p>
-</blockquote>
 
 
 <footer class="footline">
@@ -2090,19 +2086,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1583150530"></script>
-    <script src="/js/perfect-scrollbar.min.js?1583150530"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1583150530"></script>
-    <script src="/js/jquery.sticky.js?1583150530"></script>
-    <script src="/js/featherlight.min.js?1583150530"></script>
-    <script src="/js/highlight.pack.js?1583150530"></script>
+    <script src="/js/clipboard.min.js?1583153571"></script>
+    <script src="/js/perfect-scrollbar.min.js?1583153571"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1583153571"></script>
+    <script src="/js/jquery.sticky.js?1583153571"></script>
+    <script src="/js/featherlight.min.js?1583153571"></script>
+    <script src="/js/highlight.pack.js?1583153571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1583150530"></script>
-    <script src="/js/learn.js?1583150530"></script>
-    <script src="/js/hugo-learn.js?1583150530"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1583153571"></script>
+    <script src="/js/learn.js?1583153571"></script>
+    <script src="/js/hugo-learn.js?1583153571"></script>
 
-    <link href="/mermaid/mermaid.css?1583150530" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1583150530"></script>
+    <link href="/mermaid/mermaid.css?1583153571" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1583153571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -88,8 +88,9 @@ scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#3
       
       <guid>https://balerter.github.io/ru/basics/about/</guid>
       <description>Balerter - это Alert Manager.
-Balerter позволяет вам писать и исполнять lua-скрипты, в которых вы:
- получаете необходимые данные из различных источников, которые вы определили в конфигурации  postgres clickhouse prometheus etc   производите над этими данными любые вычисления принимаете решение об уровне алерта Success (штатная ситуация), Warning или Error если необходимо, прикрепляете к алерту график, чтобы при получении сообщения можно было наглядно понять ситуацию   Пример простейшего использования вы можете посмотреть в статье Базовый пример</description>
+Основное предназначение Balerter - дать возможность как можно проще описать сложные правила алертинга.
+Для простого Алерта, который срабатывает при превышении количества http запросов - достаточно будет даже встроенного функционала Grafana (оставим за скобками целесообразность этого подхода)
+Однако, для более сложных случаев это не подойдет. Например, вы если вы хотите выбрать исторические данные из БД, затем сравнить их с текущими данными, сходить в сторонний сервис по API и затем уже принять решение об алертинге.</description>
     </item>
     
     <item>
@@ -187,8 +188,7 @@ local math = require(&#39;math&#39;) local res = math.add(10, 20) print(res) -- 
       <guid>https://balerter.github.io/ru/basics/install/</guid>
       <description>Докер Для простейшего запуска Balerter вам требуется передать ему конфигурационный файл
 docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=/opt/config.yml Исходный код Клонируем репозиторий на локальную машину и запускаем Balerter, указав конфигурационный файл
- Требуется Go версии 1.13 и выше
- git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
+git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
     </item>
     
     <item>
