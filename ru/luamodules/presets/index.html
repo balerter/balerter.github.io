@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Prometheus :: Документация по Balerter</title>
+    <title>Предустановленные модули :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1583142710" rel="stylesheet">
@@ -39,7 +39,7 @@
     })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
 
   </head>
-  <body class="" data-url="/ru/core/datasource/prometheus/">
+  <body class="" data-url="/ru/luamodules/presets/">
     <nav id="sidebar" class="">
 
 
@@ -498,7 +498,7 @@
   
     
     <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
-        parent
+        
         
         
         ">
@@ -681,7 +681,7 @@
   
     
     <li data-nav-id="/ru/core/datasource/" title="Datasource" class="dd-item 
-        parent
+        
         
         
         ">
@@ -756,8 +756,8 @@
   
     
     <li data-nav-id="/ru/core/datasource/prometheus/" title="Prometheus" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/ru/core/datasource/prometheus/">
@@ -796,7 +796,7 @@
   
     
     <li data-nav-id="/ru/luamodules/" title="Lua Модули" class="dd-item 
-        
+        parent
         
         
         ">
@@ -858,7 +858,7 @@
  
   
     
-      <li data-nav-id="/ru/luamodules/presets/" title="Предустановленные модули" class="dd-item ">
+      <li data-nav-id="/ru/luamodules/presets/" title="Предустановленные модули" class="dd-item active">
         <a href="/ru/luamodules/presets/">
         Предустановленные модули
         
@@ -1177,7 +1177,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/core/datasource/prometheus/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/luamodules/presets/" selected>Русский</option>
                     
                   
               
@@ -1243,13 +1243,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/ru/'>Содержание</a> > <a href='/ru/core/'>Модули ядра</a> > <a href='/ru/core/datasource/'>Datasource</a> > Prometheus
-          
-         
+            <a href='/ru/'>Содержание</a> > <a href='/ru/luamodules/'>Lua Модули</a> > Предустановленные модули
           
          
           
@@ -1264,9 +1258,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#предустановленные-модули">Предустановленные модули</a>
       <ul>
-        <li><a href="#методы">Методы</a></li>
+        <li><a href="#h-helper">h (helper)</a></li>
       </ul>
     </li>
   </ul>
@@ -1286,7 +1280,7 @@
           
             <h1>
               
-              Prometheus
+              Предустановленные модули
             </h1>
           
 
@@ -1294,154 +1288,46 @@
 
 
 
-
-	<p>Модуль <code>datasource.prometheus</code> позволяет получать данные из источников, которые поддерживают язык запросов PromQL от <strong>Prometheus</strong></p>
-<p>Это может быть как сам Prometheus, так и, например, <a href="https://victoriametrics.com">Victoria Metrics</a></p>
+<h2 id="предустановленные-модули">Предустановленные модули</h2>
+<p>По-умолчанию с Balerter предоставляются некоторые предустановленные модули в каталоге <code>modules</code>.</p>
+<p>Они не являются необходимыми для функционирования. Однако, вы можете использовать их в своих скриптах.
+Внутри каждого предустарновленного модуля есть описание об экспортируемых методах.</p>
+<h3 id="h-helper">h (helper)</h3>
 <p>Подключение:</p>
-<pre><code>local db = require('datasource.prometheus.&lt;NAME_FROM_CONFIG&gt;')
-</code></pre><h3 id="методы">Методы</h3>
-<h4 id="queryquery-query_options-result-error"><code>query('&lt;QUERY&gt;'[, &lt;QUERY_OPTIONS&gt;]) result, error</code></h4>
-<p>Запрос <a href="https://prometheus.io/docs/prometheus/latest/querying/api/#instant-queries">Instant Query</a></p>
-<p>Формат результата:</p>
-<pre><code>{
-    {
-        metrics = {
-            &lt;METRIC_NAME&gt; = &lt;METRIC_VALUE&gt;,
-            ...
-        },
-        value = {
-            timestamp = &lt;TIMESTAMP&gt;,
-            value = &lt;VALUE&gt;
-        }
-    },
-    ...
+<pre><code>local h = require('h')
+</code></pre><h4 id="методы">Методы</h4>
+<h4 id="tabletomaptable-keyfieldname-table-error"><code>tableToMap(table, keyFieldName) table, error</code></h4>
+<p>Предназначен для преобразования таблицы со строкам в хеш-таблицу, где ключами будут являться значения поля с именем <code>keyFieldName</code></p>
+<p>Пример:</p>
+<pre><code>table = { 
+    { date = '2020-01-01', id = 'a', name = 'aa'}, 
+    { date = '2020-01-01', id = 'b', name = 'bb' },
+    ... 
 }
-</code></pre><p>Опции:</p>
-<pre><code>{
-    time = &lt;TIME RFC3339|Timestamp&gt; -- Evaluation timestamp
-}
-</code></pre><p>Например:</p>
-<pre><code>local prom = require('datasource.prometheus.dev')
 
-local res, err = prom.query(&quot;node_cpu_seconds_total&quot;)
-if err ~= nil then
-    return
-end
+res, err = h.tableToMap(table, 'id')
 
--- res будет содержать примерно следующие данные
+-- res будет содержать: 
 {
-    ...
-    {
-        metrics = {
-            __name__ = node_cpu_seconds_total
-            cpu = 7
-            datacenter = dc1
-            job = node_exporter
-            mode = softirq
-        }
-        value = {
-            timestamp = 1581934085
-            value = 118687.2
-        }
-    },
-    {
-        metrics = {
-            __name__ = node_cpu_seconds_total
-            cpu = 6
-            datacenter = dc1
-            job = node_exporter
-            mode = idle
-        }
-        value = {
-            timestamp = 1581934085
-            value = 3.95205464e+06
-    },
-    ...
- }
-</code></pre><h4 id="rangequery-query_options-result-error"><code>range('&lt;QUERY&gt;'[, &lt;QUERY_OPTIONS&gt;]) result, error</code></h4>
-<p>Запрос <a href="https://prometheus.io/docs/prometheus/latest/querying/api/#range-queries">Range Query</a></p>
-<p>Формат результата:</p>
-<pre><code>{
-    {
-        metrics = {
-            &lt;METRIC_NAME&gt; = &lt;METRIC_VALUE&gt;,
-            ...
-        },
-        values = {
-            {
-                timestamp = &lt;TIMESTAMP&gt;,
-                value = &lt;VALUE&gt;
-            },
-            ...
-        }
-    },
+    'a' = { date = '2020-01-01', id = 'a', name = 'aa'}, 
+    'b' = { date = '2020-01-01', id = 'b', name = 'bb' },
     ...
 }
-</code></pre><p>Опции:</p>
-<pre><code>{
-    start = &lt;TIME RFC3339|Timestamp&gt;    -- start time
-    end = &lt;TIME RFC3339|Timestamp&gt;      -- end time
-    step = &lt;NUMBER&gt;                     -- Query resolution step width in duration format or float number of seconds
-}
-</code></pre><p>Например:</p>
-<pre><code>local prom = require('datasource.prometheus.dev')
+</code></pre><h4 id="printtabletable"><code>printTable(table)</code></h4>
+<p>Вывод содержимого таблицы в человеко-понятном виде</p>
+<pre><code>local t = { ['foo'] = { ['bar'] = 42 } }
 
-local res, err = prom.range(&quot;node_cpu_seconds_total&quot;)
-if err ~= nil then
-    return
-end
+h.printTable(t)
 
--- res будет содержать примерно следующие данные
+-- результат
 {
-    ...
-    {
-        metrics = {
-            __name__ = node_cpu_seconds_total
-            cpu = 7
-            datacenter = dc1
-            job = node_exporter
-            mode = softirq
-        }
-        values = {
-            {
-                timestamp = 1581837350,
-                value = 186776.71
-            },
-            {
-                timestamp = 1581840950,
-                value = 186770.40
-            },
-            ...
-        }
-    },
-    {
-        metrics = {
-            __name__ = node_cpu_seconds_total
-            cpu = 6
-            datacenter = dc1
-            job = node_exporter
-            mode = idle
-        }
-        values = {
-            {
-                timestamp = 1581837350,
-                value = 186776.71
-            },
-            {
-                timestamp = 1581840950,
-                value = 186770.40
-            },
-            ...
-        }
-    },
-    ...
- }
+    foo = {
+        bar = 42
+    }
+}
 </code></pre>
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1753,7 +1639,6 @@ end
             
                 
                     
-                    
                 
                 
 
@@ -1768,9 +1653,6 @@ end
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1870,13 +1752,80 @@ end
             
                 
                     
-                    
                 
                 
 
                     
                     
                         
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
                     
                     
 
@@ -1936,9 +1885,6 @@ end
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1946,70 +1892,6 @@ end
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2193,10 +2075,10 @@ end
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/core/datasource/postgres/" title="Postgres"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/luamodules/new/" title="Создание lua модуля"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/luamodules/" title="Lua Модули" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/scripts/" title="Скрипты" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2228,3 +2110,4 @@ end
 
   </body>
 </html>
+

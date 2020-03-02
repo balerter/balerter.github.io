@@ -49,6 +49,18 @@ bucket  Обязательное поле
     </item>
     
     <item>
+      <title>Базовый пример</title>
+      <link>https://balerter.github.io/ru/manuals/simple/</link>
+      <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/manuals/simple/</guid>
+      <description>В данной статье мы по шагам проработаем настройку системы и создание скрипта для следующей задачи:
+ У нас есть Prometheus, который собирает какие-то метрики. Мы хотим отслеживать метрику go_memstats_heap_objects. Если значение превысит заданный нами порог, создадим алерт.
+ Конфигурирование В первую очередь требуется создать файл конфигуации:
+scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s datasources: prometheus: - name: prom1 url: domain.com channels: telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chat_id: 100500 proxy: todo</description>
+    </item>
+    
+    <item>
       <title>Пример конфигурации</title>
       <link>https://balerter.github.io/ru/configuration/example/</link>
       <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
@@ -75,9 +87,9 @@ scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#3
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
       
       <guid>https://balerter.github.io/ru/basics/about/</guid>
-      <description>Balerter - это система оповещний, основанная на скриптах.
-Все логика получения, обработки данных и отправки оповещений описывается в LUA-скриптах.
-todo</description>
+      <description>Balerter - is Alert Manager.
+Balerter позволяет вам писать и исполнять lua-скрипты, в которых вы:
+ получаете необходимые данные из различных источников, которые вы определили в конфигурации  postgres clickhouse prometheus etc   производите над этими данными любые вычисления принимаете решение об уровне алерта Success (штатная ситуация), Warning или Error если необходимо, прикрепляете к алерту график, чтобы при получении сообщения можно было наглядно понять ситуацию   Пример простейшего использования вы можете посмотреть в статье Базовый пример</description>
     </item>
     
     <item>
@@ -184,6 +196,20 @@ local ds = require(&#39;datasource.postgres.pg1&#39;) host  Обязательн
  Хост для подключения к БД
 port  По-умолчанию 5432
  Порт для подключения к БД</description>
+    </item>
+    
+    <item>
+      <title>Предустановленные модули</title>
+      <link>https://balerter.github.io/ru/luamodules/presets/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/luamodules/presets/</guid>
+      <description>Предустановленные модули По-умолчанию с Balerter предоставляются некоторые предустановленные модули в каталоге modules.
+Они не являются необходимыми для функционирования. Однако, вы можете использовать их в своих скриптах. Внутри каждого предустарновленного модуля есть описание об экспортируемых методах.
+h (helper) Подключение:
+local h = require(&#39;h&#39;) Методы tableToMap(table, keyFieldName) table, error Предназначен для преобразования таблицы со строкам в хеш-таблицу, где ключами будут являться значения поля с именем keyFieldName
+Пример:
+table = { { date = &#39;2020-01-01&#39;, id = &#39;a&#39;, name = &#39;aa&#39;}, { date = &#39;2020-01-01&#39;, id = &#39;b&#39;, name = &#39;bb&#39; }, .</description>
     </item>
     
     <item>
