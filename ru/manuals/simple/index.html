@@ -12,18 +12,18 @@
     <title>Базовый пример :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1583143064" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1583143064" rel="stylesheet">
-    <link href="/css/hybrid.css?1583143064" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1583143064" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1583143064" rel="stylesheet">
-    <link href="/css/auto-complete.css?1583143064" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1583143064" rel="stylesheet">
-    <link href="/css/theme.css?1583143064" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1583143064" rel="stylesheet">
+    <link href="/css/nucleus.css?1583150530" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1583150530" rel="stylesheet">
+    <link href="/css/hybrid.css?1583150530" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1583150530" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1583150530" rel="stylesheet">
+    <link href="/css/auto-complete.css?1583150530" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1583150530" rel="stylesheet">
+    <link href="/css/theme.css?1583150530" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1583150530" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1583143064"></script>
+    <script src="/js/jquery-3.3.1.min.js?1583150530"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -58,14 +58,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1583143064"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1583143064"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1583150530"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1583150530"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1583143064"></script>
+<script type="text/javascript" src="/js/search.js?1583150530"></script>
 
     
   </div>
@@ -1143,6 +1143,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/examples/02/" title="Количество горутин (с графиком)" class="dd-item ">
+        <a href="/ru/examples/02/">
+        Количество горутин (с графиком)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -1261,6 +1280,7 @@
     <li>
       <ul>
         <li><a href="#конфигурирование">Конфигурирование</a></li>
+        <li><a href="#скрипт">Скрипт</a></li>
       </ul>
     </li>
   </ul>
@@ -1304,7 +1324,7 @@
 datasources:
   prometheus:
     - name: prom1
-      url: domain.com
+      url: 127.0.0.1:9090
 channels:
   telegram:
     - name: tg1
@@ -1312,7 +1332,53 @@ channels:
       chat_id: 100500
       proxy:
 
-</code></pre><p>todo</p>
+</code></pre><p>В кофиге мы указали</p>
+<ul>
+<li>скрипты будем брать в папке <code>/opt/scripts</code> (файлы отбирать по маске *.lua)</li>
+<li>источник данных с именем <code>prom1</code> имеет тип <code>Prometheus</code> и будет получать данные с адреса <code>127.0.0.1:9090</code></li>
+<li>канал <code>tg1</code> имеет тип <code>Telegram</code> - туда будут отправляться сообщения</li>
+</ul>
+<blockquote>
+<p>подробнее о том, как подключить Telegram -  можно почитать <a href="../telegram">тут</a></p>
+</blockquote>
+<h3 id="скрипт">Скрипт</h3>
+<p>Создадим файл <code>/opt/scripts/script.lua</code> со следующим содержимым</p>
+<pre><code>-- @interval 2m
+
+local prom = require('datasource.prometheus.prom1')
+local h = require('h')
+
+res = prom.query('sum(go_memstats_heap_objects)')
+
+h.printTable(res)
+</code></pre><p>С помощью мета-тега <code>@interval</code> мы указали, что скрипт должен исполняться каждые 2 минуты</p>
+<p>И на последней строке мы воспользуемся предустановленным модулем <code>h</code> (helper) и функцией <code>printTable</code> чтобы вывести в консоль результат запроса</p>
+<p>Мы увидим примерно следующее:</p>
+<pre><code>{
+    1 = {
+        metrics = {
+        }
+        value = {
+            timestamp = 1583147803
+            value = 1006483950
+        }
+    }
+}
+</code></pre><p>Доработаем скрипт до финального вида. Подключим модуль <code>alert</code> и допишем логику управления алертом</p>
+<pre><code>-- @interval 120s
+
+local prom = require('datasource.prometheus.prom1')
+local alert = require('alert')
+
+res = prom.query('sum(go_memstats_heap_objects)')
+
+if res[1].value.value &gt; 1000000000 then
+    alert.error('alert1', 'go_memstats_heap_objects greater than 1e9 :(')
+else
+    alert.success('alert1', 'go_memstats_heap_objects less than 1e9 :)')
+end
+</code></pre><p>Готово.</p>
+<p>Другие примеры вы можете посмотреть в соотвествующем <a href="../../examples">разделе</a></p>
 
 
 <footer class="footline">
@@ -2048,6 +2114,22 @@ channels:
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2073,19 +2155,19 @@ channels:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1583143064"></script>
-    <script src="/js/perfect-scrollbar.min.js?1583143064"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1583143064"></script>
-    <script src="/js/jquery.sticky.js?1583143064"></script>
-    <script src="/js/featherlight.min.js?1583143064"></script>
-    <script src="/js/highlight.pack.js?1583143064"></script>
+    <script src="/js/clipboard.min.js?1583150530"></script>
+    <script src="/js/perfect-scrollbar.min.js?1583150530"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1583150530"></script>
+    <script src="/js/jquery.sticky.js?1583150530"></script>
+    <script src="/js/featherlight.min.js?1583150530"></script>
+    <script src="/js/highlight.pack.js?1583150530"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1583143064"></script>
-    <script src="/js/learn.js?1583143064"></script>
-    <script src="/js/hugo-learn.js?1583143064"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1583150530"></script>
+    <script src="/js/learn.js?1583150530"></script>
+    <script src="/js/hugo-learn.js?1583150530"></script>
 
-    <link href="/mermaid/mermaid.css?1583143064" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1583143064"></script>
+    <link href="/mermaid/mermaid.css?1583150530" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1583150530"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

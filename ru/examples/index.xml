@@ -20,5 +20,14 @@
       <description>Проверяем нагрузку на CPU. Если она выше 70% - алертим  Prometheus собирает данные с Node Exporter Метрики имеют лейбл instance, который идентифицирует каждую машину  -- @interval 30s -- @name cpu70 local cpuLimit = 0.7 local prom1 = require(&#39;datasource.prometheus.prom1&#39;) local alert = require(&#39;alert&#39;) local res, err = prom1.range(&#39;rate(sum(node_cpu_seconds_total{mode!=&amp;quot;idle&amp;quot;}) by (instance)) / rate(sum(node_cpu_seconds_total) by (instance))&#39;) if err ~= nil then return end for i, item in pairs(res) do local v = item.</description>
     </item>
     
+    <item>
+      <title>Количество горутин (с графиком)</title>
+      <link>https://balerter.github.io/ru/examples/02/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/examples/02/</guid>
+      <description>Проверяем нагрузку на CPU. Если она выше 70% - алертим  Prometheus собирает данные В конфигурации настроено хранилище для загрузки изображений  -- @interval 30s -- @name goroutines local prom1 = require(&#39;datasource.prometheus.prom1&#39;) local alert = require(&#39;alert&#39;) local chart = require(&#39;chart&#39;) local storage = require(&#39;storage.s3.dev&#39;) local now = os.time(os.date(&amp;quot;!*t&amp;quot;)) rangeOptions = { [&#39;start&#39;] = now - 86400, [&#39;end&#39;] = now, [&#39;step&#39;] = &#39;3600&#39; } res = prom1.range(&#39;sum(go_goroutines)&#39;, rangeOptions) local chartOptions = { [&#39;series&#39;] = { { [&#39;color&#39;] = &#39;red&#39;, [&#39;line_color&#39;] = &#39;blue&#39;, [&amp;quot;data&amp;quot;] = res[1].</description>
+    </item>
+    
   </channel>
 </rss>
