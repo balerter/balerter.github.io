@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Content :: Documentation for Balerter</title>
+    <title>About :: Documentation for Balerter</title>
 
     
     <link href="/css/nucleus.css?1583269586" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/en/">
+  <body class="" data-url="/en/basics/about/">
     <nav id="sidebar" class="">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/en/basics/" title="Basics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -107,7 +107,7 @@
  
   
     
-      <li data-nav-id="/en/basics/about/" title="About" class="dd-item ">
+      <li data-nav-id="/en/basics/about/" title="About" class="dd-item active">
         <a href="/en/basics/about/">
         About
         
@@ -170,7 +170,7 @@
                   
                     
                     
-                      <option id="en" value="https://balerter.github.io/en/" selected>English</option>
+                      <option id="en" value="https://balerter.github.io/en/basics/about/" selected>English</option>
                     
                   
               
@@ -184,7 +184,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/">Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/basics/about/">Русский</option>
                     
                   
               
@@ -223,117 +223,92 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>Content</a> > <a href='/en/basics/'>Basics</a> > About
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              About
+            </h1>
+          
 
         
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="balerter">Balerter</h1>
-<p>Balerter is a Scripts Bases Alerting System</p>
-<blockquote>
-<p>Sorry! Translate from Russian to English in progress.
-If you may to help us translate this site, welcome to our <a href="https://t.me/balerter">official telegram group</a>
-or to the <a href="https://github.com/balerter/balerter.github.io">github</a> with your PRs!</p>
-</blockquote>
-<h3 id="content">Content</h3>
+<p><strong>Balerter</strong> - it is an <strong>Alert Manager</strong>.</p>
+<p>Main Balerter purpose is opportunity for &lsquo;write easily hard alert rules&rsquo;</p>
+<p>For a simple alert, which firing on a http request limit, enough, for example, internal Grafana alerts.</p>
+<p>However, for more difficult tasks it is not enough.
+For example:
+You wants select a historical data from a Database, then compare it with a current data. Then you calls an external API (over HTTP) and makes a decision about an Alert status.</p>
+<p>Exactly for same cases we did make the Balerter.</p>
+<p>All business logic are describes in lua-scripts.</p>
+<p>Inside a script you may:</p>
 <ul>
-<li><a href="basics">Basics</a>
-<ul>
-<li><a href="basics/about">About</a></li>
-<li><a href="basics/install">Installation</a></li>
+<li>select data from different sources, for example: Prometheus or Postgres (etc)</li>
+<li>make any calculations and make a decision about an alert</li>
+<li>set level for an alert: Success, Warning or Error</li>
+<li>configure the behavior for notifications. For example: Warning Alerts send to duty engineer. Error Alerts send also to CTO</li>
+<li>make and attach a chart to a notification</li>
 </ul>
-</li>
-<li><a href="configuration"><del>Configuration</del></a>
-<ul>
-<li><a href="configuration/scripts"><del>Scripts Sources</del></a>
-<ul>
-<li><a href="configuration/scripts/folder"><del>Folder</del></a></li>
-</ul>
-</li>
-<li><a href="configuration/datasources"><del>Data Sources</del></a>
-<ul>
-<li><a href="configuration/datasources/clickhouse"><del>Clickhouse</del></a></li>
-<li><a href="configuration/datasources/prometheus"><del>Prometheus</del></a></li>
-<li><a href="configuration/datasources/postgres"><del>Postgres</del></a></li>
-</ul>
-</li>
-<li><a href="configuration/channels"><del>Channels</del></a>
-<ul>
-<li><a href="configuration/channels/slack"><del>Slack</del></a></li>
-<li><a href="configuration/channels/telegram"><del>Telegram</del></a></li>
-</ul>
-</li>
-<li><a href="configuration/storages"><del>Storage</del></a>
-<ul>
-<li><a href="configuration/storages/s3"><del>S3</del></a></li>
-</ul>
-</li>
-<li><a href="configuration/global"><del>Global</del></a></li>
-</ul>
-</li>
-<li><a href="core"><del>Core Modules</del></a>
-<ul>
-<li><a href="core/log"><del>Log</del></a></li>
-<li><a href="core/kv"><del>KV</del></a> (Key/Value)</li>
-<li><a href="core/chart"><del>Chart</del></a></li>
-<li><a href="core/storage"><del>Storage</del></a>
-<ul>
-<li><a href="core/storage/s3"><del>s3</del></a></li>
-</ul>
-</li>
-<li><a href="core/alert"><del>Alert</del></a></li>
-<li><a href="core/datasource"><del>DataSoruce</del></a>
-<ul>
-<li><a href="core/datasource/clickhouse"><del>Clickhouse</del></a></li>
-<li><a href="core/datasource/postgres"><del>Postgres</del></a></li>
-<li><a href="core/datasource/prometheus"><del>Prometheus</del></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="luamodules"><del>Lua Modules</del></a>
-<ul>
-<li><a href="luamodules/about"><del>About</del></a></li>
-<li><a href="luamodules/new"><del>Crate a lua module</del></a></li>
-<li><a href="luamodules/presets"><del>Preset modules</del></a></li>
-</ul>
-</li>
-<li><a href="scripts"><del>Scripts</del></a>
-<ul>
-<li><a href="scripts/basics"><del>Basics</del></a></li>
-<li><a href="scripts/meta-tags"><del>Meta-tags</del></a></li>
-</ul>
-</li>
-<li><a href="api"><del>API</del></a>
-<ul>
-<li><a href="api/api"><del>API</del></a></li>
-</ul>
-</li>
-<li><a href="manuals"><del>Manuals</del></a>
-<ul>
-<li><a href="manuals/slack"><del>Connect to Slack</del></a></li>
-<li><a href="manuals/telegram"><del>Connect to Telegram</del></a></li>
-</ul>
-</li>
-<li><a href="examples"><del>Examples</del></a>
-<ul>
-<li><a href="examples/01"><del>CPU Loading</del></a></li>
-<li><a href="examples/02"><del>Goroutines count (with a chart)</del></a></li>
-</ul>
-</li>
-</ul>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div> 
         
@@ -365,8 +340,6 @@ or to the <a href="https://github.com/balerter/balerter.github.io">github</a> wi
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -380,6 +353,7 @@ or to the <a href="https://github.com/balerter/balerter.github.io">github</a> wi
             
             
                 
+                    
                     
                 
                 
@@ -396,6 +370,9 @@ or to the <a href="https://github.com/balerter/balerter.github.io">github</a> wi
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -420,8 +397,10 @@ or to the <a href="https://github.com/balerter/balerter.github.io">github</a> wi
 	 
 	 
 		
+			<a class="nav nav-prev" href="/en/basics/" title="Basics"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/en/basics/" title="Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/en/basics/install/" title="Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

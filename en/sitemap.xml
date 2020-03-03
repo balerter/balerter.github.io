@@ -3,6 +3,66 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://balerter.github.io/en/basics/about/</loc>
+    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/basics/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/basics/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/basics/</loc>
+    <lastmod>2020-02-04T16:07:19+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/basics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/basics/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/basics/install/</loc>
+    <lastmod>2020-02-04T16:20:36+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/basics/install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/basics/install/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -13,20 +73,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/"
                 />
   </url>
   

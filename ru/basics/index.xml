@@ -29,9 +29,11 @@
       <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
       
       <guid>https://balerter.github.io/ru/basics/install/</guid>
-      <description>Докер Для простейшего запуска Balerter вам требуется передать ему конфигурационный файл
+      <description>Докер Официальный образ: https://hub.docker.com/r/balerter/balerter
+Для простейшего запуска Balerter вам требуется передать ему конфигурационный файл
 docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=/opt/config.yml Исходный код Клонируем репозиторий на локальную машину и запускаем Balerter, указав конфигурационный файл
-git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
+ Требуется Go версии 1.13 или выше
+ git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
     </item>
     
   </channel>
