@@ -27,6 +27,23 @@ channel  Обязательное поле
     </item>
     
     <item>
+      <title>Тип Syslog</title>
+      <link>https://balerter.github.io/ru/configuration/channels/syslog/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/configuration/channels/syslog/</guid>
+      <description>Сообщения, сериализованные в json, будут отправляться на syslog сервер.
+syslog: - name: default tag: balerter network: tcp address: 127.0.0.1:10515 priority: &#39;EMERG|DAEMON&#39; name  Обязательное поле, Уникальное значение
+ Название канала уведомлений, в том числе используется при логгировании
+В названии могут использоваться латинские символы, цифры, знаки минуса и подчеркивания
+tag  По-умолчанию: пустая строка
+ Тег syslog
+network  По-умолчанию: пустая строка
+ Тип сети для syslog сервиса.
+ udp tcp пустая строка для использования локального сервиса  address  По-умолчанию: пустая строка</description>
+    </item>
+    
+    <item>
       <title>Тип Telegram</title>
       <link>https://balerter.github.io/ru/configuration/channels/telegram/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>

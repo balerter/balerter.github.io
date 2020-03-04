@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>API :: Документация по Balerter</title>
+    <title>Тип Syslog :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1583339488" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/ru/api/">
+  <body class="" data-url="/ru/configuration/channels/syslog/">
     <nav id="sidebar" class="">
 
 
@@ -153,7 +153,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        
+        parent
         
         
         ">
@@ -343,7 +343,7 @@
   
     
     <li data-nav-id="/ru/configuration/channels/" title="Раздел Channels" class="dd-item 
-        
+        parent
         
         
         ">
@@ -386,7 +386,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/channels/syslog/" title="Тип Syslog" class="dd-item ">
+      <li data-nav-id="/ru/configuration/channels/syslog/" title="Тип Syslog" class="dd-item active">
         <a href="/ru/configuration/channels/syslog/">
         Тип Syslog
         
@@ -975,8 +975,8 @@
   
     
     <li data-nav-id="/ru/api/" title="API" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/ru/api/">
@@ -1216,7 +1216,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/api/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/configuration/channels/syslog/" selected>Русский</option>
                     
                   
               
@@ -1266,6 +1266,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1276,7 +1278,19 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > API
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/channels/'>Раздел Channels</a> > Тип Syslog
+          
+         
+          
+         
           
          
           
@@ -1285,6 +1299,25 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#name">name</a></li>
+        <li><a href="#tag">tag</a></li>
+        <li><a href="#network">network</a></li>
+        <li><a href="#address">address</a></li>
+        <li><a href="#priority">priority</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1292,30 +1325,100 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Тип Syslog
+            </h1>
           
 
         
 
 
 
+<p>Сообщения, сериализованные в json, будут отправляться на syslog сервер.</p>
+<pre><code>syslog:
+  - name: default
+    tag: balerter
+    network: tcp
+    address: 127.0.0.1:10515
+    priority: 'EMERG|DAEMON'
+</code></pre><h3 id="name">name</h3>
+<blockquote>
+<p>Обязательное поле, Уникальное значение</p>
+</blockquote>
+<p>Название канала уведомлений, в том числе используется при логгировании</p>
+<p>В названии могут использоваться латинские символы, цифры, знаки минуса и подчеркивания</p>
+<h3 id="tag">tag</h3>
+<blockquote>
+<p>По-умолчанию: пустая строка</p>
+</blockquote>
+<p>Тег syslog</p>
+<h3 id="network">network</h3>
+<blockquote>
+<p>По-умолчанию: пустая строка</p>
+</blockquote>
+<p>Тип сети для syslog сервиса.</p>
+<ul>
+<li><code>udp</code></li>
+<li><code>tcp</code></li>
+<li>пустая строка для использования локального сервиса</li>
+</ul>
+<h3 id="address">address</h3>
+<blockquote>
+<p>По-умолчанию: пустая строка</p>
+</blockquote>
+<p>Адрес syslog сервера</p>
+<h3 id="priority">priority</h3>
+<blockquote>
+<p>По-умолчанию: <code>EMERG</code></p>
+</blockquote>
+<p>Формат параметра: <code>&lt;SEVERITY&gt;[|&lt;FACILITI&gt;]</code></p>
+<p>Возможные варианты Severity &amp; Facility:</p>
+<p>Severity:</p>
+<ul>
+<li>EMERG</li>
+<li>ALERT</li>
+<li>CRIT</li>
+<li>ERR</li>
+<li>WARNING</li>
+<li>NOTICE</li>
+<li>INFO</li>
+<li>DEBUG</li>
+</ul>
+<p>Facility:</p>
+<ul>
+<li>KERN</li>
+<li>USER</li>
+<li>MAIL</li>
+<li>DAEMON</li>
+<li>AUTH</li>
+<li>SYSLOG</li>
+<li>LPR</li>
+<li>NEWS</li>
+<li>UUCP</li>
+<li>CRON</li>
+<li>AUTHPRIV</li>
+<li>FTP</li>
+<li>LOCAL0</li>
+<li>LOCAL1</li>
+<li>LOCAL2</li>
+<li>LOCAL3</li>
+<li>LOCAL4</li>
+<li>LOCAL5</li>
+<li>LOCAL6</li>
+</ul>
+<p>Например:</p>
+<pre><code>priority: 'ALERT'
+priority: 'ALERT|USER'
+priority: 'INFO|LOCAL0'
+</code></pre>
 
-	<h3 id="часть-vi">Часть VI</h3>
-<h1 id="api">API</h1>
-<p>Описание HTTP API</p>
-
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1398,6 +1501,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1412,6 +1516,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1525,6 +1632,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1537,6 +1645,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1554,6 +1665,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1570,37 +1682,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1625,90 +1708,6 @@
                 
 
                     
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
                     
                     
 
@@ -1744,6 +1743,9 @@
                     
                     
 
+                    
+            
+        
                     
             
         
@@ -1811,6 +1813,183 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1862,22 +2041,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1898,58 +2061,6 @@
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -2088,10 +2199,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/scripts/meta-tags/" title="Мета-теги"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/configuration/channels/slack/" title="Тип Slack"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/api/api/" title="Описание API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/configuration/channels/telegram/" title="Тип Telegram" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2123,3 +2234,4 @@
 
   </body>
 </html>
+
