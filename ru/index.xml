@@ -237,7 +237,7 @@ local ds = require(&#39;datasource.postgres.mysql1&#39;) dsn  Обязатель
  Строка (Data Source Name) для подключения к БД
 Формат: [username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;amp;...&amp;amp;paramN=valueN]
  В описании используемой библиотеки можно посмотреть подробнее про построение DSN
- Информация На данный момент не поддерживаются поля GEOMETRY, ENUM</description>
+ </description>
     </item>
     
     <item>

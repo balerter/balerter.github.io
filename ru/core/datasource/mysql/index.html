@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Примеры :: Документация по Balerter</title>
+    <title>MySQL :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1583406884" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/ru/examples/">
+  <body class="" data-url="/ru/core/datasource/mysql/">
     <nav id="sidebar" class="">
 
 
@@ -537,7 +537,7 @@
   
     
     <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
-        
+        parent
         
         
         ">
@@ -720,7 +720,7 @@
   
     
     <li data-nav-id="/ru/core/datasource/" title="Datasource" class="dd-item 
-        
+        parent
         
         
         ">
@@ -819,8 +819,8 @@
   
     
     <li data-nav-id="/ru/core/datasource/mysql/" title="MySQL" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/core/datasource/mysql/">
@@ -1170,8 +1170,8 @@
   
     
     <li data-nav-id="/ru/examples/" title="Примеры" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/ru/examples/">
@@ -1259,7 +1259,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/examples/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/core/datasource/mysql/" selected>Русский</option>
                     
                   
               
@@ -1309,6 +1309,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1319,7 +1321,19 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > Примеры
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/core/'>Модули ядра</a> > <a href='/ru/core/datasource/'>Datasource</a> > MySQL
+          
+         
+          
+         
           
          
           
@@ -1328,6 +1342,22 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#методы">Методы</a></li>
+      </ul>
+    </li>
+    <li><a href="#поддержка-типов-полей">Поддержка типов полей</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1335,9 +1365,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              MySQL
+            </h1>
           
 
         
@@ -1345,9 +1378,57 @@
 
 
 
-	<h3 id="часть-viii">Часть VIII</h3>
-<h1 id="примеры">Примеры</h1>
-<p>В этой части собраны различные примеры скриптов (без конфигураций) для решения различных проблем.</p>
+	<p>Модуль <code>datasource.mysql</code> позволяет получать данные из базы данных <strong>MySQL</strong></p>
+<p>Подключение:</p>
+<pre><code>local db = require('datasource.myqsl.&lt;NAME_FROM_CONFIG&gt;')
+</code></pre><h3 id="методы">Методы</h3>
+<h4 id="querysql-query-result-error"><code>query('&lt;SQL QUERY&gt;') result, error</code></h4>
+<p>Выполнение запроса и получение результата. В случае ошибки, вторая возвращаемая переменная будет содержать текст ошибки</p>
+<p>Формат результата:</p>
+<pre><code>{
+    -- row 1
+    {
+        &lt;FIELD1_NAME&gt; = &lt;FIELD1_VALUE&gt;,
+        &lt;FIELD2_NAME&gt; = &lt;FIELD2_VALUE&gt;,
+        ...
+    },
+    -- row 2
+    {
+        &lt;FIELD1_NAME&gt; = &lt;FIELD1_VALUE&gt;,
+        &lt;FIELD2_NAME&gt; = &lt;FIELD2_VALUE&gt;,
+        ...
+    },
+    -- row N
+    ...
+}
+</code></pre><p>Например:
+Допустим, у нас есть таблица <code>users</code>, которая имеет колонки <code>id</code> и <code>name</code></p>
+<pre><code>local db = require('datasource.mysql.dev')
+
+local res, err = db.query(&quot;SELECT id, name FROM users&quot;)
+if err ~= nil then
+    return
+end
+
+-- res будет содержать примерно следующие данные
+{
+    {
+        id = 1,
+        name = 'root',
+    },
+    {
+        id = 2,
+        name = 'admin',
+    },
+    {
+        id = 4,
+        name = 'user1',
+    },
+}
+
+</code></pre><h2 id="поддержка-типов-полей">Поддержка типов полей</h2>
+<p>На данный момент не поддерживаются поля GEOMETRY, ENUM, BIT</p>
+<p>Если вам необходима их поддержка, создайте <a href="https://github.com/balerter/balerter/issues">issue на github</a></p>
 
 
 
@@ -1357,8 +1438,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1699,6 +1778,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1713,6 +1793,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1812,6 +1895,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1826,6 +1910,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1875,6 +1962,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1897,34 +1985,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1933,9 +1995,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1952,22 +2011,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2033,24 +2076,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
                         
             
             
@@ -2067,6 +2092,9 @@
             
         
                     
+            
+        
+                    
                         
             
             
@@ -2079,9 +2107,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -2107,6 +2132,71 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -2120,9 +2210,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2163,10 +2250,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/manuals/telegram/" title="Подключение Telegram"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/core/datasource/prometheus/" title="Prometheus"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/examples/01/" title="Нагрузка CPU" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/luamodules/" title="Lua Модули" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
