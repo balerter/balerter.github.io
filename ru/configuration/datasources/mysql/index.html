@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Тип Prometheus :: Документация по Balerter</title>
+    <title>Тип MySQL :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1583399775" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/ru/configuration/datasources/prometheus/">
+  <body class="" data-url="/ru/configuration/datasources/mysql/">
     <nav id="sidebar" class="">
 
 
@@ -295,7 +295,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/datasources/prometheus/" title="Тип Prometheus" class="dd-item active">
+      <li data-nav-id="/ru/configuration/datasources/prometheus/" title="Тип Prometheus" class="dd-item ">
         <a href="/ru/configuration/datasources/prometheus/">
         Тип Prometheus
         
@@ -333,7 +333,7 @@
  
   
     
-      <li data-nav-id="/ru/configuration/datasources/mysql/" title="Тип MySQL" class="dd-item ">
+      <li data-nav-id="/ru/configuration/datasources/mysql/" title="Тип MySQL" class="dd-item active">
         <a href="/ru/configuration/datasources/mysql/">
         Тип MySQL
         
@@ -1235,7 +1235,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/datasources/prometheus/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/configuration/datasources/mysql/" selected>Русский</option>
                     
                   
               
@@ -1305,7 +1305,7 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/datasources/'>Раздел datasource</a> > Тип Prometheus
+            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > <a href='/ru/configuration/datasources/'>Раздел datasource</a> > Тип MySQL
           
          
           
@@ -1325,10 +1325,10 @@
     <li>
       <ul>
         <li><a href="#name">name</a></li>
-        <li><a href="#url">url</a></li>
-        <li><a href="#basic_auth">basic_auth</a></li>
+        <li><a href="#dsn">dsn</a></li>
       </ul>
     </li>
+    <li><a href="#информация">Информация</a></li>
   </ul>
 </nav>
     </div>
@@ -1346,7 +1346,7 @@
           
             <h1>
               
-              Тип Prometheus
+              Тип MySQL
             </h1>
           
 
@@ -1354,12 +1354,8 @@
 
 
 
-<pre><code>name: prom1
-url: domain.com
-basic_auth:
-  username: username
-  password: password
-
+<pre><code>name: mysql1
+dsn: user:secret@tcp(127.0.0.1:3306)/database
 </code></pre><h3 id="name">name</h3>
 <blockquote>
 <p>Обязательное поле, Уникальное значение среди источников данных этого типа</p>
@@ -1367,14 +1363,19 @@ basic_auth:
 <p>Название источника данных</p>
 <p>В названии могут использоваться латинские символы, цифры и знак подчеркивания</p>
 <p>По этому имени вы будете обращаться из скрипта, например:</p>
-<pre><code>local ds = require('datasource.prometheus.prom1')
-</code></pre><h3 id="url">url</h3>
+<pre><code>local ds = require('datasource.postgres.mysql1')
+</code></pre><h3 id="dsn">dsn</h3>
 <blockquote>
 <p>Обязательное поле</p>
 </blockquote>
-<p>URL для запросов. Требуемые пути API, например <code>/api/v1/query</code> будут добавлены автоматически</p>
-<h3 id="basic_auth">basic_auth</h3>
-<p>Имя и пароль пользователя, если источник данных защищен Basic аутентификацией</p>
+<p>Строка (Data Source Name) для подключения к БД</p>
+<p>Формат: <code>[username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;...&amp;paramN=valueN]</code></p>
+<blockquote>
+<p>В описании <a href="https://github.com/go-sql-driver/mysql">используемой библиотеки</a> можно посмотреть подробнее про построение DSN</p>
+</blockquote>
+<h2 id="информация">Информация</h2>
+<p>На данный момент не поддерживаются поля GEOMETRY, ENUM</p>
+<p>Если вам необходима их поддержка, создайте <a href="https://github.com/balerter/balerter/issues">issue на github</a></p>
 
 
 <footer class="footline">
@@ -1563,26 +1564,6 @@ basic_auth:
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1610,6 +1591,23 @@ basic_auth:
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1617,6 +1615,9 @@ basic_auth:
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2177,10 +2178,10 @@ basic_auth:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/datasources/clickhouse/" title="Тип Clickhouse"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/configuration/datasources/postgres/" title="Тип Postgres"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/datasources/postgres/" title="Тип Postgres" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/configuration/channels/" title="Раздел Channels" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
