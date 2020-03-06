@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chapter Channels on Documentation for Balerter</title>
+    <link>https://balerter.github.io/en/configuration/channels/</link>
+    <description>Recent content in Chapter Channels on Documentation for Balerter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 16:48:31 +0300</lastBuildDate>
+    
+	<atom:link href="https://balerter.github.io/en/configuration/channels/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Slack</title>
+      <link>https://balerter.github.io/en/configuration/channels/slack/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/channels/slack/</guid>
+      <description>slack: - name: slack-notification token: SLACK-APPLICATION-TOKEN channel: notification name  Required, Unique
+ Channel name
+token  Required
+ Slack application token
+channel  Обязательное поле
+ Slack channel</description>
+    </item>
+    
+    <item>
+      <title>Syslog</title>
+      <link>https://balerter.github.io/en/configuration/channels/syslog/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/channels/syslog/</guid>
+      <description>JSON marshalled messaged will be send to syslog server
+syslog: - name: default tag: balerter network: tcp address: 127.0.0.1:10515 priority: &#39;EMERG|DAEMON&#39; name  Required, Unique
+ Channel name
+tag  Default: empty string
+ Syslog tag
+network  Default: empty string
+ Network type
+ udp tcp empty string for use local syslog server  address  Default: empty string
+ Server address
+priority  Default: EMERG
+ Message priority</description>
+    </item>
+    
+    <item>
+      <title>Telegram</title>
+      <link>https://balerter.github.io/en/configuration/channels/telegram/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/channels/telegram/</guid>
+      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chat_id: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Required, Unique
+ Channel name
+token  Required
+ Telegram bot API token
+chat_id  Required
+ Chat ID
+proxy  Default: empty, not use
+ Socks5 proxy settings
+If auth section is defined, it will use for authentication</description>
+    </item>
+    
+  </channel>
+</rss>
