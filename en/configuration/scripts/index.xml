@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripts on Documentation for Balerter</title>
+    <link>https://balerter.github.io/en/configuration/scripts/</link>
+    <description>Recent content in Scripts on Documentation for Balerter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 16:48:31 +0300</lastBuildDate>
+    
+	<atom:link href="https://balerter.github.io/en/configuration/scripts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Folder</title>
+      <link>https://balerter.github.io/en/configuration/scripts/folder/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/scripts/folder/</guid>
+      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Required, Unique
+ Script source name
+path  Required
+ Path to folder
+mask  By default: *.lua
+ File mask
+update_interval  By default: 10s
+ With that interval Balerter check folder for any changes and reload if needed
+A possible suffixes: &amp;ldquo;ns&amp;rdquo;, &amp;ldquo;us&amp;rdquo; (or &amp;ldquo;µs&amp;rdquo;), &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;s&amp;rdquo;, &amp;ldquo;m&amp;rdquo;, &amp;ldquo;h&amp;rdquo;.
+Number must be not negative
+ Warning! Too small value can cause high load</description>
+    </item>
+    
+  </channel>
+</rss>

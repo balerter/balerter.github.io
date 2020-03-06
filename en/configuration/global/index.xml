@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Global on Documentation for Balerter</title>
+    <link>https://balerter.github.io/en/configuration/global/</link>
+    <description>Recent content in Global on Documentation for Balerter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 17:06:21 +0300</lastBuildDate>
+    
+	<atom:link href="https://balerter.github.io/en/configuration/global/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

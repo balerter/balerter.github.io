@@ -32,6 +32,27 @@ database  By default: default</description>
     </item>
     
     <item>
+      <title>s3</title>
+      <link>https://balerter.github.io/en/configuration/storages/s3/</link>
+      <pubDate>Tue, 04 Feb 2020 17:06:21 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/storages/s3/</guid>
+      <description>Amazon s3 compatible storage
+name: dev region: us-east1 key: SOME_KEY secret: SOME_SECRET endpoint: SOME_ENDPOINT bucket: SOME_BUCKET name  Required, Unique
+ Storage name
+region  Required
+ Region
+key  Required
+ Access key
+secret  Required
+ Secret key
+endpoint  Required
+ Endpoint (without URI schema)
+bucket  Required
+ Bucket name</description>
+    </item>
+    
+    <item>
       <title>A configuration example</title>
       <link>https://balerter.github.io/en/configuration/example/</link>
       <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
@@ -114,6 +135,25 @@ local ds = require(&#39;datasource.postgres.mysql1&#39;) dsn  Required
 Format: [username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;amp;...&amp;amp;paramN=valueN]
  golang packge for more information about DSN
  </description>
+    </item>
+    
+    <item>
+      <title>Folder</title>
+      <link>https://balerter.github.io/en/configuration/scripts/folder/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/scripts/folder/</guid>
+      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Required, Unique
+ Script source name
+path  Required
+ Path to folder
+mask  By default: *.lua
+ File mask
+update_interval  By default: 10s
+ With that interval Balerter check folder for any changes and reload if needed
+A possible suffixes: &amp;ldquo;ns&amp;rdquo;, &amp;ldquo;us&amp;rdquo; (or &amp;ldquo;µs&amp;rdquo;), &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;s&amp;rdquo;, &amp;ldquo;m&amp;rdquo;, &amp;ldquo;h&amp;rdquo;.
+Number must be not negative
+ Warning! Too small value can cause high load</description>
     </item>
     
     <item>

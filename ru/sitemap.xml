@@ -35,6 +35,16 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/storages/s3/</loc>
     <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/storages/s3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/storages/s3/"
+                />
   </url>
   
   <url>
@@ -140,6 +150,16 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/scripts/</loc>
     <lastmod>2020-02-04T16:48:31+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/scripts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/scripts/"
+                />
   </url>
   
   <url>
@@ -240,6 +260,16 @@
   <url>
     <loc>https://balerter.github.io/ru/core/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/core/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/core/"
+                />
   </url>
   
   <url>
@@ -295,6 +325,16 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/storages/</loc>
     <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/storages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/storages/"
+                />
   </url>
   
   <url>
@@ -310,6 +350,16 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/global/</loc>
     <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/global/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/global/"
+                />
   </url>
   
   <url>
@@ -330,6 +380,16 @@
   <url>
     <loc>https://balerter.github.io/ru/configuration/scripts/folder/</loc>
     <lastmod>2020-02-04T16:50:16+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/scripts/folder/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/scripts/folder/"
+                />
   </url>
   
   <url>

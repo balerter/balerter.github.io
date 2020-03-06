@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>s3 :: Documentation for Balerter</title>
+
+    
+    <link href="/css/nucleus.css?1583493968" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1583493968" rel="stylesheet">
+    <link href="/css/hybrid.css?1583493968" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1583493968" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1583493968" rel="stylesheet">
+    <link href="/css/auto-complete.css?1583493968" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1583493968" rel="stylesheet">
+    <link href="/css/theme.css?1583493968" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1583493968" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1583493968"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
+
+<meta name="yandex-verification" content="21b462ebe3ea6f7a" />
+  </head>
+  <body class="" data-url="/en/configuration/storages/s3/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://balerter.github.io">
+  <strong style="font-size: 2em;color:#ffffff;font-family:Tahoma">BALERTER</strong>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1583493968"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1583493968"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/balerter.github.io\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1583493968"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/basics/" title="Basics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/basics/">
+          <b>I. </b>Basics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/basics/about/" title="About" class="dd-item ">
+        <a href="/en/basics/about/">
+        About
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/basics/install/" title="Installation" class="dd-item ">
+        <a href="/en/basics/install/">
+        Installation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/" title="Configuration" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/configuration/">
+          <b>II. </b>Configuration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/example/" title="A configuration example" class="dd-item ">
+        <a href="/en/configuration/example/">
+        A configuration example
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/scripts/" title="Scripts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/scripts/">
+          Scripts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/scripts/folder/" title="Folder" class="dd-item ">
+        <a href="/en/configuration/scripts/folder/">
+        Folder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/datasources/" title="Datasource" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/datasources/">
+          Datasource
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/clickhouse/" title="Clickhouse" class="dd-item ">
+        <a href="/en/configuration/datasources/clickhouse/">
+        Clickhouse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/prometheus/" title="Prometheus" class="dd-item ">
+        <a href="/en/configuration/datasources/prometheus/">
+        Prometheus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/postgres/" title="Postgres" class="dd-item ">
+        <a href="/en/configuration/datasources/postgres/">
+        Postgres
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/mysql/" title="MySQL" class="dd-item ">
+        <a href="/en/configuration/datasources/mysql/">
+        MySQL
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/channels/" title="Chapter Channels" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/channels/">
+          Chapter Channels
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/channels/slack/" title="Slack" class="dd-item ">
+        <a href="/en/configuration/channels/slack/">
+        Slack
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/channels/syslog/" title="Syslog" class="dd-item ">
+        <a href="/en/configuration/channels/syslog/">
+        Syslog
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/channels/telegram/" title="Telegram" class="dd-item ">
+        <a href="/en/configuration/channels/telegram/">
+        Telegram
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/storages/" title="Раздел storages" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/configuration/storages/">
+          Раздел storages
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/storages/s3/" title="s3" class="dd-item active">
+        <a href="/en/configuration/storages/s3/">
+        s3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/global/" title="Global" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/global/">
+          Global
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/" title="Core modules" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/">
+          <b>III. </b>Core modules
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://balerter.github.io/en/configuration/storages/s3/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ru" value="https://balerter.github.io/ru/configuration/storages/s3/">Русский</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p><a href="/">Содержание</a></p>
+<h4><a href="https://github.com/balerter/balerter" target="_blank"><i class="fab fa-github"></i> Github</a></h4>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>Content</a> > <a href='/en/configuration/'>Configuration</a> > <a href='/en/configuration/storages/'>Раздел storages</a> > s3
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#name">name</a></li>
+        <li><a href="#region">region</a></li>
+        <li><a href="#key">key</a></li>
+        <li><a href="#secret">secret</a></li>
+        <li><a href="#endpoint">endpoint</a></li>
+        <li><a href="#bucket">bucket</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              s3
+            </h1>
+          
+
+        
+
+
+
+<p>Amazon s3 compatible storage</p>
+<pre><code>name: dev
+region: us-east1
+key: SOME_KEY
+secret: SOME_SECRET
+endpoint: SOME_ENDPOINT
+bucket: SOME_BUCKET
+</code></pre><h3 id="name"><code>name</code></h3>
+<blockquote>
+<p>Required, Unique</p>
+</blockquote>
+<p>Storage name</p>
+<h3 id="region"><code>region</code></h3>
+<blockquote>
+<p>Required</p>
+</blockquote>
+<p>Region</p>
+<h3 id="key"><code>key</code></h3>
+<blockquote>
+<p>Required</p>
+</blockquote>
+<p>Access key</p>
+<h3 id="secret"><code>secret</code></h3>
+<blockquote>
+<p>Required</p>
+</blockquote>
+<p>Secret key</p>
+<h3 id="endpoint"><code>endpoint</code></h3>
+<blockquote>
+<p>Required</p>
+</blockquote>
+<p>Endpoint (without URI schema)</p>
+<h3 id="bucket"><code>bucket</code></h3>
+<blockquote>
+<p>Required</p>
+</blockquote>
+<p>Bucket name</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/configuration/storages/" title="Раздел storages"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/configuration/global/" title="Global" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1583493968"></script>
+    <script src="/js/perfect-scrollbar.min.js?1583493968"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1583493968"></script>
+    <script src="/js/jquery.sticky.js?1583493968"></script>
+    <script src="/js/featherlight.min.js?1583493968"></script>
+    <script src="/js/highlight.pack.js?1583493968"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1583493968"></script>
+    <script src="/js/learn.js?1583493968"></script>
+    <script src="/js/hugo-learn.js?1583493968"></script>
+
+    <link href="/mermaid/mermaid.css?1583493968" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1583493968"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJGB6P6"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  </body>
+</html>
+
