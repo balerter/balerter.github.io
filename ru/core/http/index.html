@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Раздел datasource :: Документация по Balerter</title>
+    <title>HTTP :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1583758498" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/ru/configuration/datasources/">
+  <body class="" data-url="/ru/core/http/">
     <nav id="sidebar" class="">
 
 
@@ -153,7 +153,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        parent
+        
         
         
         ">
@@ -252,8 +252,8 @@
   
     
     <li data-nav-id="/ru/configuration/datasources/" title="Раздел datasource" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/ru/configuration/datasources/">
@@ -537,7 +537,7 @@
   
     
     <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
-        
+        parent
         
         
         ">
@@ -636,8 +636,8 @@
   
     
     <li data-nav-id="/ru/core/http/" title="HTTP" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/core/http/">
@@ -1301,23 +1301,11 @@
               
               
                   
-                    
-                    
-                      <option id="en" value="https://balerter.github.io/en/configuration/datasources/">English</option>
-                    
-                  
-              
-                  
-              
-          
-              
-              
-                  
               
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/datasources/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/core/http/" selected>Русский</option>
                     
                   
               
@@ -1383,7 +1371,7 @@
             
           
           
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > Раздел datasource
+            <a href='/ru/'>Содержание</a> > <a href='/ru/core/'>Модули ядра</a> > HTTP
           
          
           
@@ -1396,7 +1384,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#методы">Методы</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1412,7 +1408,7 @@
           
             <h1>
               
-              Раздел datasource
+              HTTP
             </h1>
           
 
@@ -1421,43 +1417,61 @@
 
 
 
-	<p>В секции <code>datasources</code> описываются источники данных, к которым смогут обращаться скрипты для получения и анализа данных</p>
+	<p>Модуль <code>http</code> позволяет отправлять http запросы</p>
+<p>Подключение:</p>
+<pre><code>local http = require('http')
+</code></pre><h3 id="методы">Методы</h3>
+<h4 id="response-err--httpgeturi-body-headers--getpostputdelete"><code>response, err = http.get(&lt;URI&gt;, &lt;BODY&gt;, &lt;HEADERS&gt;) </code> <code>get/post/put/delete</code></h4>
+<p>Отправить соотвествующий запрос</p>
+<pre><code>http.get('https://domain.com') 
+http.post('https://domain.com', 'foo=bar') 
+http.put('https://domain.com', 'foo=bar', { Authorizaion = 'Basic ABCDE'}) 
+</code></pre><p>Возвращает структуру <a href="#response">response</a></p>
+<p>Если произошла ошибка, она возвращается вторым параметром</p>
+<h4 id="response-err--httprequestoptsion"><code>response, err = http.request(optsion)</code></h4>
+<p>Отправить произвольный запрос</p>
+<pre><code>options = {
+    method = http.methodGet,
+    uri = 'https://domain.com',
+    body = nil,
+    headers = {
+        Authentication = 'Basic ABCDEF'
+    }
+}
+
+http.request(options)
+</code></pre><p>Возвращает структуру <a href="#response">response</a></p>
+<p>Если произошла ошибка, она возвращается вторым параметром</p>
+<h4 id="response---результат-запроса">response - результат запроса</h4>
+<pre><code>{
+    status_code = &lt;INT&gt;
+    body = &lt;STRING&gt;
+    headers = {
+        &lt;KEY&gt; = &lt;VALUE&gt;,
+        ...
+    }
+}
+</code></pre><h4 id="константы-http-методов">константы http методов</h4>
+<p>Модуль содержит константы http методов, которые вы можете использовать при построении request options</p>
 <ul>
-<li><a href="clickhouse">clickhouse</a> Clickhouse</li>
-<li><a href="prometheus">prometheus</a> Prometheus</li>
-<li><a href="postgres">postgres</a> Postgres</li>
-<li><a href="mysql">mysql</a> MySQL</li>
+<li>methodGet</li>
+<li>methodHead</li>
+<li>methodPost</li>
+<li>methodPut</li>
+<li>methodPatch</li>
+<li>methodDelete</li>
+<li>methodConnect</li>
+<li>methodOptions</li>
+<li>methodTrace</li>
 </ul>
-<pre><code>datasources:
-  clickhouse:
-    - name: ch1
-      host: domain.com
-      port: 6440
-      username: username
-      password: password
-      database: database
-      ssl_cert_path: /path/to/cert.crt
+<pre><code>http = require('http')
 
-  prometheus:
-    - name: prom1
-      url: domain.com
-      basic_auth:
-        username: username
-        password: password
+options = {
+    method = http.methodPost,
+    ...
+}
 
-  postgres:
-    - name: pg1
-      host: domain.com
-      port: 5432
-      username: username
-      password: password
-      database: database
-      ssl_mode: verify-full
-      ssl_cert_path: /path/to/cert.crt
-
-  mysql:
-    - name: mysql1
-      dsn: user:secret@tcp(127.0.0.1:3306)/database
+http.request(options)
 </code></pre>
 
 
@@ -1549,7 +1563,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1564,9 +1577,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1616,7 +1626,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1629,9 +1638,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1815,6 +1821,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1829,6 +1836,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1878,6 +1888,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1893,6 +1904,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2307,10 +2321,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/scripts/folder/" title="Тип Folder"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/core/chart/" title="Chart"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/datasources/clickhouse/" title="Тип Clickhouse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/core/storage/" title="Storage" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

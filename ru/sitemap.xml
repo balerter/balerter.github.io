@@ -213,6 +213,11 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/ru/core/http/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/ru/core/datasource/prometheus/</loc>
     <lastmod>2020-02-04T19:23:28+03:00</lastmod>
   </url>
@@ -375,6 +380,21 @@
   <url>
     <loc>https://balerter.github.io/ru/examples/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/changelog/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/changelog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/changelog/"
+                />
   </url>
   
   <url>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Раздел datasource :: Документация по Balerter</title>
+    <title>Список изменений :: Документация по Balerter</title>
 
     
     <link href="/css/nucleus.css?1583758498" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/ru/configuration/datasources/">
+  <body class="" data-url="/ru/changelog/">
     <nav id="sidebar" class="">
 
 
@@ -153,7 +153,7 @@
   
     
     <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
-        parent
+        
         
         
         ">
@@ -252,8 +252,8 @@
   
     
     <li data-nav-id="/ru/configuration/datasources/" title="Раздел datasource" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/ru/configuration/datasources/">
@@ -1264,8 +1264,8 @@
   
     
     <li data-nav-id="/ru/changelog/" title="Список изменений" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/ru/changelog/">
@@ -1303,7 +1303,7 @@
                   
                     
                     
-                      <option id="en" value="https://balerter.github.io/en/configuration/datasources/">English</option>
+                      <option id="en" value="https://balerter.github.io/en/changelog/">English</option>
                     
                   
               
@@ -1317,7 +1317,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/datasources/" selected>Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/changelog/" selected>Русский</option>
                     
                   
               
@@ -1379,13 +1379,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/ru/'>Содержание</a> > <a href='/ru/configuration/'>Конфигурация</a> > Раздел datasource
-          
-         
+            <a href='/ru/'>Содержание</a> > Список изменений
           
          
           
@@ -1396,7 +1390,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1412,7 +1414,7 @@
           
             <h1>
               
-              Раздел datasource
+              Список изменений
             </h1>
           
 
@@ -1421,44 +1423,20 @@
 
 
 
-	<p>В секции <code>datasources</code> описываются источники данных, к которым смогут обращаться скрипты для получения и анализа данных</p>
+	<h4 id="2020-03-09-v011">2020-03-09 <code>v0.1.1</code></h4>
 <ul>
-<li><a href="clickhouse">clickhouse</a> Clickhouse</li>
-<li><a href="prometheus">prometheus</a> Prometheus</li>
-<li><a href="postgres">postgres</a> Postgres</li>
-<li><a href="mysql">mysql</a> MySQL</li>
+<li>исправлена ошибка в именовании константы модуля ядра
+<ul>
+<li>http.msethodTrace -&gt; http.methodTrace</li>
 </ul>
-<pre><code>datasources:
-  clickhouse:
-    - name: ch1
-      host: domain.com
-      port: 6440
-      username: username
-      password: password
-      database: database
-      ssl_cert_path: /path/to/cert.crt
+</li>
+</ul>
+<h4 id="2020-03-09-v010">2020-03-09 <code>v0.1.0</code></h4>
+<ul>
+<li>добавлен модуль ядра <a href="../core/http">http</a></li>
+<li>добавлен lua модуль <a href="../luamodules/presets#json">json</a></li>
+</ul>
 
-  prometheus:
-    - name: prom1
-      url: domain.com
-      basic_auth:
-        username: username
-        password: password
-
-  postgres:
-    - name: pg1
-      host: domain.com
-      port: 5432
-      username: username
-      password: password
-      database: database
-      ssl_mode: verify-full
-      ssl_cert_path: /path/to/cert.crt
-
-  mysql:
-    - name: mysql1
-      dsn: user:secret@tcp(127.0.0.1:3306)/database
-</code></pre>
 
 
 
@@ -1549,7 +1527,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1564,9 +1541,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1616,7 +1590,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1629,9 +1602,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2286,6 +2256,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -2307,10 +2278,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/configuration/scripts/folder/" title="Тип Folder"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/examples/02/" title="Количество горутин (с графиком)"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/configuration/datasources/clickhouse/" title="Тип Clickhouse" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

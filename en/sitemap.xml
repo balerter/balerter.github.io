@@ -243,6 +243,21 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/en/changelog/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/changelog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/changelog/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/configuration/scripts/folder/</loc>
     <lastmod>2020-02-04T16:50:16+03:00</lastmod>
     <xhtml:link
