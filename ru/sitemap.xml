@@ -325,6 +325,16 @@
   <url>
     <loc>https://balerter.github.io/ru/core/alert/</loc>
     <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/core/alert/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/core/alert/"
+                />
   </url>
   
   <url>
@@ -370,6 +380,16 @@
   <url>
     <loc>https://balerter.github.io/ru/api/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/api/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/api/"
+                />
   </url>
   
   <url>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Раздел storages :: Documentation for Balerter</title>
+    <title>Alert :: Documentation for Balerter</title>
 
     
     <link href="/css/nucleus.css?1583945437" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/en/configuration/storages/">
+  <body class="" data-url="/en/core/alert/">
     <nav id="sidebar" class="">
 
 
@@ -153,7 +153,7 @@
   
     
     <li data-nav-id="/en/configuration/" title="Configuration" class="dd-item 
-        parent
+        
         
         
         ">
@@ -453,8 +453,8 @@
   
     
     <li data-nav-id="/en/configuration/storages/" title="Раздел storages" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/en/configuration/storages/">
@@ -537,7 +537,7 @@
   
     
     <li data-nav-id="/en/core/" title="Core modules" class="dd-item 
-        
+        parent
         
         
         ">
@@ -564,8 +564,8 @@
   
     
     <li data-nav-id="/en/core/alert/" title="Alert" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/en/core/alert/">
@@ -656,7 +656,7 @@
                   
                     
                     
-                      <option id="en" value="https://balerter.github.io/en/configuration/storages/" selected>English</option>
+                      <option id="en" value="https://balerter.github.io/en/core/alert/" selected>English</option>
                     
                   
               
@@ -670,7 +670,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/storages/">Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/core/alert/">Русский</option>
                     
                   
               
@@ -736,7 +736,7 @@
             
           
           
-            <a href='/en/'>Content</a> > <a href='/en/configuration/'>Configuration</a> > Раздел storages
+            <a href='/en/'>Content</a> > <a href='/en/core/'>Core modules</a> > Alert
           
          
           
@@ -749,7 +749,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#parameters">Parameters</a></li>
+        <li><a href="#alert-options">Alert options</a></li>
+        <li><a href="#методы">Методы</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -765,7 +775,7 @@
           
             <h1>
               
-              Раздел storages
+              Alert
             </h1>
           
 
@@ -774,18 +784,85 @@
 
 
 
-	<p>In the <code>storages</code> section describes settings for remote storages.</p>
-<ul>
-<li><a href="s3">s3</a></li>
-</ul>
-<pre><code>storages:
-  s3:
-    - name: dev
-      region: us-east1
-      key: SOME_KEY
-      secret: SOME_SECRET
-      endpoint: SOME_ENDPOINT
-      bucket: SOME_BUCKET
+	<p><strong>Alert</strong> - is basic concept of Balerter</p>
+<p>Alert has unique ID and one of three possible statuses: <code>Success</code>, <code>Warning</code>, <code>Error</code></p>
+<p>By default status changing send notification. However, you can change this behavior.</p>
+<p>Alerts are managed by their IDs. You manually define IDs and you should check their uniqueness.</p>
+<p><strong>Important!</strong>, getting Alert by ID is global through all scripts</p>
+<p>On start all Alerts have status <code>Succes</code></p>
+<p><strong>Important!</strong> Currenly supports only in-memory storage for alerts statuses. Its mean what after Balerter restart all Alerts will have <code>Success</code> status by default</p>
+<hr>
+<pre><code>local alert = require('alert')
+</code></pre><h3 id="parameters">Parameters</h3>
+<p>All methods have one required and two not required arguments</p>
+<ol>
+<li>Alert ID. Тип: <code>text</code>. Require</li>
+<li>Notification message. Тип <code>text</code></li>
+<li>Alert Options. Тип <code>table</code></li>
+</ol>
+<h3 id="alert-options">Alert options</h3>
+<pre><code>{
+    quiet = &lt;BOOL&gt;,
+    repeat = &lt;UINT&gt;,
+    channels = &lt;STRINGS&gt;,
+    fields = &lt;STRINGS&gt;
+}
+
+{
+    quiet = true,
+    repeat = 5,
+    channels = {'channal-name-1', 'channel-name-2', ...},
+    fields = {'field1', 'field2', ... }
+}
+</code></pre><h4 id="quiet---suppress-message-on-status-change">quiet - suppress message on status change</h4>
+<h4 id="repeat---notifications-repeat">repeat - notifications repeat</h4>
+<p>By default - 0. Set any non negative value N &gt; 0, and notification will be send by every N check</p>
+<p>Example:</p>
+<p>Our script, which run every 1 minute</p>
+<pre><code>-- @interval 1m
+
+local alert = require('alert')
+
+alert.error('alert-id', 'An error occured!`)
+</code></pre><p>Так как, при старте сервиса все Алерты имееют статус по-умолчанию <code>Success</code>, то при первом запуске скрипта и измениии статуса на <code>Error</code> вы получите уведомление.</p>
+<p>При последующих запусках скрипта, уведомления об ошибке отправляться (повторяться) не будут, так как Алерт уже имеет статус <code>Error</code> и этот статус не меняется.</p>
+<p>Теперь в скрипте напишем следующее:</p>
+<pre><code>alert.error('alert-id', 'An error occured!`, { repeat = 5 })
+</code></pre><p>Это будет означать, что, пока статус не поменялся, каждый пятый вызов этого метода будет приводить к отправке сообщения. То есть, каждые пять минут вы будете получать уведомление о ошибке, пока статус не поменяется.</p>
+<h4 id="channels---каналы-для-отправки-уведомлений">channels - каналы для отправки уведомлений</h4>
+<p>Позволяет переопределить список каналов, куда будет отправлено уведомление.</p>
+<p>По-умолчанию берутся все каналы, описанные в файле конфигурации. Для всех Алертов конкретного скрипта можно переопределить список каналов с помощью мета-тега <code>@channels</code>.
+И, наконец, в опциях Алерта можно переопределить каналы для этого конкретного алерта</p>
+<p>Например:</p>
+<pre><code>alert.error('alert-name-1', 'Alert Text', { channels = {'slack-seo'} })
+</code></pre><h4 id="fields---дополнительные-поля-в-сообщении">fields - дополнительные поля в сообщении</h4>
+<p>При отображении уведомления, помимо самого текста уведомления, можно добавить информация в виде массива строк, которая будет так же видна в сообщении.
+Конкретное отображение зависит от типа канала. То есть, например, в Slack и в Email будет разный вид. Но общая концепция &ldquo;Дополнительная инфорация в виде массива строка&rdquo; сохраняется</p>
+<p>Пример:</p>
+<pre><code>alert.error('cpu-limit', 'High CPU', { ['fields'] = { 'cpu1 = 0.91', 'cpu2 = 0.97' } )
+</code></pre><h3 id="методы">Методы</h3>
+<h4 id="erroralert_name-alert_message-alert_options"><code>error(&lt;ALERT_NAME&gt;[, &lt;ALERT_MESSAGE&gt;[, &lt;ALERT_OPTIONS&gt;]])</code></h4>
+<blockquote>
+<p>Алиасы: <code>on</code>, <code>fail</code></p>
+</blockquote>
+<p>Установить для алерта статус <strong>Error</strong></p>
+<p>Примеры:</p>
+<pre><code>alert.error('alert-id', 'An error accured')
+alert.on('alert-id', 'User balance too low', { repeat = 5 })
+alert.fail('alert-id', 'Service FOO is unavailable')
+</code></pre><h4 id="warnalert_name-alert_message-alert_options"><code>warn(&lt;ALERT_NAME&gt;[, &lt;ALERT_MESSAGE&gt;[, &lt;ALERT_OPTIONS&gt;]])</code></h4>
+<p>Установить для алерта статус <strong>Warning</strong></p>
+<p>Примеры:</p>
+<pre><code>alert.warn('alert-id', 'RPS too low')
+</code></pre><h4 id="successalert_name-alert_message-alert_options"><code>success(&lt;ALERT_NAME&gt;[, &lt;ALERT_MESSAGE&gt;[, &lt;ALERT_OPTIONS&gt;]])</code></h4>
+<blockquote>
+<p>Алиасы: <code>off</code>, <code>ok</code></p>
+</blockquote>
+<p>Установить для алерта статус <strong>Success</strong></p>
+<p>Примеры:</p>
+<pre><code>alert.success('alert-id', 'Serive is available')
+alert.off('alert-id', '', { quiet = true })
+alert.ok('alert-id', 'OK')
 </code></pre>
 
 
@@ -877,7 +954,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -892,9 +968,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1088,7 +1161,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1101,9 +1173,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1143,6 +1212,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1157,6 +1227,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1176,6 +1247,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1213,10 +1287,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/en/configuration/channels/telegram/" title="Telegram"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/en/core/" title="Core modules"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/en/configuration/storages/s3/" title="s3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/en/api/" title="API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
