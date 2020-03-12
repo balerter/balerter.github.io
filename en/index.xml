@@ -53,6 +53,20 @@ bucket  Required
     </item>
     
     <item>
+      <title>Slack</title>
+      <link>https://balerter.github.io/en/configuration/channels/slack/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/channels/slack/</guid>
+      <description>slack: - name: slack-notification token: SLACK-APPLICATION-TOKEN channel: notification name  Required, Unique
+ Channel name
+token  Required
+ Slack application token
+channel  Обязательное поле
+ Slack channel</description>
+    </item>
+    
+    <item>
       <title>A configuration example</title>
       <link>https://balerter.github.io/en/configuration/example/</link>
       <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
@@ -77,6 +91,18 @@ However, for more difficult tasks it is not enough. For example: You wants selec
     </item>
     
     <item>
+      <title>API</title>
+      <link>https://balerter.github.io/en/api/api/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/api/api/</guid>
+      <description>In the global section you can define listen address. By default 127.0.0.1:2000
+API path /api/&amp;lt;API_VERSION&amp;gt;/&amp;lt;API_QUERY&amp;gt;
+ Current API version v1
+Models AlertInfo    field type description     name string alert name   level int current alert level (error/warning/success)   count int count current level checks after last level change   updated_at datetime time of last level change. Format RFC3339 (YYYY-MM-ddTHH:mm:ssZoffset)    An example:</description>
+    </item>
+    
+    <item>
       <title>Prometheus</title>
       <link>https://balerter.github.io/en/configuration/datasources/prometheus/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
@@ -87,6 +113,23 @@ However, for more difficult tasks it is not enough. For example: You wants selec
 local ds = require(&#39;datasource.prometheus.prom1&#39;) url  Required
  Request URI. API path /api/v1/... will be added
 basic_auth Username and password, if Prometheus require Basic Auth</description>
+    </item>
+    
+    <item>
+      <title>Telegram</title>
+      <link>https://balerter.github.io/en/configuration/channels/telegram/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/channels/telegram/</guid>
+      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chat_id: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Required, Unique
+ Channel name
+token  Required
+ Telegram bot API token
+chat_id  Required
+ Chat ID
+proxy  Default: empty, not use
+ Socks5 proxy settings
+If auth section is defined, it will use for authentication</description>
     </item>
     
     <item>
@@ -123,54 +166,6 @@ ssl_mode  By default disable</description>
     </item>
     
     <item>
-      <title>MySQL</title>
-      <link>https://balerter.github.io/en/configuration/datasources/mysql/</link>
-      <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/configuration/datasources/mysql/</guid>
-      <description>name: mysql1 dsn: user:secret@tcp(127.0.0.1:3306)/database name  Required, Unique
- Datasource name
-local ds = require(&#39;datasource.postgres.mysql1&#39;) dsn  Required
- DSN (Data Source Name) for connect to DB
-Format: [username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;amp;...&amp;amp;paramN=valueN]
- golang packge for more information about DSN
- </description>
-    </item>
-    
-    <item>
-      <title>Folder</title>
-      <link>https://balerter.github.io/en/configuration/scripts/folder/</link>
-      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/configuration/scripts/folder/</guid>
-      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Required, Unique
- Script source name
-path  Required
- Path to folder
-mask  By default: *.lua
- File mask
-update_interval  By default: 10s
- With that interval Balerter check folder for any changes and reload if needed
-A possible suffixes: &amp;ldquo;ns&amp;rdquo;, &amp;ldquo;us&amp;rdquo; (or &amp;ldquo;µs&amp;rdquo;), &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;s&amp;rdquo;, &amp;ldquo;m&amp;rdquo;, &amp;ldquo;h&amp;rdquo;.
-Number must be not negative
- Warning! Too small value can cause high load</description>
-    </item>
-    
-    <item>
-      <title>Slack</title>
-      <link>https://balerter.github.io/en/configuration/channels/slack/</link>
-      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/configuration/channels/slack/</guid>
-      <description>slack: - name: slack-notification token: SLACK-APPLICATION-TOKEN channel: notification name  Required, Unique
- Channel name
-token  Required
- Slack application token
-channel  Обязательное поле
- Slack channel</description>
-    </item>
-    
-    <item>
       <title>Syslog</title>
       <link>https://balerter.github.io/en/configuration/channels/syslog/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
@@ -190,20 +185,50 @@ priority  Default: EMERG
     </item>
     
     <item>
-      <title>Telegram</title>
-      <link>https://balerter.github.io/en/configuration/channels/telegram/</link>
+      <title>MySQL</title>
+      <link>https://balerter.github.io/en/configuration/datasources/mysql/</link>
+      <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/datasources/mysql/</guid>
+      <description>name: mysql1 dsn: user:secret@tcp(127.0.0.1:3306)/database name  Required, Unique
+ Datasource name
+local ds = require(&#39;datasource.postgres.mysql1&#39;) dsn  Required
+ DSN (Data Source Name) for connect to DB
+Format: [username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;amp;...&amp;amp;paramN=valueN]
+ golang packge for more information about DSN
+ </description>
+    </item>
+    
+    <item>
+      <title>Notify</title>
+      <link>https://balerter.github.io/en/configuration/channels/notify/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
-      <guid>https://balerter.github.io/en/configuration/channels/telegram/</guid>
-      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chat_id: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Required, Unique
+      <guid>https://balerter.github.io/en/configuration/channels/notify/</guid>
+      <description>Send standard OS GUI notification
+notify: - name: default icons: success: /path/to/logo-success.png error: /path/to/logo-error.png warning: /path/to/logo-warning.png name  Required, Unique
  Channel name
-token  Required
- Telegram bot API token
-chat_id  Required
- Chat ID
-proxy  Default: empty, not use
- Socks5 proxy settings
-If auth section is defined, it will use for authentication</description>
+icons.success/error/warning  By default: empty string
+ Path to images (use as notification icons)</description>
+    </item>
+    
+    <item>
+      <title>Folder</title>
+      <link>https://balerter.github.io/en/configuration/scripts/folder/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/scripts/folder/</guid>
+      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Required, Unique
+ Script source name
+path  Required
+ Path to folder
+mask  By default: *.lua
+ File mask
+update_interval  By default: 10s
+ With that interval Balerter check folder for any changes and reload if needed
+A possible suffixes: &amp;ldquo;ns&amp;rdquo;, &amp;ldquo;us&amp;rdquo; (or &amp;ldquo;µs&amp;rdquo;), &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;s&amp;rdquo;, &amp;ldquo;m&amp;rdquo;, &amp;ldquo;h&amp;rdquo;.
+Number must be not negative
+ Warning! Too small value can cause high load</description>
     </item>
     
   </channel>

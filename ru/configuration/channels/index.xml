@@ -27,6 +27,23 @@ channel  Обязательное поле
     </item>
     
     <item>
+      <title>Тип Telegram</title>
+      <link>https://balerter.github.io/ru/configuration/channels/telegram/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/configuration/channels/telegram/</guid>
+      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chat_id: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Обязательное поле, Уникальное значение
+ Название канала уведомлений, в том числе используется при логгировании
+В названии могут использоваться латинские символы, цифры, знаки минуса и подчеркивания
+token  Обязательное поле
+ Токен telegram бота
+chat_id  Обязательное поле
+ ID чата
+proxy  По-умолчанию: не используется
+ Настройки socks5 прокси для отправки уведомлений</description>
+    </item>
+    
+    <item>
       <title>Тип Syslog</title>
       <link>https://balerter.github.io/ru/configuration/channels/syslog/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
@@ -44,20 +61,17 @@ network  По-умолчанию: пустая строка
     </item>
     
     <item>
-      <title>Тип Telegram</title>
-      <link>https://balerter.github.io/ru/configuration/channels/telegram/</link>
+      <title>Тип Notify</title>
+      <link>https://balerter.github.io/ru/configuration/channels/notify/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
-      <guid>https://balerter.github.io/ru/configuration/channels/telegram/</guid>
-      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chat_id: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Обязательное поле, Уникальное значение
+      <guid>https://balerter.github.io/ru/configuration/channels/notify/</guid>
+      <description>Сообщения будут отправлены как стандартные GUI уведомления для операционной системы
+notify: - name: default icons: success: /path/to/logo-success.png error: /path/to/logo-error.png warning: /path/to/logo-warning.png name  Обязательное поле, Уникальное значение
  Название канала уведомлений, в том числе используется при логгировании
 В названии могут использоваться латинские символы, цифры, знаки минуса и подчеркивания
-token  Обязательное поле
- Токен telegram бота
-chat_id  Обязательное поле
- ID чата
-proxy  По-умолчанию: не используется
- Настройки socks5 прокси для отправки уведомлений</description>
+icons.success/error/warning  По умолчанию: пустая строка
+ Путь к изображениями, который будут прикреплены для уведомлений соответствующего уровня</description>
     </item>
     
   </channel>

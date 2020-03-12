@@ -33,6 +33,21 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/en/configuration/channels/slack/</loc>
+    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/channels/slack/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/channels/slack/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/configuration/example/</loc>
     <lastmod>2020-02-04T16:37:04+03:00</lastmod>
     <xhtml:link
@@ -63,6 +78,21 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/en/api/api/</loc>
+    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/api/api/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/api/api/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/basics/</loc>
     <lastmod>2020-02-04T16:07:19+03:00</lastmod>
     <xhtml:link
@@ -89,6 +119,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/configuration/datasources/prometheus/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/configuration/channels/telegram/</loc>
+    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/channels/telegram/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/channels/telegram/"
                 />
   </url>
   
@@ -168,6 +213,21 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/en/configuration/channels/syslog/</loc>
+    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/channels/syslog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/channels/syslog/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/core/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
     <xhtml:link
@@ -194,6 +254,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/configuration/datasources/mysql/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/configuration/channels/notify/</loc>
+    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/channels/notify/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/channels/notify/"
                 />
   </url>
   
@@ -299,51 +374,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/configuration/scripts/folder/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/configuration/channels/slack/</loc>
-    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/configuration/channels/slack/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/configuration/channels/slack/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/configuration/channels/syslog/</loc>
-    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/configuration/channels/syslog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/configuration/channels/syslog/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/configuration/channels/telegram/</loc>
-    <lastmod>2020-02-04T16:50:16+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/configuration/channels/telegram/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/configuration/channels/telegram/"
                 />
   </url>
   

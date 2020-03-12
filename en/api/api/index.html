@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>MySQL :: Documentation for Balerter</title>
+    <title>API :: Documentation for Balerter</title>
 
     
     <link href="/css/nucleus.css?1584030694" rel="stylesheet">
@@ -40,7 +40,7 @@
 
 <meta name="yandex-verification" content="21b462ebe3ea6f7a" />
   </head>
-  <body class="" data-url="/en/configuration/datasources/mysql/">
+  <body class="" data-url="/en/api/api/">
     <nav id="sidebar" class="">
 
 
@@ -153,7 +153,7 @@
   
     
     <li data-nav-id="/en/configuration/" title="Configuration" class="dd-item 
-        parent
+        
         
         
         ">
@@ -252,7 +252,7 @@
   
     
     <li data-nav-id="/en/configuration/datasources/" title="Datasource" class="dd-item 
-        parent
+        
         
         
         ">
@@ -333,7 +333,7 @@
  
   
     
-      <li data-nav-id="/en/configuration/datasources/mysql/" title="MySQL" class="dd-item active">
+      <li data-nav-id="/en/configuration/datasources/mysql/" title="MySQL" class="dd-item ">
         <a href="/en/configuration/datasources/mysql/">
         MySQL
         
@@ -614,7 +614,7 @@
   
     
     <li data-nav-id="/en/api/" title="API" class="dd-item 
-        
+        parent
         
         
         ">
@@ -638,7 +638,7 @@
  
   
     
-      <li data-nav-id="/en/api/api/" title="API" class="dd-item ">
+      <li data-nav-id="/en/api/api/" title="API" class="dd-item active">
         <a href="/en/api/api/">
         API
         
@@ -704,7 +704,7 @@
                   
                     
                     
-                      <option id="en" value="https://balerter.github.io/en/configuration/datasources/mysql/" selected>English</option>
+                      <option id="en" value="https://balerter.github.io/en/api/api/" selected>English</option>
                     
                   
               
@@ -718,7 +718,7 @@
                   
                     
                     
-                      <option id="ru" value="https://balerter.github.io/ru/configuration/datasources/mysql/">Русский</option>
+                      <option id="ru" value="https://balerter.github.io/ru/api/api/">Русский</option>
                     
                   
               
@@ -784,13 +784,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/en/'>Content</a> > <a href='/en/configuration/'>Configuration</a> > <a href='/en/configuration/datasources/'>Datasource</a> > MySQL
-          
-         
+            <a href='/en/'>Content</a> > <a href='/en/api/'>API</a> > API
           
          
           
@@ -805,10 +799,14 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#models">Models</a>
       <ul>
-        <li><a href="#name">name</a></li>
-        <li><a href="#dsn">dsn</a></li>
+        <li><a href="#alertinfo">AlertInfo</a></li>
+      </ul>
+    </li>
+    <li><a href="#api-methods">API methods</a>
+      <ul>
+        <li><a href="#get-apiv1alertsnamename1name2levellevel1level2">GET /api/v1/alerts?name=<NAME1>,<NAME2>&level=<LEVEL1>,<LEVEL2></a></li>
       </ul>
     </li>
   </ul>
@@ -828,7 +826,7 @@
           
             <h1>
               
-              MySQL
+              API
             </h1>
           
 
@@ -836,24 +834,81 @@
 
 
 
-<pre><code>name: mysql1
-dsn: user:secret@tcp(127.0.0.1:3306)/database
-</code></pre><h3 id="name">name</h3>
-<blockquote>
-<p>Required, Unique</p>
+<p>In the <code>global</code> section you can define listen address. By default <code>127.0.0.1:2000</code></p>
+<p>API path <code>/api/&lt;API_VERSION&gt;/&lt;API_QUERY&gt;</code></p>
+<hr>
+<p>Current API version <code>v1</code></p>
+<h2 id="models">Models</h2>
+<h3 id="alertinfo"><code>AlertInfo</code></h3>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>alert name</td>
+</tr>
+<tr>
+<td>level</td>
+<td>int</td>
+<td>current alert level (error/warning/success)</td>
+</tr>
+<tr>
+<td>count</td>
+<td>int</td>
+<td>count current level checks after last level change</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>time of last level change. Format RFC3339 (YYYY-MM-ddTHH:mm:ssZoffset)</td>
+</tr>
+</tbody>
+</table>
+<p>An example:</p>
+<pre><code>{
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: &quot;error&quot;,
+    &quot;name&quot;: &quot;alert-name&quot;,
+}
+</code></pre><blockquote>
+<p>Comment for the <code>Count</code> field:</p>
 </blockquote>
-<p>Datasource name</p>
-<pre><code>local ds = require('datasource.postgres.mysql1')
-</code></pre><h3 id="dsn">dsn</h3>
 <blockquote>
-<p>Required</p>
+<p>Your script runs 1 times per minute. After 5 minutes your script 5 times calls &lsquo;alert.off(&hellip;)&rsquo;
+If your script change alert level, counter will be reset
+Field <code>count</code> represents this counter</p>
 </blockquote>
-<p>DSN (Data Source Name) for connect to DB</p>
-<p>Format: <code>[username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;...&amp;paramN=valueN]</code></p>
-<blockquote>
-<p><a href="https://github.com/go-sql-driver/mysql">golang packge</a> for more information about DSN</p>
-</blockquote>
-
+<h2 id="api-methods">API methods</h2>
+<h3 id="get-apiv1alertsnamename1name2levellevel1level2"><code>GET /api/v1/alerts?name=&lt;NAME1&gt;,&lt;NAME2&gt;&amp;level=&lt;LEVEL1&gt;,&lt;LEVEL2&gt;</code></h3>
+<p>Get alerts list</p>
+<p>Not mandatory Query arguments <code>name</code> and <code>level</code> allow filtering results by name and/or level. You can defined multiple values with comma delimiter</p>
+<p>Response:</p>
+<pre><code>[
+  {
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: 2,
+    &quot;name&quot;: &quot;a1&quot;,
+  },
+  ...
+]
+</code></pre><p>Query examples:</p>
+<pre><code>GET /api/v1/alerts
+GET /api/v1/alerts?name=foo
+GET /api/v1/alerts?name=foo,bar
+GET /api/v1/alerts?level=error
+GET /api/v1/alerts?level=error,success
+GET /api/v1/alerts?level=error,success&amp;name=foo,bar
+GET /api/v1/alerts?name=foo&amp;level=error
+</code></pre>
 
 <footer class="footline">
 	
@@ -941,7 +996,6 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
                 
                     
-                    
                 
                 
 
@@ -956,9 +1010,6 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1008,7 +1059,6 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
                 
                     
-                    
                 
                 
 
@@ -1021,9 +1071,6 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1073,7 +1120,6 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
                 
                     
-                    
                 
                 
 
@@ -1092,9 +1138,6 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1261,6 +1304,7 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
                 
                     
+                    
                 
                 
 
@@ -1273,6 +1317,7 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
             
                 
+                    
                     
                 
                 
@@ -1292,6 +1337,9 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1313,10 +1361,10 @@ dsn: user:secret@tcp(127.0.0.1:3306)/database
 	 
 	 
 		
-			<a class="nav nav-prev" href="/en/configuration/datasources/postgres/" title="Postgres"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/en/api/" title="API"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/en/configuration/channels/" title="Chapter Channels" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/en/changelog/" title="Changelog" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
