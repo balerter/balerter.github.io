@@ -68,7 +68,8 @@ priority  Default: EMERG
       
       <guid>https://balerter.github.io/en/configuration/channels/notify/</guid>
       <description>Send standard OS GUI notification
-notify: - name: default icons: success: /path/to/logo-success.png error: /path/to/logo-error.png warning: /path/to/logo-warning.png name  Required, Unique
+ Important! This channel does not support &amp;lsquo;fields&amp;rsquo; from alert options
+ notify: - name: default icons: success: /path/to/logo-success.png error: /path/to/logo-error.png warning: /path/to/logo-warning.png name  Required, Unique
  Channel name
 icons.success/error/warning  By default: empty string
  Path to images (use as notification icons)</description>

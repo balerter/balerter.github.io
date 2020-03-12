@@ -296,7 +296,8 @@ local ds = require(&#39;datasource.postgres.mysql1&#39;) dsn  Обязатель
       
       <guid>https://balerter.github.io/ru/configuration/channels/notify/</guid>
       <description>Сообщения будут отправлены как стандартные GUI уведомления для операционной системы
-notify: - name: default icons: success: /path/to/logo-success.png error: /path/to/logo-error.png warning: /path/to/logo-warning.png name  Обязательное поле, Уникальное значение
+ Внимание! Этот метод не поддерживает отправку fields, передаваемый в опциях алерта
+ notify: - name: default icons: success: /path/to/logo-success.png error: /path/to/logo-error.png warning: /path/to/logo-warning.png name  Обязательное поле, Уникальное значение
  Название канала уведомлений, в том числе используется при логгировании
 В названии могут использоваться латинские символы, цифры, знаки минуса и подчеркивания
 icons.success/error/warning  По умолчанию: пустая строка
