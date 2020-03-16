@@ -11,26 +11,5 @@
 	<atom:link href="https://balerter.github.io/en/configuration/storages/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>s3</title>
-      <link>https://balerter.github.io/en/configuration/storages/s3/</link>
-      <pubDate>Tue, 04 Feb 2020 17:06:21 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/configuration/storages/s3/</guid>
-      <description>Amazon s3 compatible storage
-name: dev region: us-east1 key: SOME_KEY secret: SOME_SECRET endpoint: SOME_ENDPOINT bucket: SOME_BUCKET name  Required, Unique
- Storage name
-region  Required
- Region
-key  Required
- Access key
-secret  Required
- Secret key
-endpoint  Required
- Endpoint (without URI schema)
-bucket  Required
- Bucket name</description>
-    </item>
-    
   </channel>
 </rss>

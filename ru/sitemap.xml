@@ -33,17 +33,47 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/configuration/storages/s3/</loc>
+    <loc>https://balerter.github.io/ru/configuration/storages/core/</loc>
     <lastmod>2020-02-04T17:06:21+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://balerter.github.io/en/configuration/storages/s3/"
+                href="https://balerter.github.io/en/configuration/storages/core/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://balerter.github.io/ru/configuration/storages/s3/"
+                href="https://balerter.github.io/ru/configuration/storages/core/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/configuration/storages/core/file/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/storages/core/file/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/storages/core/file/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/configuration/storages/upload/s3/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/storages/upload/s3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/storages/upload/s3/"
                 />
   </url>
   
@@ -169,6 +199,21 @@
                 rel="alternate"
                 hreflang="ru"
                 href="https://balerter.github.io/ru/configuration/datasources/prometheus/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/ru/configuration/storages/upload/</loc>
+    <lastmod>2020-02-04T17:06:21+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/storages/upload/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/storages/upload/"
                 />
   </url>
   

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Core on Documentation for Balerter</title>
+    <link>https://balerter.github.io/en/configuration/storages/core/</link>
+    <description>Recent content in Core on Documentation for Balerter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 17:06:21 +0300</lastBuildDate>
+    
+	<atom:link href="https://balerter.github.io/en/configuration/storages/core/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>File</title>
+      <link>https://balerter.github.io/en/configuration/storages/core/file/</link>
+      <pubDate>Tue, 04 Feb 2020 17:06:21 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/storages/core/file/</guid>
+      <description>Storage &amp;lsquo;File&amp;rsquo;
+name: primaryFile path: /path/to/file name  Require, Unique
+ Storage name
+path  Require
+ Path to file</description>
+    </item>
+    
+  </channel>
+</rss>

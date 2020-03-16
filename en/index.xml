@@ -32,11 +32,24 @@ database  By default: default</description>
     </item>
     
     <item>
-      <title>s3</title>
-      <link>https://balerter.github.io/en/configuration/storages/s3/</link>
+      <title>File</title>
+      <link>https://balerter.github.io/en/configuration/storages/core/file/</link>
       <pubDate>Tue, 04 Feb 2020 17:06:21 +0300</pubDate>
       
-      <guid>https://balerter.github.io/en/configuration/storages/s3/</guid>
+      <guid>https://balerter.github.io/en/configuration/storages/core/file/</guid>
+      <description>Storage &amp;lsquo;File&amp;rsquo;
+name: primaryFile path: /path/to/file name  Require, Unique
+ Storage name
+path  Require
+ Path to file</description>
+    </item>
+    
+    <item>
+      <title>s3</title>
+      <link>https://balerter.github.io/en/configuration/storages/upload/s3/</link>
+      <pubDate>Tue, 04 Feb 2020 17:06:21 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/storages/upload/s3/</guid>
       <description>Amazon s3 compatible storage
 name: dev region: us-east1 key: SOME_KEY secret: SOME_SECRET endpoint: SOME_ENDPOINT bucket: SOME_BUCKET name  Required, Unique
  Storage name
@@ -74,8 +87,8 @@ channel  Обязательное поле
       <guid>https://balerter.github.io/en/configuration/example/</guid>
       <description>Configuration file has yaml format
 Top-level configuration sections:
- scripts - script sources datasources - data sources channels - notification channels storages - storages for upload data. For example, images global - global settings  An example:
-scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.crt prometheus: - name: prom1 url: domain.</description>
+ scripts - script sources datasources - data sources channels - notification channels storages - storages for upload data, for example, images. And for store alert/kv date (core storage) global - global settings  An example:
+scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.</description>
     </item>
     
     <item>

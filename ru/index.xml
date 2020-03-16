@@ -28,11 +28,24 @@ port  По-умолчанию 6440
     </item>
     
     <item>
-      <title>s3</title>
-      <link>https://balerter.github.io/ru/configuration/storages/s3/</link>
+      <title>File</title>
+      <link>https://balerter.github.io/ru/configuration/storages/core/file/</link>
       <pubDate>Tue, 04 Feb 2020 17:06:21 +0300</pubDate>
       
-      <guid>https://balerter.github.io/ru/configuration/storages/s3/</guid>
+      <guid>https://balerter.github.io/ru/configuration/storages/core/file/</guid>
+      <description>Настройки хранилища File
+name: primaryFile path: /path/to/file name  Обязательное поле, Уникальное значение среди хранилищ этого типа
+ Название хранилища
+path  Обязательное поле
+ Путь к файлу</description>
+    </item>
+    
+    <item>
+      <title>s3</title>
+      <link>https://balerter.github.io/ru/configuration/storages/upload/s3/</link>
+      <pubDate>Tue, 04 Feb 2020 17:06:21 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/configuration/storages/upload/s3/</guid>
       <description>Настройки хранилища s3
 name: dev region: us-east1 key: SOME_KEY secret: SOME_SECRET endpoint: SOME_ENDPOINT bucket: SOME_BUCKET name  Обязательное поле, Уникальное значение среди хранилищ этого типа
  Название хранилища
@@ -83,7 +96,7 @@ scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#3
       <guid>https://balerter.github.io/ru/configuration/example/</guid>
       <description>Файл конфигурации описывается в yaml формате
 Секции конфигурации высшего уровня:
- scripts - описание источников скриптов datasources - описание источников данных channels - описание каналов отправки уведомлений storages - описание хранилищ для загрузки данных. например, изображений global - глобальные настройки  Пример:
+ scripts - описание источников скриптов datasources - описание источников данных channels - описание каналов отправки уведомлений storages - описание хранилищ для загрузки данных, например, изображений. И для хранения информации об алертах и KV global - глобальные настройки  Пример:
 scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.</description>
     </item>
     

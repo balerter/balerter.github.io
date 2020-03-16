@@ -12,18 +12,18 @@
     <title>Раздел storages :: Documentation for Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584031023" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584031023" rel="stylesheet">
-    <link href="/css/hybrid.css?1584031023" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584031023" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584031023" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584031023" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584031023" rel="stylesheet">
-    <link href="/css/theme.css?1584031023" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584031023" rel="stylesheet">
+    <link href="/css/nucleus.css?1584354977" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584354977" rel="stylesheet">
+    <link href="/css/hybrid.css?1584354977" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584354977" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584354977" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584354977" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584354977" rel="stylesheet">
+    <link href="/css/theme.css?1584354977" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584354977" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584031023"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584354977"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584031023"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584031023"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584354977"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584354977"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/en";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584031023"></script>
+<script type="text/javascript" src="/js/search.js?1584354977"></script>
 
     
   </div>
@@ -485,6 +485,8 @@
         <ul>
           
           
+            
+          
           
           
         
@@ -496,13 +498,100 @@
  
   
     
-      <li data-nav-id="/en/configuration/storages/s3/" title="s3" class="dd-item ">
-        <a href="/en/configuration/storages/s3/">
+    <li data-nav-id="/en/configuration/storages/core/" title="Core" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/storages/core/">
+          Core
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/storages/core/file/" title="File" class="dd-item ">
+        <a href="/en/configuration/storages/core/file/">
+        File
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/storages/upload/" title="Upload" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/storages/upload/">
+          Upload
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/storages/upload/s3/" title="s3" class="dd-item ">
+        <a href="/en/configuration/storages/upload/s3/">
         s3
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -797,7 +886,12 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#core">Core</a></li>
+    <li><a href="#upload">Upload</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -822,19 +916,33 @@
 
 
 
-	<p>In the <code>storages</code> section describes settings for remote storages.</p>
+	<p>In section <code>storages</code> describes:</p>
 <ul>
-<li><a href="s3">s3</a></li>
+<li>core : for store Alert data and KV data</li>
+<li>upload : for upload files (usually images)</li>
 </ul>
 <pre><code>storages:
-  s3:
-    - name: dev
-      region: us-east1
-      key: SOME_KEY
-      secret: SOME_SECRET
-      endpoint: SOME_ENDPOINT
-      bucket: SOME_BUCKET
-</code></pre>
+  core:
+    file:
+      - name: primaryFile
+        path: /path/to/file
+  upload:
+    s3:
+      - name: dev
+        region: us-east1
+        key: SOME_KEY
+        secret: SOME_SECRET
+        endpoint: SOME_ENDPOINT
+        bucket: SOME_BUCKET
+</code></pre><h2 id="core">Core</h2>
+<ul>
+<li><a href="core/file">file</a></li>
+</ul>
+<h2 id="upload">Upload</h2>
+<ul>
+<li><a href="upload/s3">s3</a></li>
+</ul>
+
 
 
 
@@ -1158,6 +1266,8 @@
 
                     
                     
+                        
+                    
                     
 
                     
@@ -1176,6 +1286,54 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1296,7 +1454,7 @@
 			<a class="nav nav-prev" href="/en/configuration/channels/notify/" title="Notify"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/en/configuration/storages/s3/" title="s3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/en/configuration/storages/core/" title="Core" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1306,19 +1464,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584031023"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584031023"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584031023"></script>
-    <script src="/js/jquery.sticky.js?1584031023"></script>
-    <script src="/js/featherlight.min.js?1584031023"></script>
-    <script src="/js/highlight.pack.js?1584031023"></script>
+    <script src="/js/clipboard.min.js?1584354977"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584354977"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584354977"></script>
+    <script src="/js/jquery.sticky.js?1584354977"></script>
+    <script src="/js/featherlight.min.js?1584354977"></script>
+    <script src="/js/highlight.pack.js?1584354977"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584031023"></script>
-    <script src="/js/learn.js?1584031023"></script>
-    <script src="/js/hugo-learn.js?1584031023"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584354977"></script>
+    <script src="/js/learn.js?1584354977"></script>
+    <script src="/js/hugo-learn.js?1584354977"></script>
 
-    <link href="/mermaid/mermaid.css?1584031023" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584031023"></script>
+    <link href="/mermaid/mermaid.css?1584354977" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584354977"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
