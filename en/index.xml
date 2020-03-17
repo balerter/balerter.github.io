@@ -17,7 +17,7 @@
       <pubDate>Tue, 04 Feb 2020 17:10:36 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/clickhouse/</guid>
-      <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.crt name  Required, Unique
+      <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.crt name  Required, Unique
  Datasource name
 This name uses for connect to datasource from script. For example:
 local ds = require(&#39;datasource.clickhouse.ch1&#39;) host  Required
@@ -88,7 +88,7 @@ channel  Обязательное поле
       <description>Configuration file has yaml format
 Top-level configuration sections:
  scripts - script sources datasources - data sources channels - notification channels storages - storages for upload data, for example, images. And for store alert/kv date (core storage) global - global settings  An example:
-scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.</description>
+scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.</description>
     </item>
     
     <item>
@@ -121,11 +121,11 @@ Models AlertInfo    field type description     name string alert name   level in
       <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/prometheus/</guid>
-      <description>name: prom1 url: domain.com basic_auth: username: username password: password name  Required, Unique
+      <description>name: prom1 url: domain.com basicAuth: username: username password: password name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.prometheus.prom1&#39;) url  Required
  Request URI. API path /api/v1/... will be added
-basic_auth Username and password, if Prometheus require Basic Auth</description>
+basicAuth Username and password, if Prometheus require Basic Auth</description>
     </item>
     
     <item>
@@ -134,11 +134,11 @@ basic_auth Username and password, if Prometheus require Basic Auth</description>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/channels/telegram/</guid>
-      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chat_id: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Required, Unique
+      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chatId: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Required, Unique
  Channel name
 token  Required
  Telegram bot API token
-chat_id  Required
+chatId  Required
  Chat ID
 proxy  Default: empty, not use
  Socks5 proxy settings
@@ -163,7 +163,7 @@ docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/postgres/</guid>
-      <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database ssl_mode: verify-full ssl_cert_path: /path/to/cert.crt name  Required, Unique
+      <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database sslMode: verify-full sslCertPath: /path/to/cert.crt name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.postgres.pg1&#39;) host  Required
  Connection host
@@ -175,7 +175,7 @@ password  By default: postgres
  Connection password
 database  By default: postgres
  Connection database
-ssl_mode  By default disable</description>
+sslMode  By default disable</description>
     </item>
     
     <item>
@@ -227,22 +227,30 @@ icons.success/error/warning  By default: empty string
     </item>
     
     <item>
+      <title>Loki</title>
+      <link>https://balerter.github.io/en/configuration/datasources/loki/</link>
+      <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/datasources/loki/</guid>
+      <description>name: loki1 url: domain.com basicAuth: username: username password: password name  Required, Unique
+ Datasource name
+local ds = require(&#39;datasource.loki.loki1&#39;) url  Required
+ Request URI. API path /api/v1/... will be added
+basicAuth Username and password, if Loki require Basic Auth</description>
+    </item>
+    
+    <item>
       <title>Folder</title>
       <link>https://balerter.github.io/en/configuration/scripts/folder/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/scripts/folder/</guid>
-      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Required, Unique
+      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; name  Required, Unique
  Script source name
 path  Required
  Path to folder
 mask  By default: *.lua
- File mask
-update_interval  By default: 10s
- With that interval Balerter check folder for any changes and reload if needed
-A possible suffixes: &amp;ldquo;ns&amp;rdquo;, &amp;ldquo;us&amp;rdquo; (or &amp;ldquo;µs&amp;rdquo;), &amp;ldquo;ms&amp;rdquo;, &amp;ldquo;s&amp;rdquo;, &amp;ldquo;m&amp;rdquo;, &amp;ldquo;h&amp;rdquo;.
-Number must be not negative
- Warning! Too small value can cause high load</description>
+ File mask</description>
     </item>
     
   </channel>

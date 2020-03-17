@@ -17,7 +17,7 @@
       <pubDate>Tue, 04 Feb 2020 17:10:36 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/clickhouse/</guid>
-      <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.crt name  Required, Unique
+      <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.crt name  Required, Unique
  Datasource name
 This name uses for connect to datasource from script. For example:
 local ds = require(&#39;datasource.clickhouse.ch1&#39;) host  Required
@@ -37,11 +37,11 @@ database  By default: default</description>
       <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/prometheus/</guid>
-      <description>name: prom1 url: domain.com basic_auth: username: username password: password name  Required, Unique
+      <description>name: prom1 url: domain.com basicAuth: username: username password: password name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.prometheus.prom1&#39;) url  Required
  Request URI. API path /api/v1/... will be added
-basic_auth Username and password, if Prometheus require Basic Auth</description>
+basicAuth Username and password, if Prometheus require Basic Auth</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ basic_auth Username and password, if Prometheus require Basic Auth</description>
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/postgres/</guid>
-      <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database ssl_mode: verify-full ssl_cert_path: /path/to/cert.crt name  Required, Unique
+      <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database sslMode: verify-full sslCertPath: /path/to/cert.crt name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.postgres.pg1&#39;) host  Required
  Connection host
@@ -62,7 +62,7 @@ password  By default: postgres
  Connection password
 database  By default: postgres
  Connection database
-ssl_mode  By default disable</description>
+sslMode  By default disable</description>
     </item>
     
     <item>
@@ -78,6 +78,19 @@ local ds = require(&#39;datasource.postgres.mysql1&#39;) dsn  Required
 Format: [username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;amp;...&amp;amp;paramN=valueN]
  golang packge for more information about DSN
  </description>
+    </item>
+    
+    <item>
+      <title>Loki</title>
+      <link>https://balerter.github.io/en/configuration/datasources/loki/</link>
+      <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/datasources/loki/</guid>
+      <description>name: loki1 url: domain.com basicAuth: username: username password: password name  Required, Unique
+ Datasource name
+local ds = require(&#39;datasource.loki.loki1&#39;) url  Required
+ Request URI. API path /api/v1/... will be added
+basicAuth Username and password, if Loki require Basic Auth</description>
     </item>
     
   </channel>

@@ -348,6 +348,36 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/en/core/datasource/loki/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/core/datasource/loki/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/core/datasource/loki/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/configuration/datasources/loki/</loc>
+    <lastmod>2020-02-04T17:10:42+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/configuration/datasources/loki/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/configuration/datasources/loki/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/configuration/storages/</loc>
     <lastmod>2020-02-04T17:06:21+03:00</lastmod>
     <xhtml:link

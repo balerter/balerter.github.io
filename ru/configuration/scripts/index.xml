@@ -17,15 +17,13 @@
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
       <guid>https://balerter.github.io/ru/configuration/scripts/folder/</guid>
-      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s name  Обязательное поле, Уникальное значение
+      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; name  Обязательное поле, Уникальное значение
  Название источника скрипта, в том числе используется при логгировании
 В названии могут использоваться латинские символы, цифры и знак подчеркивания
 path  Обязательное поле
  Путь к папке со скриптами.
 mask  По умолчанию: *.lua
- Макса для выбора файлов
-update_interval  По умолчанию: 10s
- С указанным интервалов система будет проверять изменения файлов в данной папке и, при необходимости, останавливать/запускать или перезапускать скрипты</description>
+ Макса для выбора файлов</description>
     </item>
     
   </channel>

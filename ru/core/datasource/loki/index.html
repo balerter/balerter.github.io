@@ -1,0 +1,2652 @@
+<!DOCTYPE html>
+<html lang="ru" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Loki :: Документация по Balerter</title>
+
+    
+    <link href="/css/nucleus.css?1584464256" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584464256" rel="stylesheet">
+    <link href="/css/hybrid.css?1584464256" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584464256" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584464256" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584464256" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584464256" rel="stylesheet">
+    <link href="/css/theme.css?1584464256" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584464256" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1584464256"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
+
+<meta name="yandex-verification" content="21b462ebe3ea6f7a" />
+  </head>
+  <body class="" data-url="/ru/core/datasource/loki/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://balerter.github.io">
+  <strong style="font-size: 2em;color:#ffffff;font-family:Tahoma">BALERTER</strong>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Поиск...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1584464256"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584464256"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/balerter.github.io\/ru";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1584464256"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/basics/" title="Основы" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/basics/">
+          <b>I. </b>Основы
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/basics/about/" title="О Balerter" class="dd-item ">
+        <a href="/ru/basics/about/">
+        О Balerter
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/basics/install/" title="Установка" class="dd-item ">
+        <a href="/ru/basics/install/">
+        Установка
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/" title="Конфигурация" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/">
+          <b>II. </b>Конфигурация
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/example/" title="Пример конфигурации" class="dd-item ">
+        <a href="/ru/configuration/example/">
+        Пример конфигурации
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/scripts/" title="Раздел Scripts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/scripts/">
+          Раздел Scripts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item ">
+        <a href="/ru/configuration/scripts/folder/">
+        Тип Folder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/datasources/" title="Раздел datasource" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/datasources/">
+          Раздел datasource
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/clickhouse/" title="Тип Clickhouse" class="dd-item ">
+        <a href="/ru/configuration/datasources/clickhouse/">
+        Тип Clickhouse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/prometheus/" title="Тип Prometheus" class="dd-item ">
+        <a href="/ru/configuration/datasources/prometheus/">
+        Тип Prometheus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/postgres/" title="Тип Postgres" class="dd-item ">
+        <a href="/ru/configuration/datasources/postgres/">
+        Тип Postgres
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/mysql/" title="Тип MySQL" class="dd-item ">
+        <a href="/ru/configuration/datasources/mysql/">
+        Тип MySQL
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/loki/" title="Тип Loki" class="dd-item ">
+        <a href="/ru/configuration/datasources/loki/">
+        Тип Loki
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/channels/" title="Раздел Channels" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/channels/">
+          Раздел Channels
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/channels/slack/" title="Тип Slack" class="dd-item ">
+        <a href="/ru/configuration/channels/slack/">
+        Тип Slack
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/channels/telegram/" title="Тип Telegram" class="dd-item ">
+        <a href="/ru/configuration/channels/telegram/">
+        Тип Telegram
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/channels/syslog/" title="Тип Syslog" class="dd-item ">
+        <a href="/ru/configuration/channels/syslog/">
+        Тип Syslog
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/channels/notify/" title="Тип Notify" class="dd-item ">
+        <a href="/ru/configuration/channels/notify/">
+        Тип Notify
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/storages/" title="Раздел storages" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/storages/">
+          Раздел storages
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/storages/core/" title="Core" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/storages/core/">
+          Core
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/storages/core/file/" title="File" class="dd-item ">
+        <a href="/ru/configuration/storages/core/file/">
+        File
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/storages/upload/" title="Upload" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/storages/upload/">
+          Upload
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/storages/upload/s3/" title="s3" class="dd-item ">
+        <a href="/ru/configuration/storages/upload/s3/">
+        s3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/configuration/global/" title="Раздел global" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/configuration/global/">
+          Раздел global
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/" title="Модули ядра" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/ru/core/">
+          <b>III. </b>Модули ядра
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/log/" title="Log" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/log/">
+          Log
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/kv/" title="KV" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/kv/">
+          KV
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/chart/" title="Chart" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/chart/">
+          Chart
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/http/" title="HTTP" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/http/">
+          HTTP
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/storage/">
+          Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/storage/s3/" title="s3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/storage/s3/">
+          s3
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/alert/" title="Alert" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/alert/">
+          Alert
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/datasource/" title="Datasource" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/ru/core/datasource/">
+          Datasource
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/datasource/clickhouse/" title="Clickhouse" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/datasource/clickhouse/">
+          Clickhouse
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/datasource/postgres/" title="Postgres" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/datasource/postgres/">
+          Postgres
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/datasource/prometheus/" title="Prometheus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/datasource/prometheus/">
+          Prometheus
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/datasource/mysql/" title="MySQL" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/datasource/mysql/">
+          MySQL
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/datasource/loki/" title="Loki" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/ru/core/datasource/loki/">
+          Loki
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/luamodules/" title="Lua Модули" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/luamodules/">
+          <b>IV. </b>Lua Модули
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/luamodules/about/" title="О lua модулях" class="dd-item ">
+        <a href="/ru/luamodules/about/">
+        О lua модулях
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/luamodules/new/" title="Создание lua модуля" class="dd-item ">
+        <a href="/ru/luamodules/new/">
+        Создание lua модуля
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/luamodules/presets/" title="Предустановленные модули" class="dd-item ">
+        <a href="/ru/luamodules/presets/">
+        Предустановленные модули
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/scripts/" title="Скрипты" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/scripts/">
+          <b>V. </b>Скрипты
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/scripts/basics/" title="Основы" class="dd-item ">
+        <a href="/ru/scripts/basics/">
+        Основы
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/scripts/meta-tags/" title="Мета-теги" class="dd-item ">
+        <a href="/ru/scripts/meta-tags/">
+        Мета-теги
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/api/" title="API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/api/">
+          <b>VI. </b>API
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/api/api/" title="Описание API" class="dd-item ">
+        <a href="/ru/api/api/">
+        Описание API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/manuals/" title="Руководства" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/manuals/">
+          <b>VII. </b>Руководства
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/manuals/simple/" title="Базовый пример" class="dd-item ">
+        <a href="/ru/manuals/simple/">
+        Базовый пример
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/manuals/slack/" title="Подключение Slack" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/manuals/slack/">
+          Подключение Slack
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/manuals/telegram/" title="Подключение Telegram" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/manuals/telegram/">
+          Подключение Telegram
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/examples/" title="Примеры" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/examples/">
+          <b>VIII. </b>Примеры
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/examples/01/" title="Нагрузка CPU" class="dd-item ">
+        <a href="/ru/examples/01/">
+        Нагрузка CPU
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/examples/02/" title="Количество горутин (с графиком)" class="dd-item ">
+        <a href="/ru/examples/02/">
+        Количество горутин (с графиком)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/changelog/" title="Список изменений" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/changelog/">
+          <b>IX. </b>Список изменений
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://balerter.github.io/en/core/datasource/loki/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ru" value="https://balerter.github.io/ru/core/datasource/loki/" selected>Русский</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p><a href="/">Содержание</a></p>
+<h4><a href="https://github.com/balerter/balerter" target="_blank"><i class="fab fa-github"></i> Github</a></h4>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/ru/'>Содержание</a> > <a href='/ru/core/'>Модули ядра</a> > <a href='/ru/core/datasource/'>Datasource</a> > Loki
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#методы">Методы</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Loki
+            </h1>
+          
+
+        
+
+
+
+
+	<p>Модуль <code>datasource.loki</code> позволяет получать данные из источников, которые поддерживают язык запросов LogQL от <strong>Grafana Loki</strong></p>
+<p>Подробнее о <a href="https://github.com/grafana/loki">Loki</a></p>
+<p>Подключение:</p>
+<pre><code>local loki = require('datasource.loki.&lt;NAME_FROM_CONFIG&gt;')
+</code></pre><h3 id="методы">Методы</h3>
+<h4 id="queryquery-query_options-result-error"><code>query('&lt;QUERY&gt;'[, &lt;QUERY_OPTIONS&gt;]) result, error</code></h4>
+<p>Запрос <a href="https://github.com/grafana/loki/blob/master/docs/api.md#get-lokiapiv1query">Instant Query</a></p>
+<p>Формат результата:</p>
+<pre><code>{
+    {
+        lables = {
+            &lt;LABEL_NAME&gt; = &lt;LABEL_VALUE&gt;,
+            ...
+        },
+        entries = {
+            {
+                timestamp = &lt;TIMESTAMP&gt;,
+                line = &lt;VALUE&gt;
+            },
+            ...
+        }
+    },
+    ...
+}
+</code></pre><p>Опции:</p>
+<pre><code>{
+    time = &lt;TIME RFC3339|Timestamp&gt; -- Evaluation timestamp
+    direction = [backward|forward]  -- порядок сортировки логов, поддерживаемые значения: forward или backward. По умолчанию: backward
+    limit = &lt;NUMBER&gt;                -- максимальное количество записей
+}
+</code></pre><p>Например:</p>
+<pre><code>local loki = require('datasource.loki.dev')
+
+local res, err = loki.query('{service=&quot;srv1&quot;}')
+if err ~= nil then
+    return
+end
+
+-- res будет содержать примерно следующие данные
+{
+    ...
+    {
+        labels = {
+            service = srv1
+            level = 1
+        }
+        entries = {
+            {
+                timestamp = 1581934085
+                line = 'Log line'
+            }
+        }
+    },
+    {
+        labels = {
+            service = srv1
+            level = 2
+        }
+        entries = {
+            {
+                timestamp = 1581934085
+                line = 'Log line'
+            }
+        }
+    },
+    ...
+ }
+</code></pre><h4 id="rangequery-query_options-result-error"><code>range('&lt;QUERY&gt;'[, &lt;QUERY_OPTIONS&gt;]) result, error</code></h4>
+<p>Запрос <a href="https://github.com/grafana/loki/blob/master/docs/api.md#get-lokiapiv1query_range">Range Query</a></p>
+<p>Формат результата аналогичен выводу метода <code>query</code></p>
+<p>Опции:</p>
+<pre><code>{
+    start = &lt;TIME RFC3339|Timestamp&gt;    -- start time
+    end = &lt;TIME RFC3339|Timestamp&gt;      -- end time
+    step = &lt;NUMBER&gt;                     -- Query resolution step width in duration format or float number of seconds
+    direction = [backward|forward]      -- порядок сортировки логов, поддерживаемые значения: forward или backward. По умолчанию: backward
+    limit = &lt;NUMBER&gt;                    -- максимальное количество записей
+}
+</code></pre>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/ru/core/datasource/mysql/" title="MySQL"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/ru/luamodules/" title="Lua Модули" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1584464256"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584464256"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584464256"></script>
+    <script src="/js/jquery.sticky.js?1584464256"></script>
+    <script src="/js/featherlight.min.js?1584464256"></script>
+    <script src="/js/highlight.pack.js?1584464256"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584464256"></script>
+    <script src="/js/learn.js?1584464256"></script>
+    <script src="/js/hugo-learn.js?1584464256"></script>
+
+    <link href="/mermaid/mermaid.css?1584464256" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584464256"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJGB6P6"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  </body>
+</html>

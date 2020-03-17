@@ -12,18 +12,18 @@
     <title>Тип Clickhouse :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584462051" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584462051" rel="stylesheet">
-    <link href="/css/hybrid.css?1584462051" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584462051" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584462051" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584462051" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584462051" rel="stylesheet">
-    <link href="/css/theme.css?1584462051" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584462051" rel="stylesheet">
+    <link href="/css/nucleus.css?1584464256" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584464256" rel="stylesheet">
+    <link href="/css/hybrid.css?1584464256" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584464256" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584464256" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584464256" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584464256" rel="stylesheet">
+    <link href="/css/theme.css?1584464256" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584464256" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584462051"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584464256"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584462051"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584462051"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584464256"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584464256"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584462051"></script>
+<script type="text/javascript" src="/js/search.js?1584464256"></script>
 
     
   </div>
@@ -336,6 +336,25 @@
       <li data-nav-id="/ru/configuration/datasources/mysql/" title="Тип MySQL" class="dd-item ">
         <a href="/ru/configuration/datasources/mysql/">
         Тип MySQL
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/datasources/loki/" title="Тип Loki" class="dd-item ">
+        <a href="/ru/configuration/datasources/loki/">
+        Тип Loki
         
         </a>
     </li>
@@ -967,6 +986,30 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/datasource/loki/" title="Loki" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/datasource/loki/">
+          Loki
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -1520,7 +1563,7 @@
         <li><a href="#username">username</a></li>
         <li><a href="#password">password</a></li>
         <li><a href="#database">database</a></li>
-        <li><a href="#ssl_cert_path">ssl_cert_path</a></li>
+        <li><a href="#sslcertpath">sslCertPath</a></li>
       </ul>
     </li>
   </ul>
@@ -1554,7 +1597,7 @@ port: 6440
 username: username
 password: password
 database: database
-ssl_cert_path: /path/to/cert.crt
+sslCertPath: /path/to/cert.crt
 </code></pre><h3 id="name">name</h3>
 <blockquote>
 <p>Обязательное поле, Уникальное значение среди источников данных этого типа</p>
@@ -1588,7 +1631,7 @@ ssl_cert_path: /path/to/cert.crt
 <p>По-умолчанию <code>default</code></p>
 </blockquote>
 <p>Имя БД для подключения</p>
-<h3 id="ssl_cert_path">ssl_cert_path</h3>
+<h3 id="sslcertpath">sslCertPath</h3>
 <blockquote>
 <p>По-умолчанию пустая строка</p>
 </blockquote>
@@ -1825,70 +1868,6 @@ ssl_cert_path: /path/to/cert.crt
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1917,109 +1896,6 @@ ssl_cert_path: /path/to/cert.crt
                 
 
                     
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
                     
                     
 
@@ -2088,6 +1964,189 @@ ssl_cert_path: /path/to/cert.crt
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -2152,6 +2211,22 @@ ssl_cert_path: /path/to/cert.crt
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -2519,19 +2594,19 @@ ssl_cert_path: /path/to/cert.crt
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584462051"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584462051"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584462051"></script>
-    <script src="/js/jquery.sticky.js?1584462051"></script>
-    <script src="/js/featherlight.min.js?1584462051"></script>
-    <script src="/js/highlight.pack.js?1584462051"></script>
+    <script src="/js/clipboard.min.js?1584464256"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584464256"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584464256"></script>
+    <script src="/js/jquery.sticky.js?1584464256"></script>
+    <script src="/js/featherlight.min.js?1584464256"></script>
+    <script src="/js/highlight.pack.js?1584464256"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584462051"></script>
-    <script src="/js/learn.js?1584462051"></script>
-    <script src="/js/hugo-learn.js?1584462051"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584464256"></script>
+    <script src="/js/learn.js?1584464256"></script>
+    <script src="/js/hugo-learn.js?1584464256"></script>
 
-    <link href="/mermaid/mermaid.css?1584462051" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584462051"></script>
+    <link href="/mermaid/mermaid.css?1584464256" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584464256"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
