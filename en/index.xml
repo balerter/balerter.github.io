@@ -88,7 +88,7 @@ channel  Обязательное поле
       <description>Configuration file has yaml format
 Top-level configuration sections:
  scripts - script sources datasources - data sources channels - notification channels storages - storages for upload data, for example, images. And for store alert/kv date (core storage) global - global settings  An example:
-scripts: sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; update_interval: 5s datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.</description>
+scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database ssl_cert_path: /path/to/cert.</description>
     </item>
     
     <item>
