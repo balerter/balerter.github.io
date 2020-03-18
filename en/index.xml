@@ -92,6 +92,18 @@ scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts 
     </item>
     
     <item>
+      <title>Simple example</title>
+      <link>https://balerter.github.io/en/examples/00/</link>
+      <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/examples/00/</guid>
+      <description>В данной статье мы по шагам проработаем настройку системы и создание скрипта для следующей задачи:
+ У нас есть Prometheus, который собирает какие-то метрики. Мы хотим отслеживать метрику go_memstats_heap_objects. Если значение превысит заданный нами порог, создадим алерт.
+ Конфигурирование В первую очередь требуется создать файл конфигуации:
+scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: prometheus: - name: prom1 url: 127.0.0.1:9090 channels: telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chatId: 100500 В кофиге мы указали</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://balerter.github.io/en/basics/about/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
@@ -104,6 +116,19 @@ However, for more difficult tasks it is not enough. For example: You wants selec
     </item>
     
     <item>
+      <title>About lua modules</title>
+      <link>https://balerter.github.io/en/luamodules/about/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/luamodules/about/</guid>
+      <description>You can use external lua modules, wrote with the Lua language
+You should place it to the modules folder
+A module can be wrote in the single file. In this case module name will be same as filename
+An example:
+root | | modules | conv.lua local conv = require(&#39;conv&#39;) The module can be placed in one folder with several files. In this case folder must have file init.lua with export code</description>
+    </item>
+    
+    <item>
       <title>API</title>
       <link>https://balerter.github.io/en/api/api/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
@@ -113,6 +138,28 @@ However, for more difficult tasks it is not enough. For example: You wants selec
 API path /api/&amp;lt;API_VERSION&amp;gt;/&amp;lt;API_QUERY&amp;gt;
  Current API version v1
 Models AlertInfo    field type description     name string alert name   level int current alert level (error/warning/success)   count int count current level checks after last level change   updated_at datetime time of last level change. Format RFC3339 (YYYY-MM-ddTHH:mm:ssZoffset)    An example:</description>
+    </item>
+    
+    <item>
+      <title>Basics</title>
+      <link>https://balerter.github.io/en/scripts/basics/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/scripts/basics/</guid>
+      <description>For script use language: Lua 5.1
+Official lua documentation site
+ For developers: we use Golang library https://github.com/yuin/gopher-lua
+ A simple example. Comments in lua scripts have prefix --
+-- in the head of script you can defined some meta-tags. See more in section &#39;meta-tags&#39; -- @interval 5m -- store 1e9 to the variable sizeLimit local sizeLimit = 1000000000 -- add Log module local log = require(&amp;quot;log&amp;quot;) -- add Clickhouse datasource local ch1 = require(&amp;quot;datasource.</description>
+    </item>
+    
+    <item>
+      <title>CPU Load</title>
+      <link>https://balerter.github.io/en/examples/01/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/examples/01/</guid>
+      <description>Check CPU load. If it is greater than 70%, change an alert level to Error  Prometheus collected data from a Node Exporter Metrics have a label instance, which identified every server  -- @interval 30s -- @name cpu70 local cpuLimit = 0.7 local prom1 = require(&#39;datasource.prometheus.prom1&#39;) local alert = require(&#39;alert&#39;) local res, err = prom1.range(&#39;rate(sum(node_cpu_seconds_total{mode!=&amp;quot;idle&amp;quot;}) by (instance)) / rate(sum(node_cpu_seconds_total) by (instance))&#39;) if err ~= nil then return end for i, item in pairs(res) do local v = item.</description>
     </item>
     
     <item>
@@ -143,6 +190,40 @@ chatId  Required
 proxy  Default: empty, not use
  Socks5 proxy settings
 If auth section is defined, it will use for authentication</description>
+    </item>
+    
+    <item>
+      <title>A goroutines count (with a chart)</title>
+      <link>https://balerter.github.io/en/examples/02/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/examples/02/</guid>
+      <description>Check a goroutines count  Prometheus collect data Remote S3 storage described in configuration  -- @interval 30s -- @name goroutines local prom1 = require(&#39;datasource.prometheus.prom1&#39;) local alert = require(&#39;alert&#39;) local chart = require(&#39;chart&#39;) local storage = require(&#39;storage.s3.dev&#39;) local now = os.time(os.date(&amp;quot;!*t&amp;quot;)) rangeOptions = { [&#39;start&#39;] = now - 86400, [&#39;end&#39;] = now, [&#39;step&#39;] = &#39;3600&#39; } res = prom1.range(&#39;sum(go_goroutines)&#39;, rangeOptions) local chartOptions = { [&#39;series&#39;] = { { [&#39;color&#39;] = &#39;red&#39;, [&#39;line_color&#39;] = &#39;blue&#39;, [&amp;quot;data&amp;quot;] = res[1].</description>
+    </item>
+    
+    <item>
+      <title>Create a lua module</title>
+      <link>https://balerter.github.io/en/luamodules/new/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/luamodules/new/</guid>
+      <description>A simple example
+Method add with two arguments, returns sum
+| | modules | math.lua -- math.lua local M = {} local function add(a, b) return a + b end rawset(M, &#39;add&#39;, add) return M An example:
+local math = require(&#39;math&#39;) local res = math.add(10, 20) print(res) -- 30 </description>
+    </item>
+    
+    <item>
+      <title>Meta-tags</title>
+      <link>https://balerter.github.io/en/scripts/meta-tags/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/scripts/meta-tags/</guid>
+      <description>In the script head you can defined some meta-tags
+-- @interval 10s -- @ignore local log = require(&#39;log&#39;) ... Every meta-tag has a format: @&amp;lt;TAG_NAME&amp;gt; [&amp;lt;TAG_OPTIONS&amp;gt;]
+All meta-tags should be exactly in the head of script
+Any not empty not comment string will be interrupted meta-tags parsing
+-- You CAN place comments without tags -- @interval 10s (comment in the meta-tag line NOT ALLOWED) -- -- empty comment string ALLOWED -- also ALLOWED empty strings local a = 10 -- @ignore -- this tag will not be parsing, because we write not empty not comment string above Meta-tags @interval &amp;lt;TIME INTERVAL&amp;gt; Run script Interval If not defined, used default value: 60 seconds</description>
     </item>
     
     <item>
@@ -195,6 +276,20 @@ network  Default: empty string
  Server address
 priority  Default: EMERG
  Message priority</description>
+    </item>
+    
+    <item>
+      <title>Preset modules</title>
+      <link>https://balerter.github.io/en/luamodules/presets/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/luamodules/presets/</guid>
+      <description>Preset modules By default Balerter distributed with some preset modules, which placed in the modules folder.
+They are not needed for the balerter functional
+h (helper) Usage:
+local h = require(&#39;h&#39;) Methods tableToMap(table, keyFieldName) table, error Convert lua table to hash-table with keys as &amp;lsquo;keyFieldName&amp;rsquo; value
+An example:
+table = { { date = &#39;2020-01-01&#39;, id = &#39;a&#39;, name = &#39;aa&#39;}, { date = &#39;2020-01-01&#39;, id = &#39;b&#39;, name = &#39;bb&#39; }, .</description>
     </item>
     
     <item>
