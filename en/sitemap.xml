@@ -123,21 +123,6 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/en/configuration/example/</loc>
-    <lastmod>2020-02-04T16:37:04+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/configuration/example/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/configuration/example/"
-                />
-  </url>
-  
-  <url>
     <loc>https://balerter.github.io/en/examples/00/</loc>
     <lastmod>2020-02-04T16:37:04+03:00</lastmod>
     <xhtml:link
@@ -149,36 +134,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/examples/00/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/basics/about/</loc>
-    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/basics/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/basics/about/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/luamodules/about/</loc>
-    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/luamodules/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/luamodules/about/"
                 />
   </url>
   
@@ -198,21 +153,6 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/en/scripts/basics/</loc>
-    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/scripts/basics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/scripts/basics/"
-                />
-  </url>
-  
-  <url>
     <loc>https://balerter.github.io/en/examples/01/</loc>
     <lastmod>2020-02-04T16:32:46+03:00</lastmod>
     <xhtml:link
@@ -224,6 +164,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/examples/01/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/basics/install/</loc>
+    <lastmod>2020-02-04T16:20:36+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/basics/install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/basics/install/"
                 />
   </url>
   
@@ -404,21 +359,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/scripts/meta-tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/basics/install/</loc>
-    <lastmod>2020-02-04T16:20:36+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/basics/install/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/basics/install/"
                 />
   </url>
   
@@ -783,6 +723,21 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/en/examples/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/examples/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/examples/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/changelog/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
     <xhtml:link
@@ -809,21 +764,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://balerter.github.io/en/configuration/scripts/folder/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://balerter.github.io/en/examples/</loc>
-    <lastmod>2020-02-04T16:37:04+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/examples/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/examples/"
                 />
   </url>
   

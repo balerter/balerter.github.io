@@ -12,19 +12,6 @@
     
     
     <item>
-      <title>О lua модулях</title>
-      <link>https://balerter.github.io/ru/luamodules/about/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/luamodules/about/</guid>
-      <description>Вы можете использовать внешие модули, написанные на Lua
-Для этого вам следует поместить их в каталог modules
-Модуль может быть описан в единственном файле. В этом случае, имя файла будет являться именем для импортирования этого модуля.
-Например:
-root | | modules | conv.lua local conv = require(&#39;conv&#39;) Либо модуль может быть разбит на различные файлы. В этом случае, все файлы должны быть в одном каталоге. А код эспорта модуля должен размещаться в файле init.</description>
-    </item>
-    
-    <item>
       <title>Создание lua модуля</title>
       <link>https://balerter.github.io/ru/luamodules/new/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua Modules on Documentation for Balerter</title>
+    <link>https://balerter.github.io/en/luamodules/</link>
+    <description>Recent content in Lua Modules on Documentation for Balerter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 16:08:54 +0300</lastBuildDate>
+    
+	<atom:link href="https://balerter.github.io/en/luamodules/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a lua module</title>
+      <link>https://balerter.github.io/en/luamodules/new/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/luamodules/new/</guid>
+      <description>A simple example
+Method add with two arguments, returns sum
+| | modules | math.lua -- math.lua local M = {} local function add(a, b) return a + b end rawset(M, &#39;add&#39;, add) return M An example:
+local math = require(&#39;math&#39;) local res = math.add(10, 20) print(res) -- 30 </description>
+    </item>
+    
+    <item>
+      <title>Preset modules</title>
+      <link>https://balerter.github.io/en/luamodules/presets/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/luamodules/presets/</guid>
+      <description>Preset modules By default Balerter distributed with some preset modules, which placed in the modules folder.
+They are not needed for the balerter functional
+h (helper) Usage:
+local h = require(&#39;h&#39;) Methods tableToMap(table, keyFieldName) table, error Convert lua table to hash-table with keys as &amp;lsquo;keyFieldName&amp;rsquo; value
+An example:
+table = { { date = &#39;2020-01-01&#39;, id = &#39;a&#39;, name = &#39;aa&#39;}, { date = &#39;2020-01-01&#39;, id = &#39;b&#39;, name = &#39;bb&#39; }, .</description>
+    </item>
+    
+  </channel>
+</rss>

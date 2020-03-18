@@ -12,18 +12,6 @@
     
     
     <item>
-      <title>About</title>
-      <link>https://balerter.github.io/en/basics/about/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/basics/about/</guid>
-      <description>Balerter - it is an Alert Manager.
-Main Balerter purpose is opportunity for &amp;lsquo;write easily hard alert rules&amp;rsquo;
-For a simple alert, which firing on a http request limit, enough, for example, internal Grafana alerts.
-However, for more difficult tasks it is not enough. For example: You wants select a historical data from a Database, then compare it with a current data. Then you calls an external API (over HTTP) and makes a decision about an Alert status.</description>
-    </item>
-    
-    <item>
       <title>Installation</title>
       <link>https://balerter.github.io/en/basics/install/</link>
       <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>

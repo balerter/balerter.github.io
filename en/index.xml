@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Content on Documentation for Balerter</title>
+    <title>The Content on Documentation for Balerter</title>
     <link>https://balerter.github.io/en/</link>
-    <description>Recent content in Content on Documentation for Balerter</description>
+    <description>Recent content in The Content on Documentation for Balerter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Feb 2020 16:08:54 +0300</lastBuildDate>
@@ -80,18 +80,6 @@ channel  Обязательное поле
     </item>
     
     <item>
-      <title>A configuration example</title>
-      <link>https://balerter.github.io/en/configuration/example/</link>
-      <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/configuration/example/</guid>
-      <description>Configuration file has yaml format
-Top-level configuration sections:
- scripts - script sources datasources - data sources channels - notification channels storages - storages for upload data, for example, images. And for store alert/kv date (core storage) global - global settings  An example:
-scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.</description>
-    </item>
-    
-    <item>
       <title>Simple example</title>
       <link>https://balerter.github.io/en/examples/00/</link>
       <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
@@ -101,31 +89,6 @@ scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts 
  У нас есть Prometheus, который собирает какие-то метрики. Мы хотим отслеживать метрику go_memstats_heap_objects. Если значение превысит заданный нами порог, создадим алерт.
  Конфигурирование В первую очередь требуется создать файл конфигуации:
 scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: prometheus: - name: prom1 url: 127.0.0.1:9090 channels: telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chatId: 100500 В кофиге мы указали</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://balerter.github.io/en/basics/about/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/basics/about/</guid>
-      <description>Balerter - it is an Alert Manager.
-Main Balerter purpose is opportunity for &amp;lsquo;write easily hard alert rules&amp;rsquo;
-For a simple alert, which firing on a http request limit, enough, for example, internal Grafana alerts.
-However, for more difficult tasks it is not enough. For example: You wants select a historical data from a Database, then compare it with a current data. Then you calls an external API (over HTTP) and makes a decision about an Alert status.</description>
-    </item>
-    
-    <item>
-      <title>About lua modules</title>
-      <link>https://balerter.github.io/en/luamodules/about/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/luamodules/about/</guid>
-      <description>You can use external lua modules, wrote with the Lua language
-You should place it to the modules folder
-A module can be wrote in the single file. In this case module name will be same as filename
-An example:
-root | | modules | conv.lua local conv = require(&#39;conv&#39;) The module can be placed in one folder with several files. In this case folder must have file init.lua with export code</description>
     </item>
     
     <item>
@@ -141,25 +104,24 @@ Models AlertInfo    field type description     name string alert name   level in
     </item>
     
     <item>
-      <title>Basics</title>
-      <link>https://balerter.github.io/en/scripts/basics/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/scripts/basics/</guid>
-      <description>For script use language: Lua 5.1
-Official lua documentation site
- For developers: we use Golang library https://github.com/yuin/gopher-lua
- A simple example. Comments in lua scripts have prefix --
--- in the head of script you can defined some meta-tags. See more in section &#39;meta-tags&#39; -- @interval 5m -- store 1e9 to the variable sizeLimit local sizeLimit = 1000000000 -- add Log module local log = require(&amp;quot;log&amp;quot;) -- add Clickhouse datasource local ch1 = require(&amp;quot;datasource.</description>
-    </item>
-    
-    <item>
       <title>CPU Load</title>
       <link>https://balerter.github.io/en/examples/01/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/examples/01/</guid>
       <description>Check CPU load. If it is greater than 70%, change an alert level to Error  Prometheus collected data from a Node Exporter Metrics have a label instance, which identified every server  -- @interval 30s -- @name cpu70 local cpuLimit = 0.7 local prom1 = require(&#39;datasource.prometheus.prom1&#39;) local alert = require(&#39;alert&#39;) local res, err = prom1.range(&#39;rate(sum(node_cpu_seconds_total{mode!=&amp;quot;idle&amp;quot;}) by (instance)) / rate(sum(node_cpu_seconds_total) by (instance))&#39;) if err ~= nil then return end for i, item in pairs(res) do local v = item.</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://balerter.github.io/en/basics/install/</link>
+      <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/basics/install/</guid>
+      <description>Docker The official image: https://hub.docker.com/r/balerter/balerter
+docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=/opt/config.yml Build from sources Clone the repo and start the balerter (with the configuration file)
+ Require Go 1.13 or later
+ git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
     </item>
     
     <item>
@@ -224,18 +186,6 @@ local math = require(&#39;math&#39;) local res = math.add(10, 20) print(res) -- 
 All meta-tags should be exactly in the head of script
 Any not empty not comment string will be interrupted meta-tags parsing
 -- You CAN place comments without tags -- @interval 10s (comment in the meta-tag line NOT ALLOWED) -- -- empty comment string ALLOWED -- also ALLOWED empty strings local a = 10 -- @ignore -- this tag will not be parsing, because we write not empty not comment string above Meta-tags @interval &amp;lt;TIME INTERVAL&amp;gt; Run script Interval If not defined, used default value: 60 seconds</description>
-    </item>
-    
-    <item>
-      <title>Installation</title>
-      <link>https://balerter.github.io/en/basics/install/</link>
-      <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/basics/install/</guid>
-      <description>Docker The official image: https://hub.docker.com/r/balerter/balerter
-docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=/opt/config.yml Build from sources Clone the repo and start the balerter (with the configuration file)
- Require Go 1.13 or later
- git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
     </item>
     
     <item>

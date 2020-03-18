@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripts on Documentation for Balerter</title>
+    <link>https://balerter.github.io/en/scripts/</link>
+    <description>Recent content in Scripts on Documentation for Balerter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 16:08:54 +0300</lastBuildDate>
+    
+	<atom:link href="https://balerter.github.io/en/scripts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meta-tags</title>
+      <link>https://balerter.github.io/en/scripts/meta-tags/</link>
+      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/scripts/meta-tags/</guid>
+      <description>In the script head you can defined some meta-tags
+-- @interval 10s -- @ignore local log = require(&#39;log&#39;) ... Every meta-tag has a format: @&amp;lt;TAG_NAME&amp;gt; [&amp;lt;TAG_OPTIONS&amp;gt;]
+All meta-tags should be exactly in the head of script
+Any not empty not comment string will be interrupted meta-tags parsing
+-- You CAN place comments without tags -- @interval 10s (comment in the meta-tag line NOT ALLOWED) -- -- empty comment string ALLOWED -- also ALLOWED empty strings local a = 10 -- @ignore -- this tag will not be parsing, because we write not empty not comment string above Meta-tags @interval &amp;lt;TIME INTERVAL&amp;gt; Run script Interval If not defined, used default value: 60 seconds</description>
+    </item>
+    
+  </channel>
+</rss>

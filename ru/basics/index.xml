@@ -12,18 +12,6 @@
     
     
     <item>
-      <title>О Balerter</title>
-      <link>https://balerter.github.io/ru/basics/about/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/basics/about/</guid>
-      <description>Balerter - это Alert Manager.
-Основное предназначение Balerter - дать возможность как можно проще описать сложные правила алертинга.
-Для простого Алерта, который срабатывает при превышении количества http запросов - достаточно будет даже встроенного функционала Grafana (оставим за скобками целесообразность этого подхода)
-Однако, для более сложных случаев это не подойдет. Например, вы если вы хотите выбрать исторические данные из БД, затем сравнить их с текущими данными, сходить в сторонний сервис по API и затем уже принять решение об алертинге.</description>
-    </item>
-    
-    <item>
       <title>Установка</title>
       <link>https://balerter.github.io/ru/basics/install/</link>
       <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>

@@ -12,18 +12,18 @@
     <title>Скрипты :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584531215" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584531215" rel="stylesheet">
-    <link href="/css/hybrid.css?1584531215" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584531215" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584531215" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584531215" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584531215" rel="stylesheet">
-    <link href="/css/theme.css?1584531215" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584531215" rel="stylesheet">
+    <link href="/css/nucleus.css?1584533005" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584533005" rel="stylesheet">
+    <link href="/css/hybrid.css?1584533005" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584533005" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584533005" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584533005" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584533005" rel="stylesheet">
+    <link href="/css/theme.css?1584533005" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584533005" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584531215"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584533005"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584531215"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584531215"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584533005"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584533005"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584531215"></script>
+<script type="text/javascript" src="/js/search.js?1584533005"></script>
 
     
   </div>
@@ -99,25 +99,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ru/basics/about/" title="О Balerter" class="dd-item ">
-        <a href="/ru/basics/about/">
-        О Balerter
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -171,25 +152,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ru/configuration/example/" title="Пример конфигурации" class="dd-item ">
-        <a href="/ru/configuration/example/">
-        Пример конфигурации
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -1058,25 +1020,6 @@
  
   
     
-      <li data-nav-id="/ru/luamodules/about/" title="О lua модулях" class="dd-item ">
-        <a href="/ru/luamodules/about/">
-        О lua модулях
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/ru/luamodules/new/" title="Создание lua модуля" class="dd-item ">
         <a href="/ru/luamodules/new/">
         Создание lua модуля
@@ -1139,25 +1082,6 @@
           
           
         
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ru/scripts/basics/" title="Основы" class="dd-item ">
-        <a href="/ru/scripts/basics/">
-        Основы
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -1492,8 +1416,7 @@
     </section>
     
     <section id="footer">
-      <p><a href="/">Содержание</a></p>
-<h4><a href="https://github.com/balerter/balerter" target="_blank"><i class="fab fa-github"></i> Github</a></h4>
+      <h4><a href="https://github.com/balerter/balerter" target="_blank"><i class="fab fa-github"></i> Github</a></h4>
 
     </section>
   </div>
@@ -1518,6 +1441,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1537,6 +1462,13 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1544,9 +1476,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Скрипты
+            </h1>
           
 
         
@@ -1554,10 +1489,47 @@
 
 
 
-	<h3 id="часть-v">Часть V</h3>
-<h1 id="скрипты">Скрипты</h1>
-<p>В данном разделе описаны принципы создания скриптов. Приведены примеры.</p>
+	<p>Скрипты пишутся на языке <strong>Lua 5.1</strong></p>
+<p>С официальной документацией можно ознакомться <a href="http://www.lua.org/manual/5.1/">тут</a></p>
+<blockquote>
+<p>Для разработчиков: в исходном коде используется Golang библиотка <a href="https://github.com/yuin/gopher-lua">https://github.com/yuin/gopher-lua</a> для исполнения Lua скриптов</p>
+</blockquote>
+<p>Пример простого скрипта с подробными комментариями: (комментарии в Lua начинаются с двойного минуса <code>--</code>)</p>
+<pre><code>-- в начале скрипта можно указать некоторые мета-теги. Например, с помощью тега @interval можно указать частоту исполнения скрипта
+-- все возможные варианты мета-тегов смотрите в соотвествующем разделе 
+-- @interval 5m
 
+-- в переменную sizeLimit запомним значение 1e9, которое будет в нашем случае означать 1Гб (1e9 в байтах) 
+local sizeLimit = 1000000000
+
+-- подключим модуль ядра Log для возможности вывода сообщений в лог сервиса
+local log = require(&quot;log&quot;)
+-- подключим источник данных типа Clickhouse с названием ch1 (он должен быть описан в файле конфигурации)
+local ch1 = require(&quot;datasource.clickhouse.ch1&quot;)
+
+-- получим ответ от Clickhouse на наш запрос
+local res, err = ch1.query(&quot;SELECT sum(bytes) AS size FROM system.parts WHERE active&quot;)
+-- если вернулась ошибка, то пишем сообщение в лог и выходим из скрипта
+if err ~= nil then
+    log.error(&quot;clickhouse 'ch1' query error: &quot; .. err)
+    return
+end
+
+-- из полученного результата берем первую запись (индексация массивов в Lua начинается с 1, а не с 0)
+-- и в этой записи берем поле size (мы в запросе указали: ... AS size)
+local currentSize = res[1].size
+
+if currentSize &gt; sizeLimit then
+    -- если наше полученное значение выше нашего лимита, то
+    -- устанавливаем для Алерта с идентификаторм clickhouse-disk-space статус Error
+    -- если на момент вызова был другой статус, то будет отправлено уведомление с текстом 'Check disk space ...' 
+    alert.error(&quot;clickhouse-disk-space&quot;, &quot;Check disk space in Clickhouse cluster! Current busy: &quot; .. tostring(currentSize))
+else
+    -- иначе устанавливаем для этого же Алерта статус Sucess
+    -- если на момент вызова у алерта был другой статус (например, Error), то будет отправлено уведомление с текстом 'Clickhouse disk space - ok'  
+    alert.success(&quot;clickhouse-disk-space&quot;, &quot;Clickhouse disk space - ok&quot;)
+end 
+</code></pre>
 
 
 
@@ -1566,8 +1538,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1626,22 +1596,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1659,22 +1613,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2260,22 +2198,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -2300,22 +2222,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2505,7 +2411,7 @@
 			<a class="nav nav-prev" href="/ru/luamodules/presets/" title="Предустановленные модули"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/scripts/basics/" title="Основы" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/scripts/meta-tags/" title="Мета-теги" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2515,19 +2421,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584531215"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584531215"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584531215"></script>
-    <script src="/js/jquery.sticky.js?1584531215"></script>
-    <script src="/js/featherlight.min.js?1584531215"></script>
-    <script src="/js/highlight.pack.js?1584531215"></script>
+    <script src="/js/clipboard.min.js?1584533005"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584533005"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584533005"></script>
+    <script src="/js/jquery.sticky.js?1584533005"></script>
+    <script src="/js/featherlight.min.js?1584533005"></script>
+    <script src="/js/highlight.pack.js?1584533005"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584531215"></script>
-    <script src="/js/learn.js?1584531215"></script>
-    <script src="/js/hugo-learn.js?1584531215"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584533005"></script>
+    <script src="/js/learn.js?1584533005"></script>
+    <script src="/js/hugo-learn.js?1584533005"></script>
 
-    <link href="/mermaid/mermaid.css?1584531215" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584531215"></script>
+    <link href="/mermaid/mermaid.css?1584533005" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584533005"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

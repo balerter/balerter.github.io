@@ -12,19 +12,6 @@
     
     
     <item>
-      <title>Основы</title>
-      <link>https://balerter.github.io/ru/scripts/basics/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/scripts/basics/</guid>
-      <description>Скрипты пишутся на языке Lua 5.1
-С официальной документацией можно ознакомться тут
- Для разработчиков: в исходном коде используется Golang библиотка https://github.com/yuin/gopher-lua для исполнения Lua скриптов
- Пример простого скрипта с подробными комментариями: (комментарии в Lua начинаются с двойного минуса --)
--- в начале скрипта можно указать некоторые мета-теги. Например, с помощью тега @interval можно указать частоту исполнения скрипта -- все возможные варианты мета-тегов смотрите в соотвествующем разделе -- @interval 5m -- в переменную sizeLimit запомним значение 1e9, которое будет в нашем случае означать 1Гб (1e9 в байтах) local sizeLimit = 1000000000 -- подключим модуль ядра Log для возможности вывода сообщений в лог сервиса local log = require(&amp;quot;log&amp;quot;) -- подключим источник данных типа Clickhouse с названием ch1 (он должен быть описан в файле конфигурации) local ch1 = require(&amp;quot;datasource.</description>
-    </item>
-    
-    <item>
       <title>Мета-теги</title>
       <link>https://balerter.github.io/ru/scripts/meta-tags/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>

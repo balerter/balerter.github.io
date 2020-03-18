@@ -89,49 +89,12 @@ scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts 
     </item>
     
     <item>
-      <title>Пример конфигурации</title>
-      <link>https://balerter.github.io/ru/configuration/example/</link>
-      <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/configuration/example/</guid>
-      <description>Файл конфигурации описывается в yaml формате
-Секции конфигурации высшего уровня:
- scripts - описание источников скриптов datasources - описание источников данных channels - описание каналов отправки уведомлений storages - описание хранилищ для загрузки данных, например, изображений. И для хранения информации об алертах и KV global - глобальные настройки  Пример:
-scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.</description>
-    </item>
-    
-    <item>
       <title>Нагрузка CPU</title>
       <link>https://balerter.github.io/ru/examples/01/</link>
       <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
       
       <guid>https://balerter.github.io/ru/examples/01/</guid>
       <description>Проверяем нагрузку на CPU. Если она выше 70% - алертим  Prometheus собирает данные с Node Exporter Метрики имеют лейбл instance, который идентифицирует каждую машину  -- @interval 30s -- @name cpu70 local cpuLimit = 0.7 local prom1 = require(&#39;datasource.prometheus.prom1&#39;) local alert = require(&#39;alert&#39;) local res, err = prom1.range(&#39;rate(sum(node_cpu_seconds_total{mode!=&amp;quot;idle&amp;quot;}) by (instance)) / rate(sum(node_cpu_seconds_total) by (instance))&#39;) if err ~= nil then return end for i, item in pairs(res) do local v = item.</description>
-    </item>
-    
-    <item>
-      <title>О Balerter</title>
-      <link>https://balerter.github.io/ru/basics/about/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/basics/about/</guid>
-      <description>Balerter - это Alert Manager.
-Основное предназначение Balerter - дать возможность как можно проще описать сложные правила алертинга.
-Для простого Алерта, который срабатывает при превышении количества http запросов - достаточно будет даже встроенного функционала Grafana (оставим за скобками целесообразность этого подхода)
-Однако, для более сложных случаев это не подойдет. Например, вы если вы хотите выбрать исторические данные из БД, затем сравнить их с текущими данными, сходить в сторонний сервис по API и затем уже принять решение об алертинге.</description>
-    </item>
-    
-    <item>
-      <title>О lua модулях</title>
-      <link>https://balerter.github.io/ru/luamodules/about/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/luamodules/about/</guid>
-      <description>Вы можете использовать внешие модули, написанные на Lua
-Для этого вам следует поместить их в каталог modules
-Модуль может быть описан в единственном файле. В этом случае, имя файла будет являться именем для импортирования этого модуля.
-Например:
-root | | modules | conv.lua local conv = require(&#39;conv&#39;) Либо модуль может быть разбит на различные файлы. В этом случае, все файлы должны быть в одном каталоге. А код эспорта модуля должен размещаться в файле init.</description>
     </item>
     
     <item>
@@ -147,16 +110,16 @@ root | | modules | conv.lua local conv = require(&#39;conv&#39;) Либо мод
     </item>
     
     <item>
-      <title>Основы</title>
-      <link>https://balerter.github.io/ru/scripts/basics/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
+      <title>Установка</title>
+      <link>https://balerter.github.io/ru/basics/install/</link>
+      <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
       
-      <guid>https://balerter.github.io/ru/scripts/basics/</guid>
-      <description>Скрипты пишутся на языке Lua 5.1
-С официальной документацией можно ознакомться тут
- Для разработчиков: в исходном коде используется Golang библиотка https://github.com/yuin/gopher-lua для исполнения Lua скриптов
- Пример простого скрипта с подробными комментариями: (комментарии в Lua начинаются с двойного минуса --)
--- в начале скрипта можно указать некоторые мета-теги. Например, с помощью тега @interval можно указать частоту исполнения скрипта -- все возможные варианты мета-тегов смотрите в соотвествующем разделе -- @interval 5m -- в переменную sizeLimit запомним значение 1e9, которое будет в нашем случае означать 1Гб (1e9 в байтах) local sizeLimit = 1000000000 -- подключим модуль ядра Log для возможности вывода сообщений в лог сервиса local log = require(&amp;quot;log&amp;quot;) -- подключим источник данных типа Clickhouse с названием ch1 (он должен быть описан в файле конфигурации) local ch1 = require(&amp;quot;datasource.</description>
+      <guid>https://balerter.github.io/ru/basics/install/</guid>
+      <description>Докер Официальный образ: https://hub.docker.com/r/balerter/balerter
+Для простейшего запуска Balerter вам требуется передать ему конфигурационный файл
+docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=/opt/config.yml Исходный код Клонируем репозиторий на локальную машину и запускаем Balerter, указав конфигурационный файл
+ Требуется Go версии 1.13 или выше
+ git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
     </item>
     
     <item>
@@ -223,19 +186,6 @@ proxy  По-умолчанию: не используется
 add принимает два аргумента, складывает их и возвращает результат
 | | modules | math.lua -- math.lua local M = {} local function add(a, b) return a + b end rawset(M, &#39;add&#39;, add) return M Пример использования:
 local math = require(&#39;math&#39;) local res = math.add(10, 20) print(res) -- 30 </description>
-    </item>
-    
-    <item>
-      <title>Установка</title>
-      <link>https://balerter.github.io/ru/basics/install/</link>
-      <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/basics/install/</guid>
-      <description>Докер Официальный образ: https://hub.docker.com/r/balerter/balerter
-Для простейшего запуска Balerter вам требуется передать ему конфигурационный файл
-docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=/opt/config.yml Исходный код Клонируем репозиторий на локальную машину и запускаем Balerter, указав конфигурационный файл
- Требуется Go версии 1.13 или выше
- git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
     </item>
     
     <item>

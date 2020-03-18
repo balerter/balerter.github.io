@@ -11,17 +11,5 @@
 	<atom:link href="https://balerter.github.io/ru/configuration/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Пример конфигурации</title>
-      <link>https://balerter.github.io/ru/configuration/example/</link>
-      <pubDate>Tue, 04 Feb 2020 16:37:04 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/configuration/example/</guid>
-      <description>Файл конфигурации описывается в yaml формате
-Секции конфигурации высшего уровня:
- scripts - описание источников скриптов datasources - описание источников данных channels - описание каналов отправки уведомлений storages - описание хранилищ для загрузки данных, например, изображений. И для хранения информации об алертах и KV global - глобальные настройки  Пример:
-scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts mask: &#39;*.lua&#39; datasources: clickhouse: - name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.</description>
-    </item>
-    
   </channel>
 </rss>
