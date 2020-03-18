@@ -18,10 +18,12 @@
       
       <guid>https://balerter.github.io/ru/configuration/storages/core/file/</guid>
       <description>Настройки хранилища File
-name: primaryFile path: /path/to/file name  Обязательное поле, Уникальное значение среди хранилищ этого типа
+name: primaryFile path: /path/to/file timeout: 1s name  Обязательное поле, Уникальное значение среди хранилищ этого типа
  Название хранилища
 path  Обязательное поле
- Путь к файлу</description>
+ Путь к файлу
+timeout  По умолчанию: 1s
+ Таймаут для операций</description>
     </item>
     
   </channel>

@@ -18,10 +18,12 @@
       
       <guid>https://balerter.github.io/en/configuration/storages/core/file/</guid>
       <description>Storage &amp;lsquo;File&amp;rsquo;
-name: primaryFile path: /path/to/file name  Require, Unique
+name: primaryFile path: /path/to/file timeout: 1s name  Require, Unique
  Storage name
 path  Require
- Path to file</description>
+ Path to file
+timeout  By default: 1s
+ Timeout</description>
     </item>
     
   </channel>

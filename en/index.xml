@@ -17,7 +17,7 @@
       <pubDate>Tue, 04 Feb 2020 17:10:36 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/clickhouse/</guid>
-      <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.crt name  Required, Unique
+      <description>name: ch1 host: domain.com port: 6440 username: username password: password database: database sslCertPath: /path/to/cert.crt timeout: 3s name  Required, Unique
  Datasource name
 This name uses for connect to datasource from script. For example:
 local ds = require(&#39;datasource.clickhouse.ch1&#39;) host  Required
@@ -38,10 +38,12 @@ database  By default: default</description>
       
       <guid>https://balerter.github.io/en/configuration/storages/core/file/</guid>
       <description>Storage &amp;lsquo;File&amp;rsquo;
-name: primaryFile path: /path/to/file name  Require, Unique
+name: primaryFile path: /path/to/file timeout: 1s name  Require, Unique
  Storage name
 path  Require
- Path to file</description>
+ Path to file
+timeout  By default: 1s
+ Timeout</description>
     </item>
     
     <item>
@@ -130,11 +132,13 @@ docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=
       <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/prometheus/</guid>
-      <description>name: prom1 url: domain.com basicAuth: username: username password: password name  Required, Unique
+      <description>name: prom1 url: domain.com timeout: 3s basicAuth: username: username password: password name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.prometheus.prom1&#39;) url  Required
  Request URI. API path /api/v1/... will be added
-basicAuth Username and password, if Prometheus require Basic Auth</description>
+basicAuth Username and password, if Prometheus require Basic Auth
+timeout  By default: 5s string
+ timeout</description>
     </item>
     
     <item>
@@ -143,12 +147,14 @@ basicAuth Username and password, if Prometheus require Basic Auth</description>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/channels/telegram/</guid>
-      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chatId: 100500 proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Required, Unique
+      <description>telegram: - name: tg1 token: TELEGRAM-BOT-TOKEN chatId: 100500 timeout: 5s proxy: address: 10.20.30.40:5060 auth: username: user password: secret name  Required, Unique
  Channel name
 token  Required
  Telegram bot API token
 chatId  Required
  Chat ID
+timeout  By default: 5s
+ timeout
 proxy  Default: empty, not use
  Socks5 proxy settings
 If auth section is defined, it will use for authentication</description>
@@ -194,7 +200,7 @@ Any not empty not comment string will be interrupted meta-tags parsing
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/postgres/</guid>
-      <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database sslMode: verify-full sslCertPath: /path/to/cert.crt name  Required, Unique
+      <description>name: pg1 host: domain.com port: 5432 username: username password: password database: database sslMode: verify-full sslCertPath: /path/to/cert.crt timeout: 3s name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.postgres.pg1&#39;) host  Required
  Connection host
@@ -248,13 +254,14 @@ table = { { date = &#39;2020-01-01&#39;, id = &#39;a&#39;, name = &#39;aa&#39;},
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/mysql/</guid>
-      <description>name: mysql1 dsn: user:secret@tcp(127.0.0.1:3306)/database name  Required, Unique
+      <description>name: mysql1 dsn: user:secret@tcp(127.0.0.1:3306)/database timeout: 3s name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.postgres.mysql1&#39;) dsn  Required
  DSN (Data Source Name) for connect to DB
 Format: [username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;amp;...&amp;amp;paramN=valueN]
  golang packge for more information about DSN
- </description>
+ timeout  By default: 5s string
+ timeout</description>
     </item>
     
     <item>
@@ -277,10 +284,12 @@ icons.success/error/warning  By default: empty string
       <pubDate>Tue, 04 Feb 2020 17:10:42 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/configuration/datasources/loki/</guid>
-      <description>name: loki1 url: domain.com basicAuth: username: username password: password name  Required, Unique
+      <description>name: loki1 url: domain.com timeout: 5s basicAuth: username: username password: password name  Required, Unique
  Datasource name
 local ds = require(&#39;datasource.loki.loki1&#39;) url  Required
  Request URI. API path /api/v1/... will be added
+timeout  By default: 5s
+ timeout
 basicAuth Username and password, if Loki require Basic Auth</description>
     </item>
     
