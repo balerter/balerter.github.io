@@ -12,18 +12,18 @@
     <title>The Content :: Documentation for Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584608656" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584608656" rel="stylesheet">
-    <link href="/css/hybrid.css?1584608656" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584608656" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584608656" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584608656" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584608656" rel="stylesheet">
-    <link href="/css/theme.css?1584608656" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584608656" rel="stylesheet">
+    <link href="/css/nucleus.css?1584861800" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584861800" rel="stylesheet">
+    <link href="/css/hybrid.css?1584861800" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584861800" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584861800" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584861800" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584861800" rel="stylesheet">
+    <link href="/css/theme.css?1584861800" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584861800" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584608656"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584861800"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584608656"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584608656"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584861800"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584861800"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/en";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584608656"></script>
+<script type="text/javascript" src="/js/search.js?1584861800"></script>
 
     
   </div>
@@ -1446,13 +1446,37 @@
 
  
 <p><img src="logo.png" alt="logo"></p>
-<p>Balerter is a Script Based Alert Manager</p>
+<p>Balerter is a Self Hosted Script Based Alert Manager</p>
 <blockquote>
 <p>English version of the documentation contains some grammatical and lexical typo and errors.
 We will be happy to accept any help in updating English version of the documentation.
 Thank you!</p>
 </blockquote>
 <p>Fork me on the <a href="https://github.com/balerter/balerter">github</a></p>
+<h3 id="reasons-for-creating">Reasons for creating</h3>
+<p>Balerter was born from need to create complex business-metrics, which very hard to create declaratively.</p>
+<p>A typical case:</p>
+<ul>
+<li>get historical data from first source</li>
+<li>get operative data from second source</li>
+<li>make needed calculation</li>
+<li>if our results are disturbing</li>
+<li>get meta-data from third source</li>
+<li>make a error message</li>
+<li>send a notification to messengers, etc</li>
+<li>repeat this steps every hour</li>
+</ul>
+<p>There can be many such cases. Checking free space on hard disks or monitoring customer spends.
+Checking the temperature in the refrigerator by http api or checking CPU load on servers.</p>
+<p>In fact you are not limited in your cases, as you are not limited in writing any programs with you programming language.</p>
+<h4 id="what-does-the-balerter-give">What does the Balerter give?</h4>
+<ul>
+<li>declare all data source in one place. You do not need to write DB connections in each script.</li>
+<li>provide API for access to any datasource, but not shadowing implementation details. You need to write SQL queries manually.</li>
+<li>can send notification to different targets: email, messengers, syslog. The list is regularly updated by your requests</li>
+<li>makes it easy to attach a chart image to a notification</li>
+<li>run your scripts with a defined interval</li>
+</ul>
 <h3 id="the-content">The Content</h3>
 <ul>
 <li><a href="basics">Basics</a>
@@ -2439,19 +2463,19 @@ Thank you!</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584608656"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584608656"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584608656"></script>
-    <script src="/js/jquery.sticky.js?1584608656"></script>
-    <script src="/js/featherlight.min.js?1584608656"></script>
-    <script src="/js/highlight.pack.js?1584608656"></script>
+    <script src="/js/clipboard.min.js?1584861800"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584861800"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584861800"></script>
+    <script src="/js/jquery.sticky.js?1584861800"></script>
+    <script src="/js/featherlight.min.js?1584861800"></script>
+    <script src="/js/highlight.pack.js?1584861800"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584608656"></script>
-    <script src="/js/learn.js?1584608656"></script>
-    <script src="/js/hugo-learn.js?1584608656"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584861800"></script>
+    <script src="/js/learn.js?1584861800"></script>
+    <script src="/js/hugo-learn.js?1584861800"></script>
 
-    <link href="/mermaid/mermaid.css?1584608656" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584608656"></script>
+    <link href="/mermaid/mermaid.css?1584861800" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584861800"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

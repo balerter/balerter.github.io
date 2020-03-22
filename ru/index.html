@@ -12,18 +12,18 @@
     <title>Содержание :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584608656" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584608656" rel="stylesheet">
-    <link href="/css/hybrid.css?1584608656" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584608656" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584608656" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584608656" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584608656" rel="stylesheet">
-    <link href="/css/theme.css?1584608656" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584608656" rel="stylesheet">
+    <link href="/css/nucleus.css?1584861800" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584861800" rel="stylesheet">
+    <link href="/css/hybrid.css?1584861800" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584861800" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584861800" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584861800" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584861800" rel="stylesheet">
+    <link href="/css/theme.css?1584861800" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584861800" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584608656"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584861800"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584608656"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584608656"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584861800"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584861800"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584608656"></script>
+<script type="text/javascript" src="/js/search.js?1584861800"></script>
 
     
   </div>
@@ -1446,12 +1446,37 @@
 
  
 <p><img src="logo.png" alt="logo"></p>
-<p>Balerter это Script Based Alert Manager. Менеджер алертов, основанный на скриптах</p>
+<p>Balerter это Self Hosted Script Based Alert Manager.</p>
 <blockquote>
 <p>Английская версия докементации содержит грамматические и лексические ошибки.
 Мы будем рады принять любую помощь в исправлении документации. Спасибо!</p>
 </blockquote>
 <p>Fork me on the <a href="https://github.com/balerter/balerter">github</a></p>
+<h3 id="для-чего">Для чего?</h3>
+<p>Balerter появился из необходимости отслеживать сложные бизнес-метрики, которые очень трудно или невозможно описать декларативно.</p>
+<p>Типичный случай:</p>
+<ul>
+<li>получаем исторические данные из первого источника</li>
+<li>получаем оперативные данные из второго источника</li>
+<li>производим необходимые вычисления</li>
+<li>если вычисления нам говорят, что что-то пошло не так:</li>
+<li>получаем мета-данные из третьего источника</li>
+<li>формируем сообщение об ошибке</li>
+<li>отправляем в доступные канали уведомлений</li>
+<li>повторяем эту проверку каждый час</li>
+</ul>
+<p>Подобных кейсов может быть много. Они могут быть очень различные. Проверка свободного места на дисках или мониторинг затрат клиентов. Контроль температуры в холодильной камере или отслеживание нагрузки CPU на серверах.</p>
+<p>На самом деле вы никак не ограничены в области применения, как не ограничены в этом при создании программ на любом языке программирования.</p>
+<h4 id="чем-это-отличается-от-написания-собственных-скриптов-на-любом-языке-программирования">Чем это отличается от написания собственных скриптов на любом языке программирования?</h4>
+<p>Balerter помогает вам:</p>
+<ul>
+<li>позволяет описать все источники данных в одном месте, чтобы вам не пришлось в каждом вашем скрипте описывать, например, подключения к базам данных</li>
+<li>предоставляет API для доступа к различным источникам данных, но не скрывает детали реализации. Например, вы по-прежнему должны сами писать SQL-запросы</li>
+<li>умеет отправлять уведомления в различные цели: email, мессенджеры, syslog. Список постоянно растет по вашим запросам</li>
+<li>повозляет легко прикрепить к уведомлению изображение с графиком</li>
+<li>исполняет ваши скрипты с установленной периодичностью</li>
+<li>позволяет вашим отдельным скриптам обмениваться данными</li>
+</ul>
 <h3 id="содержание">Содержание</h3>
 <ul>
 <li><a href="basics">Основы</a>
@@ -2438,19 +2463,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584608656"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584608656"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584608656"></script>
-    <script src="/js/jquery.sticky.js?1584608656"></script>
-    <script src="/js/featherlight.min.js?1584608656"></script>
-    <script src="/js/highlight.pack.js?1584608656"></script>
+    <script src="/js/clipboard.min.js?1584861800"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584861800"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584861800"></script>
+    <script src="/js/jquery.sticky.js?1584861800"></script>
+    <script src="/js/featherlight.min.js?1584861800"></script>
+    <script src="/js/highlight.pack.js?1584861800"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584608656"></script>
-    <script src="/js/learn.js?1584608656"></script>
-    <script src="/js/hugo-learn.js?1584608656"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584861800"></script>
+    <script src="/js/learn.js?1584861800"></script>
+    <script src="/js/hugo-learn.js?1584861800"></script>
 
-    <link href="/mermaid/mermaid.css?1584608656" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584608656"></script>
+    <link href="/mermaid/mermaid.css?1584861800" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584861800"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
