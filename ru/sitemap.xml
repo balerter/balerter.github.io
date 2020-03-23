@@ -153,21 +153,6 @@
   </url>
   
   <url>
-    <loc>https://balerter.github.io/ru/api/api/</loc>
-    <lastmod>2020-02-04T16:32:46+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://balerter.github.io/en/api/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ru"
-                href="https://balerter.github.io/ru/api/api/"
-                />
-  </url>
-  
-  <url>
     <loc>https://balerter.github.io/ru/basics/install/</loc>
     <lastmod>2020-02-04T16:20:36+03:00</lastmod>
     <xhtml:link

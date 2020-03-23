@@ -100,18 +100,6 @@ scripts: updateInterval: 5s sources: folder: - name: scripts path: /opt/scripts 
     </item>
     
     <item>
-      <title>Описание API</title>
-      <link>https://balerter.github.io/ru/api/api/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/api/api/</guid>
-      <description>В конфигурации в секции Global вы можете указать адрес, на котором будет слушать HTTP API сервер. По-умолчанию это 127.0.0.1:2000.
-Запросы к API осуществляются на этот адрес по пути /api/&amp;lt;API_VERSION&amp;gt;/&amp;lt;API_QUERY&amp;gt;
- Версия API v1
-Описания моделей AlertInfo    field type description     name string имя алерта   level int текущий уровень алерта (error/warning/success)   count int количество вызовов данного уровня алерта с момента последнего изменения   updated_at datetime время, когда последний раз было изменения уровня алерта, формат time.</description>
-    </item>
-    
-    <item>
       <title>Установка</title>
       <link>https://balerter.github.io/ru/basics/install/</link>
       <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>

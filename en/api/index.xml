@@ -11,17 +11,5 @@
 	<atom:link href="https://balerter.github.io/en/api/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>API</title>
-      <link>https://balerter.github.io/en/api/api/</link>
-      <pubDate>Tue, 04 Feb 2020 16:32:46 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/api/api/</guid>
-      <description>In the global section you can define listen address. By default 127.0.0.1:2000
-API path /api/&amp;lt;API_VERSION&amp;gt;/&amp;lt;API_QUERY&amp;gt;
- Current API version v1
-Models AlertInfo    field type description     name string alert name   level int current alert level (error/warning/success)   count int count current level checks after last level change   updated_at datetime time of last level change. Format RFC3339 (YYYY-MM-ddTHH:mm:ssZoffset)    An example:</description>
-    </item>
-    
   </channel>
 </rss>

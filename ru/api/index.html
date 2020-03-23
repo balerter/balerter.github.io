@@ -12,18 +12,18 @@
     <title>API :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584861800" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584861800" rel="stylesheet">
-    <link href="/css/hybrid.css?1584861800" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584861800" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584861800" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584861800" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584861800" rel="stylesheet">
-    <link href="/css/theme.css?1584861800" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584861800" rel="stylesheet">
+    <link href="/css/nucleus.css?1584961321" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584961321" rel="stylesheet">
+    <link href="/css/hybrid.css?1584961321" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584961321" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584961321" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584961321" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584961321" rel="stylesheet">
+    <link href="/css/theme.css?1584961321" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584961321" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584861800"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584961321"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584861800"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584861800"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584961321"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584961321"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584861800"></script>
+<script type="text/javascript" src="/js/search.js?1584961321"></script>
 
     
   </div>
@@ -1126,35 +1126,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/ru/api/api/" title="Описание API" class="dd-item ">
-        <a href="/ru/api/api/">
-        Описание API
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -1441,6 +1412,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1460,6 +1433,28 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#описания-моделей">Описания моделей</a>
+      <ul>
+        <li><a href="#alertinfo">AlertInfo</a></li>
+      </ul>
+    </li>
+    <li><a href="#методы-api">Методы API</a>
+      <ul>
+        <li><a href="#get-liveness">GET /liveness</a></li>
+        <li><a href="#get-apiv1alertsnamename1name2levellevel1level2">GET /api/v1/alerts?name=<NAME1>,<NAME2>&level=<LEVEL1>,<LEVEL2></a></li>
+        <li><a href="#get-apiv1kv">GET /api/v1/kv</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1467,9 +1462,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              API
+            </h1>
           
 
         
@@ -1477,10 +1475,95 @@
 
 
 
-	<h3 id="часть-vi">Часть VI</h3>
-<h1 id="api">API</h1>
-<p>Описание HTTP API</p>
-
+	<p>В конфигурации в секции <code>Global</code> вы можете указать адрес, на котором будет слушать HTTP API сервер.
+По-умолчанию это <code>127.0.0.1:2000</code>.</p>
+<p>Запросы к API осуществляются на этот адрес по пути <code>/api/&lt;API_VERSION&gt;/&lt;API_QUERY&gt;</code></p>
+<hr>
+<p>Версия API <code>v1</code></p>
+<h2 id="описания-моделей">Описания моделей</h2>
+<h3 id="alertinfo"><code>AlertInfo</code></h3>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>имя алерта</td>
+</tr>
+<tr>
+<td>level</td>
+<td>int</td>
+<td>текущий уровень алерта (error/warning/success)</td>
+</tr>
+<tr>
+<td>count</td>
+<td>int</td>
+<td>количество вызовов данного уровня алерта с момента последнего изменения</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>время, когда последний раз было изменения уровня алерта, формат time.RFC3339 (YYYY-MM-DDTHH:mm:ssZoffset)</td>
+</tr>
+</tbody>
+</table>
+<p>Пример:</p>
+<pre><code>{
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: &quot;error&quot;,
+    &quot;name&quot;: &quot;alert-name&quot;,
+}
+</code></pre><blockquote>
+<p>Пояснения по полю <code>Count</code>:</p>
+</blockquote>
+<blockquote>
+<p>Допустим, ваш скрипт выполянется 1 раз в минуту. И каждый свой запуск он для алерта &lsquo;alert-name&rsquo; указывает статус Success. В этом случае, если вы вызовете метод API для получения спсика алертов, то для алерта &lsquo;alert-name&rsquo; поле Count будет равно 5. Так как, к этому моменту скрипт 5 раз &ldquo;сказал&rdquo;, что этот алерт имеет статус <code>Success</code></p>
+</blockquote>
+<h2 id="методы-api">Методы API</h2>
+<h3 id="get-liveness"><code>GET /liveness</code></h3>
+<p>Используется для проверки живости сервиса</p>
+<p>Возвращает строку <code>ok</code></p>
+<h3 id="get-apiv1alertsnamename1name2levellevel1level2"><code>GET /api/v1/alerts?name=&lt;NAME1&gt;,&lt;NAME2&gt;&amp;level=&lt;LEVEL1&gt;,&lt;LEVEL2&gt;</code></h3>
+<p>Получение списка Алертов</p>
+<p>Необязательные Query аргументы <code>name</code> и <code>level</code> позволяют отфильтровать выдачу по имени и/или уровню. Вы можете указать несколько имен или уровней через запятую</p>
+<p>Ответ:</p>
+<pre><code>[
+  {
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: 2,
+    &quot;name&quot;: &quot;a1&quot;,
+  },
+  ...
+]
+</code></pre><p>Примеры запросов:</p>
+<pre><code>GET /api/v1/alerts
+GET /api/v1/alerts?name=foo
+GET /api/v1/alerts?name=foo,bar
+GET /api/v1/alerts?level=error
+GET /api/v1/alerts?level=error,success
+GET /api/v1/alerts?level=error,success&amp;name=foo,bar
+GET /api/v1/alerts?name=foo&amp;level=error
+</code></pre><h3 id="get-apiv1kv"><code>GET /api/v1/kv</code></h3>
+<p>Получение пар Key/Value из хранилища</p>
+<p>Ответ:</p>
+<pre><code>[
+    {
+        name = &lt;NAME&gt;,
+        value = &lt;VALUE&gt;
+    },
+    ...
+]
+</code></pre><p>Пример:</p>
+<pre><code>GET /api/v1/kv
+</code></pre>
 
 
 
@@ -1489,8 +1572,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -2200,25 +2281,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -2226,6 +2288,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2364,7 +2429,7 @@
 			<a class="nav nav-prev" href="/ru/scripts/meta-tags/" title="Мета-теги"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/ru/api/api/" title="Описание API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/ru/manuals/" title="Руководства" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2374,19 +2439,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584861800"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584861800"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584861800"></script>
-    <script src="/js/jquery.sticky.js?1584861800"></script>
-    <script src="/js/featherlight.min.js?1584861800"></script>
-    <script src="/js/highlight.pack.js?1584861800"></script>
+    <script src="/js/clipboard.min.js?1584961321"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584961321"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584961321"></script>
+    <script src="/js/jquery.sticky.js?1584961321"></script>
+    <script src="/js/featherlight.min.js?1584961321"></script>
+    <script src="/js/highlight.pack.js?1584961321"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584861800"></script>
-    <script src="/js/learn.js?1584861800"></script>
-    <script src="/js/hugo-learn.js?1584861800"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584961321"></script>
+    <script src="/js/learn.js?1584961321"></script>
+    <script src="/js/hugo-learn.js?1584961321"></script>
 
-    <link href="/mermaid/mermaid.css?1584861800" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584861800"></script>
+    <link href="/mermaid/mermaid.css?1584961321" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584961321"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

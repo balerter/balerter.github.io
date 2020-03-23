@@ -12,18 +12,18 @@
     <title>API :: Documentation for Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584861800" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584861800" rel="stylesheet">
-    <link href="/css/hybrid.css?1584861800" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584861800" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584861800" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584861800" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584861800" rel="stylesheet">
-    <link href="/css/theme.css?1584861800" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584861800" rel="stylesheet">
+    <link href="/css/nucleus.css?1584961321" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584961321" rel="stylesheet">
+    <link href="/css/hybrid.css?1584961321" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584961321" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584961321" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584961321" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584961321" rel="stylesheet">
+    <link href="/css/theme.css?1584961321" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584961321" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584861800"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584961321"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584861800"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584861800"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584961321"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584961321"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/en";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584861800"></script>
+<script type="text/javascript" src="/js/search.js?1584961321"></script>
 
     
   </div>
@@ -1126,35 +1126,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/en/api/api/" title="API" class="dd-item ">
-        <a href="/en/api/api/">
-        API
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -1441,6 +1412,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1460,6 +1433,28 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#models">Models</a>
+      <ul>
+        <li><a href="#alertinfo">AlertInfo</a></li>
+      </ul>
+    </li>
+    <li><a href="#api-methods">API methods</a>
+      <ul>
+        <li><a href="#get-liveness">GET /liveness</a></li>
+        <li><a href="#get-apiv1alertsnamename1name2levellevel1level2">GET /api/v1/alerts?name=<NAME1>,<NAME2>&level=<LEVEL1>,<LEVEL2></a></li>
+        <li><a href="#get-apiv1kv">GET /api/v1/kv</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1467,9 +1462,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              API
+            </h1>
           
 
         
@@ -1477,10 +1475,96 @@
 
 
 
-	<h3 id="chapter-vi">Chapter VI</h3>
-<h1 id="api">API</h1>
-<p>HTTP API</p>
-
+	<p>In the <code>global</code> section you can define listen address. By default <code>127.0.0.1:2000</code></p>
+<p>API path <code>/api/&lt;API_VERSION&gt;/&lt;API_QUERY&gt;</code></p>
+<hr>
+<p>Current API version <code>v1</code></p>
+<h2 id="models">Models</h2>
+<h3 id="alertinfo"><code>AlertInfo</code></h3>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>alert name</td>
+</tr>
+<tr>
+<td>level</td>
+<td>int</td>
+<td>current alert level (error/warning/success)</td>
+</tr>
+<tr>
+<td>count</td>
+<td>int</td>
+<td>count current level checks after last level change</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>time of last level change. Format RFC3339 (YYYY-MM-ddTHH:mm:ssZoffset)</td>
+</tr>
+</tbody>
+</table>
+<p>An example:</p>
+<pre><code>{
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: &quot;error&quot;,
+    &quot;name&quot;: &quot;alert-name&quot;,
+}
+</code></pre><blockquote>
+<p>Comment for the <code>Count</code> field:</p>
+</blockquote>
+<blockquote>
+<p>Your script runs 1 times per minute. After 5 minutes your script 5 times calls &lsquo;alert.off(&hellip;)&rsquo;
+If your script change alert level, counter will be reset
+Field <code>count</code> represents this counter</p>
+</blockquote>
+<h2 id="api-methods">API methods</h2>
+<h3 id="get-liveness"><code>GET /liveness</code></h3>
+<p>Use for check a service liveness</p>
+<p>Returns a string: <code>ok</code></p>
+<h3 id="get-apiv1alertsnamename1name2levellevel1level2"><code>GET /api/v1/alerts?name=&lt;NAME1&gt;,&lt;NAME2&gt;&amp;level=&lt;LEVEL1&gt;,&lt;LEVEL2&gt;</code></h3>
+<p>Get alerts list</p>
+<p>Not mandatory Query arguments <code>name</code> and <code>level</code> allow filtering results by name and/or level. You can defined multiple values with comma delimiter</p>
+<p>Response:</p>
+<pre><code>[
+  {
+    &quot;count&quot;: 2,
+    &quot;last_change&quot;: &quot;2020-02-17T14:03:05.403478+03:00&quot;,
+    &quot;level&quot;: 2,
+    &quot;name&quot;: &quot;a1&quot;,
+  },
+  ...
+]
+</code></pre><p>Query examples:</p>
+<pre><code>GET /api/v1/alerts
+GET /api/v1/alerts?name=foo
+GET /api/v1/alerts?name=foo,bar
+GET /api/v1/alerts?level=error
+GET /api/v1/alerts?level=error,success
+GET /api/v1/alerts?level=error,success&amp;name=foo,bar
+GET /api/v1/alerts?name=foo&amp;level=error
+</code></pre><h3 id="get-apiv1kv"><code>GET /api/v1/kv</code></h3>
+<p>Obtain KV pairs from a storage</p>
+<p>A response:</p>
+<pre><code>[
+    {
+        name = &lt;NAME&gt;,
+        value = &lt;VALUE&gt;
+    },
+    ...
+]
+</code></pre><p>An example:</p>
+<pre><code>GET /api/v1/kv
+</code></pre>
 
 
 
@@ -1489,8 +1573,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -2200,25 +2282,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -2226,6 +2289,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2364,7 +2430,7 @@
 			<a class="nav nav-prev" href="/en/scripts/meta-tags/" title="Meta-tags"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/en/api/api/" title="API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/en/manuals/" title="Manuals" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2374,19 +2440,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584861800"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584861800"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584861800"></script>
-    <script src="/js/jquery.sticky.js?1584861800"></script>
-    <script src="/js/featherlight.min.js?1584861800"></script>
-    <script src="/js/highlight.pack.js?1584861800"></script>
+    <script src="/js/clipboard.min.js?1584961321"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584961321"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584961321"></script>
+    <script src="/js/jquery.sticky.js?1584961321"></script>
+    <script src="/js/featherlight.min.js?1584961321"></script>
+    <script src="/js/highlight.pack.js?1584961321"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584861800"></script>
-    <script src="/js/learn.js?1584861800"></script>
-    <script src="/js/hugo-learn.js?1584861800"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584961321"></script>
+    <script src="/js/learn.js?1584961321"></script>
+    <script src="/js/hugo-learn.js?1584961321"></script>
 
-    <link href="/mermaid/mermaid.css?1584861800" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584861800"></script>
+    <link href="/mermaid/mermaid.css?1584961321" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584961321"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
