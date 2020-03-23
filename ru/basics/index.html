@@ -12,18 +12,18 @@
     <title>Основы :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584961321" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584961321" rel="stylesheet">
-    <link href="/css/hybrid.css?1584961321" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584961321" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584961321" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584961321" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584961321" rel="stylesheet">
-    <link href="/css/theme.css?1584961321" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584961321" rel="stylesheet">
+    <link href="/css/nucleus.css?1584980777" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584980777" rel="stylesheet">
+    <link href="/css/hybrid.css?1584980777" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584980777" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584980777" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584980777" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584980777" rel="stylesheet">
+    <link href="/css/theme.css?1584980777" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584980777" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584961321"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584980777"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584961321"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584961321"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584980777"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584980777"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584961321"></script>
+<script type="text/javascript" src="/js/search.js?1584980777"></script>
 
     
   </div>
@@ -1460,20 +1460,39 @@
 
 
 
-	<p><strong>Balerter</strong> - это <strong>Alert Manager</strong>.</p>
-<p>Основное предназначение Balerter - дать возможность как можно проще описать сложные правила алертинга.</p>
-<p>Для простого Алерта, который срабатывает при превышении количества http запросов - достаточно будет даже встроенного функционала Grafana (оставим за скобками целесообразность этого подхода)</p>
-<p>Однако, для более сложных случаев это не подойдет. Например, вы если вы хотите выбрать исторические данные из БД, затем сравнить их с текущими данными, сходить в сторонний сервис по API и затем уже принять решение об алертинге.</p>
-<p>Именно для подобных кейсов и создан Balerter.</p>
-<p>Вся логика описывается в lua-скриптах.</p>
-<p>Внутри скрипта вы можете:</p>
-<ul>
-<li>получить данные из различных источников, например Prometheus, Postgres и других</li>
-<li>произвести любые требуемые вам вычисления и принять решение об алерте</li>
-<li>задать требуемый уровень алерту Success, Warning или Error</li>
-<li>настроить поведение, при котором уведомления будут отправляться в различные каналы, в зависимости от уровня алерта. Например, Warning уходит дежурному инжереру, а Error еще и руководителю</li>
-<li>создать и прикрепить график к уведомлению, чтобы можно быть сразу наглядно оценить ситуацию</li>
-</ul>
+	<p>Главным понятием в balerter является - Alert.</p>
+<p>Alert можно вопринимать как некоторый объект, который имеет свойство: уровень. Уровень может принимать одно из трех значений: Error, Warning или Success.
+Значение уровня можно менять, но нельзя представить объект с неопределенным уровнем. В момент создания объекта по умолчанию устанавливается уровень Success.
+Момент изменения уровня у Алерта является триггером для отправки уведомления.</p>
+<p>Покажем на примере.
+Есть следующий скрипт, который выполняется 1 раз в минуту:</p>
+<pre><code>alert = require('alert')
+
+alert.error('alert-id-1', 'Something went wrong')
+</code></pre><p>При запуске balerter все Алерты имеют статус по умолчанию Success. При первом запуске данного скрипта, команда <code>alert.error('alert-id-1', ...)</code> устанавливает для Алерта с ID <code>alert-id-1</code> уровень <code>Error</code>.
+Поскольку уровень изменился с Success на Error, вы получите уведомление об этом.</p>
+<p>Через минуту скрипт выполнится опять и снова установит для вышеуказанного Алерта уровень <code>Error</code>. Но поскольку у него текущий уровень уже <code>Error</code>, то ничего не произойдет.</p>
+<p>Сколько бы раз после этого не выполнялся скрипт со строкой  <code>alert.error</code>, уведомления не будет (на самом деле это поведение можно изменить, смотрите в документации по модулю <a href="../core/alert">alert</a>)</p>
+<p>Но, как только в вашем скрипте встретится <code>alert.success('alert-id-1', ...)</code> (или <code>alert.warning</code>), то есть, как только изменится уровень данного Алерта, то вы получите уведомление об этом.</p>
+<p>Исходя из вышеизложенного, следующий скрипт будет работать так:</p>
+<pre><code>-- @interval 1m
+
+alert = require('alert')
+
+-- При первом запуске Алерт имеет уровень Success, значит вызов alert.error поменяет уровень и вы получите уведомление
+alert.error('alert-id-1', 'message text')
+
+-- после выполнения предыдущей строки Алерт уже имеет уровень Error.
+-- уведомленеия не будет. мы лишь подтвердили, что Алерт сейчас с уровнем Error
+alert.error('alert-id-1', 'message text')
+
+-- это командой мы меняем уровень на Success, значит вы получите уведомление
+alert.success('alert-id-1', 'message text')
+
+-- к моменту выхода из скрипта, Алерт имеет уровень Success
+-- значит при следующем запуске и выполнении `alert.error` уровень снова поменяется, уведомление будет отправлено и все начнется с начала
+</code></pre><p>Важно понимать, что вызов в скрипте <code>alert.error</code> не приводит к безусловной отправке уведомления, а служит для того, чтобы определить текущий уровень Алерта.
+Отправка уведомления зависит от того, было изменение уровня в текущем моменте или нет.</p>
 
 
 
@@ -2347,19 +2366,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584961321"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584961321"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584961321"></script>
-    <script src="/js/jquery.sticky.js?1584961321"></script>
-    <script src="/js/featherlight.min.js?1584961321"></script>
-    <script src="/js/highlight.pack.js?1584961321"></script>
+    <script src="/js/clipboard.min.js?1584980777"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584980777"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584980777"></script>
+    <script src="/js/jquery.sticky.js?1584980777"></script>
+    <script src="/js/featherlight.min.js?1584980777"></script>
+    <script src="/js/highlight.pack.js?1584980777"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584961321"></script>
-    <script src="/js/learn.js?1584961321"></script>
-    <script src="/js/hugo-learn.js?1584961321"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584980777"></script>
+    <script src="/js/learn.js?1584980777"></script>
+    <script src="/js/hugo-learn.js?1584980777"></script>
 
-    <link href="/mermaid/mermaid.css?1584961321" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584961321"></script>
+    <link href="/mermaid/mermaid.css?1584980777" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584980777"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

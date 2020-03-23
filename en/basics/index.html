@@ -12,18 +12,18 @@
     <title>Basics :: Documentation for Balerter</title>
 
     
-    <link href="/css/nucleus.css?1584961321" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1584961321" rel="stylesheet">
-    <link href="/css/hybrid.css?1584961321" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1584961321" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1584961321" rel="stylesheet">
-    <link href="/css/auto-complete.css?1584961321" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1584961321" rel="stylesheet">
-    <link href="/css/theme.css?1584961321" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1584961321" rel="stylesheet">
+    <link href="/css/nucleus.css?1584980777" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1584980777" rel="stylesheet">
+    <link href="/css/hybrid.css?1584980777" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1584980777" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1584980777" rel="stylesheet">
+    <link href="/css/auto-complete.css?1584980777" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1584980777" rel="stylesheet">
+    <link href="/css/theme.css?1584980777" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1584980777" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1584961321"></script>
+    <script src="/js/jquery-3.3.1.min.js?1584980777"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1584961321"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1584961321"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1584980777"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1584980777"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/en";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1584961321"></script>
+<script type="text/javascript" src="/js/search.js?1584980777"></script>
 
     
   </div>
@@ -1460,22 +1460,40 @@
 
 
 
-	<p><strong>Balerter</strong> - it is an <strong>Alert Manager</strong>.</p>
-<p>Main Balerter purpose is opportunity for &lsquo;write easily hard alert rules&rsquo;</p>
-<p>For a simple alert, which firing on a http request limit, enough, for example, internal Grafana alerts.</p>
-<p>However, for more difficult tasks it is not enough.
-For example:
-You wants select a historical data from a Database, then compare it with a current data. Then you calls an external API (over HTTP) and makes a decision about an Alert status.</p>
-<p>Exactly for same cases we did make the Balerter.</p>
-<p>All business logic are describes in lua-scripts.</p>
-<p>Inside a script you may:</p>
-<ul>
-<li>select data from different sources, for example: Prometheus or Postgres (etc)</li>
-<li>make any calculations and make a decision about an alert</li>
-<li>set level for an alert: Success, Warning or Error</li>
-<li>configure the behavior for notifications. For example: Warning Alerts send to duty engineer. Error Alerts send also to CTO</li>
-<li>make and attach a chart to a notification</li>
-</ul>
+	<p>The main concept in Balerter is <strong>Alert</strong>.</p>
+<p>Alert can be thought of as some object, which has the property: level. The level can have one of three values: <code>Error</code>, <code>Warning</code> to <code>Success</code>.
+The level can be changed, but there can not be Alert with an undefined level. After creating an Alert, it has the <code>Success</code> level.
+The moment of level change is a trigger for sending a notification.</p>
+<p>An example.
+We have a script, that runs 1 times per minute.</p>
+<pre><code>alert = require('alert')
+
+alert.error('alert-id-1', 'Something went wrong')
+</code></pre><p>After start of Balerter all Alerts have the <code>Success</code> status. On first run this script, command <code>alert.error('alert-id-1', ...)</code> set <code>Error</code> level for the Alert with id <code>alert-id-1</code>.
+Since we have changed the level, you will receive a notification.</p>
+<p>After minute a script will be run again and again will set the <code>Error</code> level for the Alert. But because the Alert already has the <code>Error</code> level, a notification will not be sent.</p>
+<p>It will be repeated until the Alert level changed.</p>
+<p>After run <code>alert.success('alert-id-1', ...)</code> (or <code>alert.warning</code>) in your script, the Alert level will be changed and you will receive a notification.</p>
+<p>An example:</p>
+<pre><code>-- @interval 1m
+
+alert = require('alert')
+
+-- After first run this script an Alert has the 'Success' level.
+-- And after by calling1 `alert.error` you change the level to `Error` and receive a notification 
+alert.error('alert-id-1', 'message text')
+
+-- after previous `alert.error` the level already has level `Error` and notification will not be sent
+-- we just confirmed the `Error` level
+alert.error('alert-id-1', 'message text')
+
+-- we change the level to `Success` and get a notification
+alert.success('alert-id-1', 'message text')
+
+-- before exit from the script our Alert has the `Success` level
+-- since the next run we call `alert.error`, set the `Error` level, get a notification and the history will be repeated 
+</code></pre><p>Important! Calling <code>alert.error</code> does not send a notification. It changes the level value.
+A notification send when the level changes.</p>
 
 
 
@@ -2349,19 +2367,19 @@ You wants select a historical data from a Database, then compare it with a curre
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1584961321"></script>
-    <script src="/js/perfect-scrollbar.min.js?1584961321"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1584961321"></script>
-    <script src="/js/jquery.sticky.js?1584961321"></script>
-    <script src="/js/featherlight.min.js?1584961321"></script>
-    <script src="/js/highlight.pack.js?1584961321"></script>
+    <script src="/js/clipboard.min.js?1584980777"></script>
+    <script src="/js/perfect-scrollbar.min.js?1584980777"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1584980777"></script>
+    <script src="/js/jquery.sticky.js?1584980777"></script>
+    <script src="/js/featherlight.min.js?1584980777"></script>
+    <script src="/js/highlight.pack.js?1584980777"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1584961321"></script>
-    <script src="/js/learn.js?1584961321"></script>
-    <script src="/js/hugo-learn.js?1584961321"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1584980777"></script>
+    <script src="/js/learn.js?1584980777"></script>
+    <script src="/js/hugo-learn.js?1584980777"></script>
 
-    <link href="/mermaid/mermaid.css?1584961321" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1584961321"></script>
+    <link href="/mermaid/mermaid.css?1584980777" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1584980777"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
