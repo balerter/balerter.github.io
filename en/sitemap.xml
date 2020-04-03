@@ -693,6 +693,36 @@
   </url>
   
   <url>
+    <loc>https://balerter.github.io/en/core/test/</loc>
+    <lastmod>2020-02-04T19:23:28+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/core/test/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/core/test/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://balerter.github.io/en/testing/</loc>
+    <lastmod>2020-02-04T16:08:54+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="https://balerter.github.io/ru/testing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://balerter.github.io/en/testing/"
+                />
+  </url>
+  
+  <url>
     <loc>https://balerter.github.io/en/manuals/</loc>
     <lastmod>2020-02-04T16:08:54+03:00</lastmod>
     <xhtml:link

@@ -1,0 +1,2583 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.64.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Testing :: Documentation for Balerter</title>
+
+    
+    <link href="/css/nucleus.css?1585916915" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1585916915" rel="stylesheet">
+    <link href="/css/hybrid.css?1585916915" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1585916915" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1585916915" rel="stylesheet">
+    <link href="/css/auto-complete.css?1585916915" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1585916915" rel="stylesheet">
+    <link href="/css/theme.css?1585916915" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1585916915" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1585916915"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJGB6P6');</script>
+
+<meta name="yandex-verification" content="21b462ebe3ea6f7a" />
+  </head>
+  <body class="" data-url="/en/testing/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://balerter.github.io">
+  <strong style="font-size: 2em;color:#ffffff;font-family:Tahoma">BALERTER</strong>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1585916915"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1585916915"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/balerter.github.io\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1585916915"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/basics/" title="Basics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/basics/">
+          <b>I. </b>Basics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/basics/install/" title="Installation" class="dd-item ">
+        <a href="/en/basics/install/">
+        Installation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/">
+          <b>II. </b>Configuration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/scripts/" title="Scripts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/scripts/">
+          Scripts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/scripts/folder/" title="Folder" class="dd-item ">
+        <a href="/en/configuration/scripts/folder/">
+        Folder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/datasources/" title="Datasource" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/datasources/">
+          Datasource
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/clickhouse/" title="Clickhouse" class="dd-item ">
+        <a href="/en/configuration/datasources/clickhouse/">
+        Clickhouse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/prometheus/" title="Prometheus" class="dd-item ">
+        <a href="/en/configuration/datasources/prometheus/">
+        Prometheus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/postgres/" title="Postgres" class="dd-item ">
+        <a href="/en/configuration/datasources/postgres/">
+        Postgres
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/mysql/" title="MySQL" class="dd-item ">
+        <a href="/en/configuration/datasources/mysql/">
+        MySQL
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/datasources/loki/" title="Loki" class="dd-item ">
+        <a href="/en/configuration/datasources/loki/">
+        Loki
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/channels/" title="Chapter Channels" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/channels/">
+          Chapter Channels
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/channels/slack/" title="Slack" class="dd-item ">
+        <a href="/en/configuration/channels/slack/">
+        Slack
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/channels/telegram/" title="Telegram" class="dd-item ">
+        <a href="/en/configuration/channels/telegram/">
+        Telegram
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/channels/syslog/" title="Syslog" class="dd-item ">
+        <a href="/en/configuration/channels/syslog/">
+        Syslog
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/channels/notify/" title="Notify" class="dd-item ">
+        <a href="/en/configuration/channels/notify/">
+        Notify
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/storages/" title="Раздел storages" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/storages/">
+          Раздел storages
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/storages/core/" title="Core" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/storages/core/">
+          Core
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/storages/core/file/" title="File" class="dd-item ">
+        <a href="/en/configuration/storages/core/file/">
+        File
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/storages/upload/" title="Upload" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/storages/upload/">
+          Upload
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/storages/upload/s3/" title="s3" class="dd-item ">
+        <a href="/en/configuration/storages/upload/s3/">
+        s3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/configuration/global/" title="Global" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/configuration/global/">
+          Global
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/" title="Core modules" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/">
+          <b>III. </b>Core modules
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/log/" title="Log" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/log/">
+          Log
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/kv/" title="KV" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/kv/">
+          KV
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/chart/" title="Chart" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/chart/">
+          Chart
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/http/" title="HTTP" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/http/">
+          HTTP
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/storage/">
+          Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/storage/s3/" title="s3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/storage/s3/">
+          s3
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/alert/" title="Alert" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/alert/">
+          Alert
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/datasource/" title="Datasource" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/datasource/">
+          Datasource
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/datasource/clickhouse/" title="Clickhouse" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/datasource/clickhouse/">
+          Clickhouse
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/datasource/postgres/" title="Postgres" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/datasource/postgres/">
+          Postgres
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/datasource/prometheus/" title="Prometheus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/datasource/prometheus/">
+          Prometheus
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/datasource/mysql/" title="MySQL" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/datasource/mysql/">
+          MySQL
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/datasource/loki/" title="Loki" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/datasource/loki/">
+          Loki
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/test/" title="Test" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/test/">
+          Test
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/luamodules/" title="Lua Modules" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/luamodules/">
+          <b>IV. </b>Lua Modules
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/luamodules/new/" title="Create a lua module" class="dd-item ">
+        <a href="/en/luamodules/new/">
+        Create a lua module
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/luamodules/presets/" title="Preset modules" class="dd-item ">
+        <a href="/en/luamodules/presets/">
+        Preset modules
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/scripts/" title="Scripts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/scripts/">
+          <b>V. </b>Scripts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/scripts/meta-tags/" title="Meta-tags" class="dd-item ">
+        <a href="/en/scripts/meta-tags/">
+        Meta-tags
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/api/" title="API" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/api/">
+          <b>VI. </b>API
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/testing/" title="Testing" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/en/testing/">
+          <b>VII. </b>Testing
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/manuals/" title="Manuals" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/manuals/">
+          <b>VIII. </b>Manuals
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/manuals/slack/" title="Slack" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/manuals/slack/">
+          Slack
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/manuals/telegram/" title="Telegram" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/manuals/telegram/">
+          Telegram
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/examples/" title="Examples" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/examples/">
+          <b>IX. </b>Examples
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/examples/00/" title="Simple example" class="dd-item ">
+        <a href="/en/examples/00/">
+        Simple example
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/examples/01/" title="CPU Load" class="dd-item ">
+        <a href="/en/examples/01/">
+        CPU Load
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/examples/02/" title="A goroutines count (with a chart)" class="dd-item ">
+        <a href="/en/examples/02/">
+        A goroutines count (with a chart)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/changelog/" title="Changelog" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/changelog/">
+          <b>X. </b>Changelog
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="https://balerter.github.io/en/testing/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="ru" value="https://balerter.github.io/ru/testing/">Русский</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <h4><a href="https://github.com/balerter/balerter" target="_blank"><i class="fab fa-github"></i> Github</a></h4>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>The Content</a> > Testing
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#writing-tests">Writing tests</a></li>
+        <li><a href="#test-module">test module</a></li>
+        <li><a href="#run-tests">Run tests</a></li>
+        <li><a href="#plans">Plans</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Testing
+            </h1>
+          
+
+        
+
+
+
+
+	<p>Balerter allows you write tests for your scripts!</p>
+<p>For that you can use core module <code>test</code>. Run tests you can with <code>balerter/test</code> tool and same configuration file as main.</p>
+<p>Scrips will be obtain from scripts source, described in the configuration file. But all requests to datasources, or any core modules (as &lsquo;alert&rsquo;, &lsquo;kv&rsquo; etc) will be mocked</p>
+<h3 id="writing-tests">Writing tests</h3>
+<p>The main concept: One test script for one main script</p>
+<p>An example:</p>
+<p>Main script:</p>
+<pre><code>-- @name demoscript
+
+log = require('log')
+
+log.error('foo')
+log.info('bar')
+</code></pre><p>Now, write and discuss a test script:</p>
+<pre><code>-- @name demoscript-test
+-- @test demoscript
+
+test = requeire('test')
+
+test.log().on('error', 'foo').response()
+test.log().on('info', 'bar').response()
+
+test.log().assertCalled('error', 'foo')
+test.log().assertCalled('info', 'bar')
+test.log().assertNotCalled('warn', 'baz')
+</code></pre><p>With <code>@test</code> we did two things:</p>
+<ol>
+<li>Defined that this file is a test.</li>
+<li>Defined, that this test work with script with name &lsquo;demoscript&rsquo;</li>
+</ol>
+<h3 id="test-module"><code>test</code> module</h3>
+<blockquote>
+<p>A module <code>test</code> can be included only in scripts, which marked as tests with a tag <code>@test</code></p>
+</blockquote>
+<p>You can:</p>
+<ul>
+<li>define data, which should be returned for calls to datasources or core modules in main script. If in the main script you wrote <code>log.error('foo')</code>, but in the test script you not define return value, you will get test error.</li>
+<li>define Asserts for calls, which you want or not</li>
+</ul>
+<p>Module methods:</p>
+<ul>
+<li><code>test.&lt;MODULE&gt;.on(&lt;METHOD&gt;, [&lt;ARG&gt;, &lt;ARG&gt;, ...]).response([&lt;ARG&gt;, &lt;ARG&gt;, ...])</code></li>
+<li><code>test.&lt;MODULE&gt;.assertCalled(&lt;METHOD&gt;, [&lt;ARG&gt;, &lt;ARG&gt;, ...])</code></li>
+<li><code>test.&lt;MODULE&gt;.assertNotCalled(&lt;METHOD&gt;, [&lt;ARG&gt;, &lt;ARG&gt;, ...])</code></li>
+</ul>
+<p><code>&lt;MODULE&gt;</code> - it is may be <code>datasource(&lt;DATASOURCE_NAME&gt;)</code> for datasources. For example <code>test.datasource('postgres.prod')</code>.</p>
+<p>Or call core modules:</p>
+<ul>
+<li>log()</li>
+<li>http()</li>
+<li>chart()</li>
+<li>alert()</li>
+<li>kv()</li>
+</ul>
+<p>For example:</p>
+<pre><code>-- define a response ('nil' at now) for call `log.error('error message')` in a main script
+test.log().on('error', 'error message').response()
+
+-- check, that we want to see call `alert.error('alert-id', 'alert message')`
+test.alert().assertCalled('error', 'alert-id', 'alert message')
+
+-- define response for a call ch1.query('SELECT * FROM users'), ch1 = require('datasource.clickhouse.ch1')
+test.datasource('clickhouse.ch1').on('query', 'SELECT * FROM users').response({ { id = 1, name = 'John' } })
+</code></pre><blockquote>
+<p>Important! Even you call returns nothing (<code>log.info(...)</code>), you should register this call with <code>test.log().on('info', 'message').resoponse()</code></p>
+</blockquote>
+<h3 id="run-tests">Run tests</h3>
+<p>You can use tool <code>test</code></p>
+<p>Docker image example:</p>
+<pre><code>docker run --rm \
+    -v /path/to/config.yml:/opt/config.yml \
+    -v /path/to/scripts:/opt/scripts \
+    balerter/test -config=/opt/config.yml
+</code></pre><p>If run fails, exit code will be equal 1. If run was success, but tests fails, exit code will be equals 2.</p>
+<p>An output example:</p>
+<pre><code>[FAIL]  [demo-test]     [alert] method 'success' with args [alert-id,All OK] was called, but should not
+[PASS]  [demo-test]     [alert] method 'error' with args [alert-id Error get key] was not called
+[PASS]  [demo-test]     [kv]    method 'get' with args [foo] was called
+[FAIL]  [demo-test]     [result]        FAIL
+</code></pre><p>First column - line result. Second column - a test script name. Third - a module name. Last - a message.
+If you see <code>result</code> in Module name, that mean total result for the script</p>
+<p>Scripts from the example above:</p>
+<pre><code>-- main script
+-- @name demo
+
+alert = require('alert')
+kv = require('kv')
+
+v, err = kv.get('foo')
+
+if err ~= nil then
+    alert.error('alert-id', 'Error get key')
+else
+    alert.success('alert-id', 'All OK')
+end
+</code></pre><pre><code>-- test script
+-- @test demo
+-- @name demo-test
+
+test = require('test')
+
+test.kv().on('get', 'foo').response(42, nil)
+test.kv().assertCalled('get', 'foo')
+
+test.alert().on('success', 'alert-id', 'All OK').response()
+test.alert().assertNotCalled('success', 'alert-id', 'All OK')
+test.alert().assertNotCalled('error', 'alert-id', 'Error get key')
+</code></pre><h3 id="plans">Plans</h3>
+<h4 id="ability-to-define-testanyvalue-for-asserts-or-onresponse">Ability to define <code>test.AnyValue</code> for Asserts or on&hellip;response</h4>
+<p>For example, registration response for the call <code>log.error(&lt;ЛЮБОЕ ЗНАЧЕНИЕ&gt;)</code></p>
+<pre><code>test.log().on('error', test.AnyValue).response()
+</code></pre><h4 id="ability-to-grouping-tests-for-several-isolated-runs">Ability to grouping tests for several isolated runs</h4>
+<p>Test script example:</p>
+<pre><code>test = require('test')
+
+test.group('group name 1', function(t)
+    t.log().on('error', 'message').response()
+    t.alert().assertCalled('error', 'alert-id', 'message') 
+end)
+
+test.group('group name 2', function(t)
+    t.group('group name 2-1', function(t2)
+        t2.log().on('error', 'message').response()
+        t2.alert().assertCalled('error', 'alert-id', 'message') 
+    end)
+
+    t.group('group name 2-2', function(t2)
+        t2.log().on('error', 'message').response()
+        t2.alert().assertCalled('error', 'alert-id', 'message') 
+    end)
+end)
+</code></pre><blockquote>
+<p>Vote for issues on the <a href="https://github.com/balerter/balerter">github</a> or create new issues!</p>
+</blockquote>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/api/" title="API"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/manuals/" title="Manuals" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1585916915"></script>
+    <script src="/js/perfect-scrollbar.min.js?1585916915"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1585916915"></script>
+    <script src="/js/jquery.sticky.js?1585916915"></script>
+    <script src="/js/featherlight.min.js?1585916915"></script>
+    <script src="/js/highlight.pack.js?1585916915"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1585916915"></script>
+    <script src="/js/learn.js?1585916915"></script>
+    <script src="/js/hugo-learn.js?1585916915"></script>
+
+    <link href="/mermaid/mermaid.css?1585916915" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1585916915"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJGB6P6"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  </body>
+</html>
