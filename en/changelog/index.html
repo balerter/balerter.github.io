@@ -12,18 +12,18 @@
     <title>Changelog :: Documentation for Balerter</title>
 
     
-    <link href="/css/nucleus.css?1585916915" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1585916915" rel="stylesheet">
-    <link href="/css/hybrid.css?1585916915" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1585916915" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1585916915" rel="stylesheet">
-    <link href="/css/auto-complete.css?1585916915" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1585916915" rel="stylesheet">
-    <link href="/css/theme.css?1585916915" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1585916915" rel="stylesheet">
+    <link href="/css/nucleus.css?1587587300" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1587587300" rel="stylesheet">
+    <link href="/css/hybrid.css?1587587300" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1587587300" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1587587300" rel="stylesheet">
+    <link href="/css/auto-complete.css?1587587300" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1587587300" rel="stylesheet">
+    <link href="/css/theme.css?1587587300" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1587587300" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1585916915"></script>
+    <script src="/js/jquery-3.3.1.min.js?1587587300"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1585916915"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1585916915"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1587587300"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1587587300"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/en";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1585916915"></script>
+<script type="text/javascript" src="/js/search.js?1587587300"></script>
 
     
   </div>
@@ -110,6 +110,25 @@
       <li data-nav-id="/en/basics/install/" title="Installation" class="dd-item ">
         <a href="/en/basics/install/">
         Installation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/basics/run/" title="CLI flags" class="dd-item ">
+        <a href="/en/basics/run/">
+        CLI flags
         
         </a>
     </li>
@@ -188,6 +207,25 @@
       <li data-nav-id="/en/configuration/scripts/folder/" title="Folder" class="dd-item ">
         <a href="/en/configuration/scripts/folder/">
         Folder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/configuration/scripts/file/" title="File" class="dd-item ">
+        <a href="/en/configuration/scripts/file/">
+        File
         
         </a>
     </li>
@@ -1005,6 +1043,30 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/en/core/runtime/" title="Runtime" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/core/runtime/">
+          Runtime
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -1514,7 +1576,15 @@
 
 
 
-	<h4 id="2020-04-03-v040">2020-04-03 <code>v0.4.0</code></h4>
+	<h4 id="2020-04-23-v050">2020-04-23 <code>v0.5.0</code></h4>
+<ul>
+<li>added core module <a href="../core/runtime">runtime</a></li>
+<li>[FIX] fixed error with saving alerts data to the file storage</li>
+<li>added the CLI flag <code>-script</code> which allows quickly run the script <a href="../basics/run">See more</a></li>
+<li>added new ScriptSource provider - File <a href="../configuration/scripts/file">See more</a></li>
+<li>[FIX] disable sampling for the logger in the debug mode</li>
+</ul>
+<h4 id="2020-04-03-v040">2020-04-03 <code>v0.4.0</code></h4>
 <ul>
 <li>ability to write tests <a href="../testing">Testing</a></li>
 <li>[BREAKING] removed alias-methods <code>alert.on</code> and <code>alert.off</code></li>
@@ -1656,37 +1726,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1716,6 +1755,8 @@
 
                     
                     
+                        
+                    
                     
 
                     
@@ -1731,41 +1772,6 @@
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1879,6 +1885,102 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2206,6 +2308,22 @@
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -2494,19 +2612,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1585916915"></script>
-    <script src="/js/perfect-scrollbar.min.js?1585916915"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1585916915"></script>
-    <script src="/js/jquery.sticky.js?1585916915"></script>
-    <script src="/js/featherlight.min.js?1585916915"></script>
-    <script src="/js/highlight.pack.js?1585916915"></script>
+    <script src="/js/clipboard.min.js?1587587300"></script>
+    <script src="/js/perfect-scrollbar.min.js?1587587300"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1587587300"></script>
+    <script src="/js/jquery.sticky.js?1587587300"></script>
+    <script src="/js/featherlight.min.js?1587587300"></script>
+    <script src="/js/highlight.pack.js?1587587300"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1585916915"></script>
-    <script src="/js/learn.js?1585916915"></script>
-    <script src="/js/hugo-learn.js?1585916915"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1587587300"></script>
+    <script src="/js/learn.js?1587587300"></script>
+    <script src="/js/hugo-learn.js?1587587300"></script>
 
-    <link href="/mermaid/mermaid.css?1585916915" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1585916915"></script>
+    <link href="/mermaid/mermaid.css?1587587300" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1587587300"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

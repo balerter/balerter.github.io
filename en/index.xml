@@ -68,6 +68,20 @@ bucket  Required
     </item>
     
     <item>
+      <title>Folder</title>
+      <link>https://balerter.github.io/en/configuration/scripts/folder/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/scripts/folder/</guid>
+      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; name  Required, Unique
+ Script source name
+path  Required
+ Path to folder
+mask  By default: *.lua
+ File mask</description>
+    </item>
+    
+    <item>
       <title>Slack</title>
       <link>https://balerter.github.io/en/configuration/channels/slack/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
@@ -127,6 +141,18 @@ local ds = require(&#39;datasource.prometheus.prom1&#39;) url  Required
 basicAuth Username and password, if Prometheus require Basic Auth
 timeout  By default: 5s string
  timeout</description>
+    </item>
+    
+    <item>
+      <title>File</title>
+      <link>https://balerter.github.io/en/configuration/scripts/file/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/scripts/file/</guid>
+      <description>name: scripts filename: /opt/scripts/demo.lua name  Required, Unique
+ Script source name
+filename  Required
+ Path to the script</description>
     </item>
     
     <item>
@@ -237,6 +263,15 @@ table = { { date = &#39;2020-01-01&#39;, id = &#39;a&#39;, name = &#39;aa&#39;},
     </item>
     
     <item>
+      <title>CLI flags</title>
+      <link>https://balerter.github.io/en/basics/run/</link>
+      <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/basics/run/</guid>
+      <description>TODO:</description>
+    </item>
+    
+    <item>
       <title>MySQL</title>
       <link>https://balerter.github.io/en/configuration/datasources/mysql/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
@@ -279,20 +314,6 @@ local ds = require(&#39;datasource.loki.loki1&#39;) url  Required
 timeout  By default: 5s
  timeout
 basicAuth Username and password, if Loki require Basic Auth</description>
-    </item>
-    
-    <item>
-      <title>Folder</title>
-      <link>https://balerter.github.io/en/configuration/scripts/folder/</link>
-      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/en/configuration/scripts/folder/</guid>
-      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; name  Required, Unique
- Script source name
-path  Required
- Path to folder
-mask  By default: *.lua
- File mask</description>
     </item>
     
   </channel>

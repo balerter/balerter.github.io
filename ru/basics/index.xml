@@ -24,5 +24,14 @@ docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=
  git clone https://github.com/balerter/balerter.git cd balerter go run ./cmd/balerter -config /path/to/config.yml </description>
     </item>
     
+    <item>
+      <title>Флаги командной строки</title>
+      <link>https://balerter.github.io/ru/basics/run/</link>
+      <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/basics/run/</guid>
+      <description>TODO:</description>
+    </item>
+    
   </channel>
 </rss>

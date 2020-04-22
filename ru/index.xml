@@ -64,6 +64,21 @@ bucket  Обязательное поле
     </item>
     
     <item>
+      <title>Тип Folder</title>
+      <link>https://balerter.github.io/ru/configuration/scripts/folder/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/configuration/scripts/folder/</guid>
+      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; name  Обязательное поле, Уникальное значение
+ Название источника скрипта, в том числе используется при логгировании
+В названии могут использоваться латинские символы, цифры и знак подчеркивания
+path  Обязательное поле
+ Путь к папке со скриптами.
+mask  По умолчанию: *.lua
+ Макса для выбора файлов</description>
+    </item>
+    
+    <item>
       <title>Тип Slack</title>
       <link>https://balerter.github.io/ru/configuration/channels/slack/</link>
       <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
@@ -125,6 +140,19 @@ docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=
 local ds = require(&#39;datasource.prometheus.prom1&#39;) url  Обязательное поле
  URL для запросов. Требуемые пути API, например /api/v1/query будут добавлены автоматически
 basicAuth Имя и пароль пользователя, если источник данных защищен Basic аутентификацией</description>
+    </item>
+    
+    <item>
+      <title>File</title>
+      <link>https://balerter.github.io/ru/configuration/scripts/file/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/configuration/scripts/file/</guid>
+      <description>name: scripts filename: /opt/scripts/demo.lua name  Обязательное поле, Уникальное значение
+ Название источника скрипта
+В названии могут использоваться латинские символы, цифры и знак подчеркивания
+path  Обязательное поле
+ Путь к скрипту.</description>
     </item>
     
     <item>
@@ -226,6 +254,15 @@ table = { { date = &#39;2020-01-01&#39;, id = &#39;a&#39;, name = &#39;aa&#39;},
     </item>
     
     <item>
+      <title>Флаги командной строки</title>
+      <link>https://balerter.github.io/ru/basics/run/</link>
+      <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/basics/run/</guid>
+      <description>TODO:</description>
+    </item>
+    
+    <item>
       <title>Тип MySQL</title>
       <link>https://balerter.github.io/ru/configuration/datasources/mysql/</link>
       <pubDate>Tue, 04 Feb 2020 17:10:48 +0300</pubDate>
@@ -269,21 +306,6 @@ icons.success/error/warning  По умолчанию: пустая строка
 local ds = require(&#39;datasource.loki.loki1&#39;) url  Обязательное поле
  URL для запросов. Требуемые пути API, например /api/v1/query будут добавлены автоматически
 timeout  По умолчанию: 5s</description>
-    </item>
-    
-    <item>
-      <title>Тип Folder</title>
-      <link>https://balerter.github.io/ru/configuration/scripts/folder/</link>
-      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
-      
-      <guid>https://balerter.github.io/ru/configuration/scripts/folder/</guid>
-      <description>name: scripts path: /opt/scripts mask: &#39;*.lua&#39; name  Обязательное поле, Уникальное значение
- Название источника скрипта, в том числе используется при логгировании
-В названии могут использоваться латинские символы, цифры и знак подчеркивания
-path  Обязательное поле
- Путь к папке со скриптами.
-mask  По умолчанию: *.lua
- Макса для выбора файлов</description>
     </item>
     
   </channel>

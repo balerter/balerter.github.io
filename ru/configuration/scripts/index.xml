@@ -26,5 +26,18 @@ mask  По умолчанию: *.lua
  Макса для выбора файлов</description>
     </item>
     
+    <item>
+      <title>File</title>
+      <link>https://balerter.github.io/ru/configuration/scripts/file/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/ru/configuration/scripts/file/</guid>
+      <description>name: scripts filename: /opt/scripts/demo.lua name  Обязательное поле, Уникальное значение
+ Название источника скрипта
+В названии могут использоваться латинские символы, цифры и знак подчеркивания
+path  Обязательное поле
+ Путь к скрипту.</description>
+    </item>
+    
   </channel>
 </rss>

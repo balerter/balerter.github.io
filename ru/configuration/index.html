@@ -12,18 +12,18 @@
     <title>Конфигурация :: Документация по Balerter</title>
 
     
-    <link href="/css/nucleus.css?1585916915" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1585916915" rel="stylesheet">
-    <link href="/css/hybrid.css?1585916915" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1585916915" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1585916915" rel="stylesheet">
-    <link href="/css/auto-complete.css?1585916915" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1585916915" rel="stylesheet">
-    <link href="/css/theme.css?1585916915" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1585916915" rel="stylesheet">
+    <link href="/css/nucleus.css?1587587300" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1587587300" rel="stylesheet">
+    <link href="/css/hybrid.css?1587587300" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1587587300" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1587587300" rel="stylesheet">
+    <link href="/css/auto-complete.css?1587587300" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1587587300" rel="stylesheet">
+    <link href="/css/theme.css?1587587300" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1587587300" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1585916915"></script>
+    <script src="/js/jquery-3.3.1.min.js?1587587300"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1585916915"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1585916915"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1587587300"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1587587300"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/balerter.github.io\/ru";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1585916915"></script>
+<script type="text/javascript" src="/js/search.js?1587587300"></script>
 
     
   </div>
@@ -110,6 +110,25 @@
       <li data-nav-id="/ru/basics/install/" title="Установка" class="dd-item ">
         <a href="/ru/basics/install/">
         Установка
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/basics/run/" title="Флаги командной строки" class="dd-item ">
+        <a href="/ru/basics/run/">
+        Флаги командной строки
         
         </a>
     </li>
@@ -188,6 +207,25 @@
       <li data-nav-id="/ru/configuration/scripts/folder/" title="Тип Folder" class="dd-item ">
         <a href="/ru/configuration/scripts/folder/">
         Тип Folder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ru/configuration/scripts/file/" title="File" class="dd-item ">
+        <a href="/ru/configuration/scripts/file/">
+        File
         
         </a>
     </li>
@@ -1005,6 +1043,30 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/ru/core/runtime/" title="Runtime" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ru/core/runtime/">
+          Runtime
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -1509,11 +1571,11 @@
 	<p>Файл конфигурации описывается в <code>yaml</code> формате</p>
 <p>Секции конфигурации высшего уровня:</p>
 <ul>
-<li><a href="../scripts">scripts</a> - описание источников скриптов</li>
-<li><a href="../datasources">datasources</a> - описание источников данных</li>
-<li><a href="../channels">channels</a> - описание каналов отправки уведомлений</li>
-<li><a href="../storages">storages</a> - описание хранилищ для загрузки данных, например, изображений. И для хранения информации об алертах и KV</li>
-<li><a href="../global">global</a> - глобальные настройки</li>
+<li><a href="scripts">scripts</a> - описание источников скриптов</li>
+<li><a href="datasources">datasources</a> - описание источников данных</li>
+<li><a href="channels">channels</a> - описание каналов отправки уведомлений</li>
+<li><a href="storages">storages</a> - описание хранилищ для загрузки данных, например, изображений. И для хранения информации об алертах и KV</li>
+<li><a href="global">global</a> - глобальные настройки</li>
 </ul>
 <p>Пример:</p>
 <pre><code>scripts:
@@ -1523,6 +1585,9 @@
       - name: scripts
         path: /opt/scripts
         mask: '*.lua'
+    file:
+      - name: demo1
+        filename: /path/to/demo.lua
 
 datasources:
   clickhouse:
@@ -1691,41 +1756,6 @@ global:
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1750,10 +1780,13 @@ global:
             
                 
                     
+                    
                 
                 
 
                     
+                    
+                        
                     
                     
 
@@ -1763,37 +1796,8 @@ global:
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1802,9 +1806,6 @@ global:
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1918,6 +1919,102 @@ global:
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2245,6 +2342,22 @@ global:
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -2519,7 +2632,7 @@ global:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/ru/basics/install/" title="Установка"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/ru/basics/run/" title="Флаги командной строки"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/ru/configuration/scripts/" title="Раздел Scripts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -2532,19 +2645,19 @@ global:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1585916915"></script>
-    <script src="/js/perfect-scrollbar.min.js?1585916915"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1585916915"></script>
-    <script src="/js/jquery.sticky.js?1585916915"></script>
-    <script src="/js/featherlight.min.js?1585916915"></script>
-    <script src="/js/highlight.pack.js?1585916915"></script>
+    <script src="/js/clipboard.min.js?1587587300"></script>
+    <script src="/js/perfect-scrollbar.min.js?1587587300"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1587587300"></script>
+    <script src="/js/jquery.sticky.js?1587587300"></script>
+    <script src="/js/featherlight.min.js?1587587300"></script>
+    <script src="/js/highlight.pack.js?1587587300"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1585916915"></script>
-    <script src="/js/learn.js?1585916915"></script>
-    <script src="/js/hugo-learn.js?1585916915"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1587587300"></script>
+    <script src="/js/learn.js?1587587300"></script>
+    <script src="/js/hugo-learn.js?1587587300"></script>
 
-    <link href="/mermaid/mermaid.css?1585916915" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1585916915"></script>
+    <link href="/mermaid/mermaid.css?1587587300" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1587587300"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
