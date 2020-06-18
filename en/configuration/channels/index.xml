@@ -77,5 +77,38 @@ icons.success/error/warning  By default: empty string
  Path to images (use as notification icons)</description>
     </item>
     
+    <item>
+      <title>Email</title>
+      <link>https://balerter.github.io/en/configuration/channels/email/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/channels/email/</guid>
+      <description>Send Email
+email: - name: default from: foo@bar.com to: alert@bar.com cc: alert-cc@bar.com host: bar.com port: 1234 username: user password: secret secure: ssl timeout: 1000 name  Required, Unique
+ Channel name
+from Field &amp;lsquo;from&amp;rsquo;
+to Field &amp;lsquo;to&amp;rsquo;
+cc Field &amp;lsquo;cc&amp;rsquo;
+host Hostname
+port Port
+If Port equals to &amp;lsquo;465&amp;rsquo; and Secure field is empty, Secure filed will be set to &amp;lsquo;ssl&amp;rsquo;
+username Username
+password Password
+secure none, ssl, tls or empty string</description>
+    </item>
+    
+    <item>
+      <title>Discord</title>
+      <link>https://balerter.github.io/en/configuration/channels/discord/</link>
+      <pubDate>Tue, 04 Feb 2020 16:50:16 +0300</pubDate>
+      
+      <guid>https://balerter.github.io/en/configuration/channels/discord/</guid>
+      <description>Send to Discord
+ discord: - name: default token: &#39;ABCD&#39; channelId: 1234 name  Required, Unique
+ Channel name
+token Token
+channelID Channel ID</description>
+    </item>
+    
   </channel>
 </rss>
