@@ -29,7 +29,8 @@ docker run \ -v /path/to/config.yml:/opt/config.yml \ balerter/balerter -config=
       <pubDate>Tue, 04 Feb 2020 16:20:36 +0300</pubDate>
       
       <guid>https://balerter.github.io/en/basics/run/</guid>
-      <description>TODO:</description>
+      <description>CLI flags:
+-config=/path/to/config.yml path to config file default: config.yml -logLevel=[LOG LEVEL] log level. ERROR, WARN, INFO or DEBUG default: INFO -debug turn on debug mode for verbose logging default: false -once once run scripts and exit default: false -script=/path/to/script.lua ignore all script sources and runs only one script. Meta-tag @ignore will be ignored default: empty </description>
     </item>
     
   </channel>
