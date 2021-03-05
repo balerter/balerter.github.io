@@ -1,0 +1,10 @@
+{
+    "name": "Balerter",
+    "short_name": "Balerter",
+    "icons": [
+    ],
+    "start_url": "/0.7.0/getting_started/about.html",
+    "display": "standalone",
+    "background_color": "#ddd",
+    "theme_color": "#7e8ea1"
+}
